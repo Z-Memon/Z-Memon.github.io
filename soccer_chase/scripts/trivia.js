@@ -427,7 +427,7 @@ const triviaData = [
     },
     {
       question: "What happens if the ball becomes defective?",
-      options: ["Game Interuption", "Play Continues", "Penalty Shot", "Ball Replacement"],
+      options: ["Game Interuption", "Play Continues", "Play is stopped", "Ball Replacement"],
       answer: "Play is stopped", 
       points: 15,
       difficulty: "Hard",
@@ -436,7 +436,7 @@ const triviaData = [
     {
       question: "What happens if a goalkeeper handles the ball outside their penalty area?",
       options: ["Goalkeeper Expulsion", "Penalty Kick", "Direct Free kick for opponent", "Indirect Free kick for opponent"],
-      answer: " Direct Free kick for opponent", 
+      answer: "Direct Free kick for opponent", 
       points: 15,
       difficulty: "Hard",
       category: "Rules & Regulations"
