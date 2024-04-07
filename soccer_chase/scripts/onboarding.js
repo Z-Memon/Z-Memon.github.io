@@ -73,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentIndex === carouselItems.length - 1 && closeButton.style.display === "block") {
             return;
         }
-        // Modify here to stop at the first slide instead of wrapping to the last one
-        if (currentIndex === carouselItems.length - 1) {
-            return;
-        }
         currentIndex = (currentIndex + 1) % carouselItems.length;
         showSlide(currentIndex);
     }
-    
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+        showSlide(currentIndex);
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
