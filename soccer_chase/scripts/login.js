@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Allow users to directly type their username or email
         usernameField.contentEditable = true;
         usernameField.focus();
+        // Make the placeholder text disappear
+        usernameField.textContent = '';
     });
 
     // Select the password field
@@ -43,5 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Allow users to directly type their password
         passwordField.contentEditable = true;
         passwordField.focus();
+        // Make the placeholder text disappear
+        passwordField.textContent = '';
     });
 });
