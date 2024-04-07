@@ -69,7 +69,6 @@ body {
     display: flex;
     justify-content: space-between; /* Distributes space evenly between the lines */
     width: 80%; /* Adjust the width as needed */
-    gap: 5vw;
 }
 
 .line_1, .line_2, .line_3, .line_4, .line_5 {
