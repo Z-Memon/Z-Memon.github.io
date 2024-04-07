@@ -7,15 +7,16 @@ document.addEventListener("DOMContentLoaded", function() {
     let touchstartX = 0;
     let touchendX = 0;
     
-    // Function to update the carousel display with smooth sliding animation
+
+    // Function to update the carousel display
     function showSlide(index) {
         // Hide all items
         carouselItems.forEach(item => {
-            item.style.opacity = "0"; // Set opacity to 0 for smooth sliding animation
+            item.style.display = "none";
         });
 
-        // Show the current item with smooth sliding animation
-        carouselItems[index].style.opacity = "1";
+        // Show the current item
+        carouselItems[index].style.display = "block";
 
         // Update line colors
         lines.forEach(line => {
