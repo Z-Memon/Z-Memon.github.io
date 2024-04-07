@@ -12,7 +12,7 @@ body {
 .container {
     position: relative;
     width: 393px;
-    height: 852px;
+    height: 100vh;
     background: #000;
 }
 
