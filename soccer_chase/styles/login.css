@@ -152,18 +152,23 @@ body {
 }
 
 .login .sign-in {
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center;
+    justify-content: center;
     padding: 10px 30px;
     position: relative;
     flex: 0 0 auto;
     background-color: var(--accent-green);
     border-radius: 30px;
+    display: inline-flex;
     gap: 10px;
+    border-radius: 30px;
+    background: var(--Accent-Green, #D7FF32);
 }
 
 .login .text-wrapper-4 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
     font-family: "Bitter", Helvetica;
     font-weight: 600;
     color: var(--main-black);
@@ -172,9 +177,7 @@ body {
     line-height: normal;
     white-space: nowrap;
     color: var(--Main-Black, #0C0C0C);
-    margin: 0; /* Remove default margin */
 }
-
 
 .login .text-wrapper-5 {
     position: absolute;
