@@ -72,7 +72,7 @@ body {
 }
 
 .line_1, .line_2, .line_3, .line_4, .line_5 {
-    width: 42px;
+    width: 52px;
     height: 4px;
     flex-shrink: 0;
     border-radius: 5px;
