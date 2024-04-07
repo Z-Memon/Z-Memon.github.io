@@ -93,26 +93,3 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "trivia.html";
     });
 });
-
-function showSlide(index) {
-    // Hide all items
-    carouselItems.forEach(item => {
-        item.classList.remove("active");
-    });
-
-    // Show the current item
-    carouselItems[index].classList.add("active");
-
-    // Update line colors
-    lines.forEach(line => {
-        line.classList.remove("active");
-    });
-    lines[index].classList.add("active");
-
-    // Show or hide close button based on the index
-    if (index === carouselItems.length - 1) {
-        closeButton.style.display = "block";
-    } else {
-        closeButton.style.display = "none";
-    }
-}
