@@ -11,8 +11,8 @@ body {
 
 .container {
     position: relative;
-    max-width: 100%; /* Set maximum width to ensure it fits the screen */
-    height: 100vh; /* Make the container full height of the viewport */
+    width: 393px;
+    height: 852px;
     background: #000;
 }
 
@@ -60,16 +60,46 @@ body {
 
 .lines {
     position: absolute;
-    bottom: 8vh; /* Adjust as needed */
-    left: 0;
-    right: 0;
+    bottom: 80px;
+    left: 50px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 16px;
+    align-content: center;
 }
 
-.line_1, .line_2, .line_3, .line_4, .line_5 {
+.line_1 {
+    width: 42px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B1ADAD;
+}
+
+.line_2 {
+    width: 42px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B1ADAD;
+}
+
+.line_3 {
+    width: 42px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B1ADAD;
+}
+
+.line_4 {
+    width: 42px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #B1ADAD;
+}
+
+.line_5 {
     width: 42px;
     height: 4px;
     flex-shrink: 0;
@@ -79,10 +109,16 @@ body {
 
 .main_content {
     display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     flex-direction: column;
+    /* Stack items vertically */
     justify-content: center;
+    /* Center horizontally */
     align-items: center;
-    padding-top: 10vh; /* Adjust as needed */
+    /* Center vertically */
+    padding-top: 232px;
 }
 
 .lines .active {
