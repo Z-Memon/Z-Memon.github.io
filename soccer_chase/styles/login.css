@@ -27,6 +27,7 @@ body {
     position: absolute;
     top: 140px;
     left: 31px;
+    width: 80vw;
 }
 
 .login .div-2 {
