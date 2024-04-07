@@ -164,6 +164,7 @@ body {
     gap: 10px;
     border-radius: 30px;
     background: var(--Accent-Green, #D7FF32);
+    transform: translateX(-50%);
 }
 
 .login .text-wrapper-4 {
