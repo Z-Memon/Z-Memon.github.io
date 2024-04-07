@@ -306,7 +306,6 @@ body {
 .login .text-wrapper-7 {
     position: relative;
     width: fit-content;
-    margin-top: -1px;
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: var(--white);
