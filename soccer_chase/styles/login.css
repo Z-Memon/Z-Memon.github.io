@@ -182,22 +182,25 @@ body {
 .login .text-wrapper-5 {
     position: absolute;
     top: 440px;
-    left: 169px;
+    left: 50%; /* Change left to center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
     font-family: "Bitter", Helvetica;
     font-weight: 300;
     color: var(--white);
     font-size: 9px;
-    text-align: right;
+    text-align: center; /* Change text alignment to center */
     letter-spacing: 0;
     line-height: normal;
     color: #f6f6f6;
 }
 
 .login .sign-up {
-    align-items: flex-start;
+    align-items: center; /* Align items to center */
+    justify-content: center; /* Justify content to center */
     position: absolute;
     top: 690px;
-    left: 103px;
+    left: 50%; /* Change left to center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
     display: inline-flex;
     gap: 10px;
 }
