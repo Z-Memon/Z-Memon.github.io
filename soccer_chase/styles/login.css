@@ -203,7 +203,7 @@ body {
 .login .sign-up {
     align-items: flex-start;
     position: absolute;
-    top: 700px;
+    top: 710px;
     left: 103px;
     display: inline-flex;
     gap: 10px;
@@ -245,7 +245,7 @@ body {
     justify-content: center;
     gap: 20px;
     position: absolute;
-    top: 592px;
+    top: 500px;
     left: 16px;
 }
 
