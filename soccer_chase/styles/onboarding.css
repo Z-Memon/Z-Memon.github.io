@@ -63,7 +63,8 @@ body {
 .lines {
     position: absolute;
     bottom: 20vh;
-    left: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 20px;
     align-content: center;
