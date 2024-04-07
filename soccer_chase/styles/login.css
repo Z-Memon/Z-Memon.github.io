@@ -186,7 +186,7 @@ body {
 
 .login .text-wrapper-5 {
     position: absolute;
-    top: 411px; /* Adjusted top position */
+    top: 311px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     font-family: "Bitter", Helvetica;
