@@ -63,11 +63,12 @@ body {
 .lines {
     position: absolute;
     bottom: 20vh;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Centers the lines horizontally */
     display: flex;
-    gap: 20px;
-    align-content: center;
+    justify-content: space-between; /* Distributes space evenly between the lines */
+    width: 80%; /* Adjust the width as needed */
 }
 
 .line_1, .line_2, .line_3, .line_4, .line_5 {
