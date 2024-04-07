@@ -65,7 +65,7 @@ body {
     bottom: 120px;
     left: 50px;
     display: flex;
-    gap: 16px;
+    gap: 10vh;
     align-content: center;
 }
 
