@@ -30,12 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click event listener to the username field
     usernameField.addEventListener('click', function () {
-        // Prompt the user to enter their username or email
-        const usernameInput = prompt("Please enter your username or email:");
-        // Update the field with the entered username
-        if (usernameInput) {
-            usernameField.textContent = usernameInput;
-        }
+        // Allow users to directly type their username or email
+        usernameField.contentEditable = true;
+        usernameField.focus();
     });
 
     // Select the password field
@@ -43,11 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add click event listener to the password field
     passwordField.addEventListener('click', function () {
-        // Prompt the user to enter their password
-        const passwordInput = prompt("Please enter your password:");
-        // Update the field with the entered password
-        if (passwordInput) {
-            passwordField.textContent = passwordInput;
-        }
+        // Allow users to directly type their password
+        passwordField.contentEditable = true;
+        passwordField.focus();
     });
 });
