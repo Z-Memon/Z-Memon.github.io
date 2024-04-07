@@ -203,7 +203,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 670px; /* Adjusted top position */
+    top: 410px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
