@@ -26,9 +26,11 @@ body {
     gap: 40px;
     position: absolute;
     top: 140px;
-    left: 31px;
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
     width: 80vw;
 }
+
 
 .login .div-2 {
     display: flex;
