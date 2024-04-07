@@ -114,7 +114,7 @@ body {
 .login .line {
     position: relative;
     align-self: stretch;
-    width: 100%;
+    width: 100vh;
     height: 1px;
     margin-bottom: -0.5px;
     object-fit: cover;
