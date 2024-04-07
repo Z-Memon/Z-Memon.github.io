@@ -81,7 +81,7 @@ body {
 
 .main_content {
     display: flex;
-    position: absolute;
+    pposition: absolute;
     left: 50%;
     transform: translateX(-50%);
     flex-direction: column;
@@ -91,6 +91,10 @@ body {
     align-items: center;
     /* Center vertically */
     margin-top: 170px;
+
+    position: relative; /* Position relatively to contain absolute elements */
+    width: 100%;
+    height: 100%;
 }
 
 .lines .active {
@@ -105,8 +109,13 @@ body {
 
 .carousel-item {
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    flex-direction: row; /* Ensure items are aligned horizontally */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     height: 100%; /* Ensure the carousel item takes the full height */
+    opacity: 0; /* Initially hide items */
+    transition: opacity 0.5s ease; /* Add transition for smooth animation */
+    position: absolute; /* Position absolutely to overlap */
+    top: 0;
+    left: 0;
 }
