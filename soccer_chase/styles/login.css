@@ -203,7 +203,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 620px; /* Adjusted top position */
+    top: 640px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
@@ -215,7 +215,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     position: absolute;
     top: 440px; /* Adjusted top position */
     left: 50%;
