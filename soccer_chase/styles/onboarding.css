@@ -110,13 +110,4 @@ body {
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
     height: 100%; /* Ensure the carousel item takes the full height */
-
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.carousel-item.show {
-    opacity: 1;
-    transform: translateY(0);
 }
