@@ -243,7 +243,7 @@ body {
 
 .login .continue-with {
     display: flex;
-    width: 60vw;
+    width: 80vw;
     padding: 10px 15px;
     justify-content: center;
     align-items: center;
@@ -271,7 +271,7 @@ body {
 
 .login .continue-with-google {
     display: flex;
-    width: 332px;
+    width: 80vw;
     align-items: center;
     justify-content: center;
     gap: 15px;
@@ -297,7 +297,7 @@ body {
 
 .login .continue-with-apple {
     display: flex;
-    width: 332px;
+    width: 80vw;
     align-items: center;
     justify-content: center;
     gap: 15px;
