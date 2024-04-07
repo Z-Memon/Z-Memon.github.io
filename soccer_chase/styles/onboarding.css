@@ -11,8 +11,8 @@ body {
 
 .container {
     position: relative;
-    width: 393px;
-    height: 852px;
+    max-width: 100%; /* Set maximum width to ensure it fits the screen */
+    height: 100vh; /* Make the container full height of the viewport */
     background: #000;
 }
 
