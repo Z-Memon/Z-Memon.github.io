@@ -1,39 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let fieldsModified = false; // Flag to track if fields have been modified
+    let username = ""; // Variable to store username input
+    let password = ""; // Variable to store password input
 
-    // Select all the divs you want to trigger the script
-    const signInButtons = document.querySelectorAll('.sign-in, .continue-with, .continue-with-google, .continue-with-apple, .user-email, .user-password');
+    // Select the sign-in button
+    const signInButton = document.querySelector('.sign-in');
 
-    // Add click event listener to each div
-    signInButtons.forEach(function(signInButton) {
-        signInButton.addEventListener('click', function () {
-            const usernameEmailField = document.querySelector('.user-email .text-wrapper-2');
-            const passwordField = document.querySelector('.user-password .text-wrapper-2');
+    // Add click event listener to the sign-in button
+    signInButton.addEventListener('click', function () {
+        // Check if both username and password meet the minimum length requirement
+        if (username.length >= 6 && password.length >= 6) {
+            // Redirect to home page if both fields meet the requirement
+            window.location.href = 'home.html';
+        }
+    });
 
-            // Change username or email text if not already changed
-            if (!fieldsModified && usernameEmailField.textContent === 'username or email') {
-                usernameEmailField.textContent = 'chrisrock@gmail.com';
-            }
+    // Select the username or email field
+    const usernameField = document.querySelector('.user-email .text-wrapper-2');
 
-            // Change password text if not already changed
-            if (!fieldsModified && passwordField.textContent === 'password') {
-                passwordField.textContent = '************';
-            }
+    // Add click event listener to the username field
+    usernameField.addEventListener('click', function () {
+        // Prompt the user to enter their username
+        username = prompt("Please enter your username or email:");
+        // Update the field with the entered username
+        if (username) {
+            usernameField.textContent = username;
+        }
+    });
 
-            // If fields were modified once, navigate to home-page.html on second click
-            if (fieldsModified) {
-                window.location.href = 'home.html';
-            } else {
-                // Change user-email background color
-                const userEmailDiv = document.querySelector('.user-email');
-                userEmailDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
+    // Select the password field
+    const passwordField = document.querySelector('.user-password .text-wrapper-2');
 
-                // Change password background color
-                const userPasswordDiv = document.querySelector('.login .user-password');
-                userPasswordDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
-
-                fieldsModified = true; // Set the flag to true after fields are modified once
-            }
-        });
+    // Add click event listener to the password field
+    passwordField.addEventListener('click', function () {
+        // Prompt the user to enter their password
+        password = prompt("Please enter your password:");
+        // Update the field with asterisks to indicate password input
+        if (password) {
+            passwordField.textContent = '*'.repeat(password.length);
+        }
     });
 });
