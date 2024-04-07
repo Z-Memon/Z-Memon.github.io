@@ -1,22 +1,22 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const carouselItems = document.querySelectorAll(".carousel-item");
     const lines = document.querySelectorAll(".lines div");
     const closeButton = document.querySelector(".close");
+    const mainContent = document.querySelector(".main_content");
 
     let currentIndex = 0;
     let touchstartX = 0;
     let touchendX = 0;
-    
 
     // Function to update the carousel display
     function showSlide(index) {
         // Hide all items
         carouselItems.forEach(item => {
-            item.style.display = "none";
+            item.classList.remove("active");
         });
 
         // Show the current item
-        carouselItems[index].style.display = "block";
+        carouselItems[index].classList.add("active");
 
         // Update line colors
         lines.forEach(line => {
@@ -30,13 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             closeButton.style.display = "none";
         }
+
+        // Animate sliding
+        const offset = -index * 100; // Calculate the offset based on the index
+        mainContent.style.transform = `translateX(${offset}%)`;
     }
 
     // Initial display
     showSlide(currentIndex);
 
     // Event listeners for clicking and swiping
-    document.addEventListener("click", function(event) {
+    document.addEventListener("click", function (event) {
         // Check if the click target is the close button
         if (event.target.closest('.close')) {
             // If so, do nothing if it's on the last slide
@@ -47,11 +51,11 @@ document.addEventListener("DOMContentLoaded", function() {
         nextSlide();
     });
 
-    document.addEventListener('touchstart', function(event) {
+    document.addEventListener('touchstart', function (event) {
         touchstartX = event.changedTouches[0].screenX;
     }, false);
 
-    document.addEventListener('touchend', function(event) {
+    document.addEventListener('touchend', function (event) {
         touchendX = event.changedTouches[0].screenX;
         handleGesture();
     }, false);
@@ -88,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Event listener for clicks on the close button image
-    closeButton.addEventListener("click", function() {
+    closeButton.addEventListener("click", function () {
         // Navigate to trivia.html
         window.location.href = "trivia.html";
     });

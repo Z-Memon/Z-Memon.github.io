@@ -43,8 +43,10 @@ body {
     line-height: normal;
     padding-bottom: 17px;
 
-    white-space: nowrap; /* Prevent line breaks */
-    overflow: hidden; /* Hide overflowing text */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    overflow: hidden;
+    /* Hide overflowing text */
 }
 
 .description {
@@ -65,13 +67,20 @@ body {
     bottom: 20vh;
     left: 0;
     right: 0;
-    margin: 0 auto; /* Centers the lines horizontally */
+    margin: 0 auto;
+    /* Centers the lines horizontally */
     display: flex;
-    justify-content: space-between; /* Distributes space evenly between the lines */
-    width: 80%; /* Adjust the width as needed */
+    justify-content: space-between;
+    /* Distributes space evenly between the lines */
+    width: 80%;
+    /* Adjust the width as needed */
 }
 
-.line_1, .line_2, .line_3, .line_4, .line_5 {
+.line_1,
+.line_2,
+.line_3,
+.line_4,
+.line_5 {
     width: 52px;
     height: 4px;
     flex-shrink: 0;
@@ -82,32 +91,46 @@ body {
 .main_content {
     display: flex;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: column;
-    /* Stack items vertically */
-    justify-content: center;
-    /* Center horizontally */
+    flex-direction: row;
+    /* Change to row to allow horizontal sliding */
+    justify-content: flex-start;
+    /* Start from left */
     align-items: center;
-    /* Center vertically */
     margin-top: 170px;
-    transition: transform 0.5s ease; /* Add transition for smoother animation */
+    transition: transform 0.5s ease;
+    /* Add transition for smoother animation */
+    width: 100%;
+    /* Ensure the content takes full width */
 }
 
 .lines .active {
     background-color: #CFE92F;
 }
 
-.image, .title, .description {
+.image,
+.title,
+.description {
     /* Remove the height property to allow the content to determine its own height */
-    width: 100%; /* Ensure the content takes the full width */
-    text-align: center; /* Center the text horizontally */
+    width: 100%;
+    /* Ensure the content takes the full width */
+    text-align: center;
+    /* Center the text horizontally */
 }
 
 .carousel-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    height: 100%; /* Ensure the carousel item takes the full height */
+    flex: 0 0 auto;
+    /* Ensure items don't grow to fill space */
+    width: 100%;
+    /* Ensure each item takes full width */
+    opacity: 0;
+    /* Initially hide all items */
+    transform: translateX(-100%);
+    /* Start off-screen to the left */
+}
+
+.carousel-item.active {
+    opacity: 1;
+    /* Show active item */
+    transform: translateX(0);
+    /* Slide active item into view */
 }
