@@ -186,7 +186,7 @@ body {
 
 .login .text-wrapper-5 {
     position: absolute;
-    top: 311px; /* Adjusted top position */
+    top: 390px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     font-family: "Bitter", Helvetica;
@@ -203,7 +203,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 689px; /* Adjusted top position */
+    top: 670px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
@@ -217,7 +217,7 @@ body {
     justify-content: center;
     gap: 20px;
     position: absolute;
-    top: 459px; /* Adjusted top position */
+    top: 440px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
 }
