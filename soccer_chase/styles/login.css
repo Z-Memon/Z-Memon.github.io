@@ -203,13 +203,12 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 600px; /* Adjusted top position */
+    top: 620px; /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
     gap: 10px;
 }
-
 
 .login .social-media-login {
     display: flex;
