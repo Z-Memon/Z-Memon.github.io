@@ -90,7 +90,8 @@ body {
     /* Center horizontally */
     align-items: center;
     /* Center vertically */
-    margin-top: 170px;
+    padding-top: 200px; /* Adjust this value as needed */
+    transition: transform 0.5s ease; /* Add a transition for smooth sliding */
 }
 
 .lines .active {
