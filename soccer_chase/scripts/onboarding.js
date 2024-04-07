@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const carouselItems = document.querySelectorAll(".carousel-item");
     const lines = document.querySelectorAll(".lines div");
     const closeButton = document.querySelector(".close");
+    const mainContent = document.querySelector('.main_content');
 
     let currentIndex = 0;
     let touchstartX = 0;
     let touchendX = 0;
-    
 
     // Function to update the carousel display
     function showSlide(index) {
@@ -93,20 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "trivia.html";
     });
 
-    // Sliding animation for main_content
-    const mainContent = document.querySelector('.main_content');
-    const slides = document.querySelectorAll('.carousel-item');
-
-    function slideMainContent(index) {
-        const offset = -index * 100 + '%';
-        mainContent.style.transform = `translateY(${offset})`;
-    }
-
     // Update main content slide when clicking on carousel items
     carouselItems.forEach((item, index) => {
         item.addEventListener('click', () => {
-            slideMainContent(index);
+            const offset = -index * 100 + '%';
+            mainContent.style.transform = `translateY(${offset})`;
         });
     });
-
 });
