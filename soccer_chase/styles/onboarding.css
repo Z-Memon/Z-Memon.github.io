@@ -90,7 +90,7 @@ body {
     /* Center horizontally */
     align-items: center;
     /* Center vertically */
-    padding-top: 232px;
+    margin-top: 170px;
 }
 
 .lines .active {
