@@ -16,6 +16,8 @@ body {
     background: #000;
     margin: 0;
     padding: 0;
+
+    overflow: hidden; /* Hide overflow content */
 }
 
 .close {
@@ -83,7 +85,7 @@ body {
     display: flex;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     flex-direction: column;
     /* Stack items vertically */
     justify-content: center;
@@ -91,7 +93,7 @@ body {
     align-items: center;
     /* Center vertically */
     padding-top: 200px; /* Adjust this value as needed */
-    transition: transform 2s ease; /* Add a transition for smooth sliding */
+    transition: transform 0.5s ease; /* Add sliding animation */
 }
 
 .lines .active {

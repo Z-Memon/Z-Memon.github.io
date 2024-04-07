@@ -92,4 +92,21 @@ document.addEventListener("DOMContentLoaded", function() {
         // Navigate to trivia.html
         window.location.href = "trivia.html";
     });
+
+    // Sliding animation for main_content
+    const mainContent = document.querySelector('.main_content');
+    const slides = document.querySelectorAll('.carousel-item');
+
+    function slideMainContent(index) {
+        const offset = -index * 100 + '%';
+        mainContent.style.transform = `translateY(${offset})`;
+    }
+
+    // Update main content slide when clicking on carousel items
+    carouselItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            slideMainContent(index);
+        });
+    });
+
 });
