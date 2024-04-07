@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showSlide(currentIndex);
     }
     
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     const closeButton = document.getElementById("closeButton");
