@@ -313,3 +313,7 @@ body {
     text-decoration: underline;
     color: #f6f6f6;
 }
+
+.login .text-wrapper-2:focus, .login .text-wrapper-2:empty {
+    border-bottom-color: #fff; /* Change line color to white when focused or content is entered */
+}
