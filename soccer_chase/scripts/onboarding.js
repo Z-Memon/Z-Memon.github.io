@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const carouselItems = document.querySelectorAll(".carousel-item");
     const lines = document.querySelectorAll(".lines div");
     const closeButton = document.querySelector(".close");
-    const mainContent = document.querySelector(".main_content");
 
     let currentIndex = 0;
     let touchstartX = 0;
     let touchendX = 0;
 
+
     // Function to update the carousel display
     function showSlide(index) {
         // Hide all items
         carouselItems.forEach(item => {
-            item.classList.remove("active");
+            item.style.display = "none";
         });
 
         // Show the current item
-        carouselItems[index].classList.add("active");
+        carouselItems[index].style.display = "block";
 
         // Update line colors
         lines.forEach(line => {
@@ -30,10 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             closeButton.style.display = "none";
         }
-
-        // Animate sliding
-        const offset = -index * 100; // Calculate the offset based on the index
-        mainContent.style.transform = `translateX(${offset}%)`;
     }
 
     // Initial display
@@ -97,3 +93,26 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "trivia.html";
     });
 });
+
+function showSlide(index) {
+    // Hide all items
+    carouselItems.forEach(item => {
+        item.classList.remove("active");
+    });
+
+    // Show the current item
+    carouselItems[index].classList.add("active");
+
+    // Update line colors
+    lines.forEach(line => {
+        line.classList.remove("active");
+    });
+    lines[index].classList.add("active");
+
+    // Show or hide close button based on the index
+    if (index === carouselItems.length - 1) {
+        closeButton.style.display = "block";
+    } else {
+        closeButton.style.display = "none";
+    }
+}
