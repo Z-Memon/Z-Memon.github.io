@@ -26,8 +26,10 @@ body {
     gap: 40px;
     position: absolute;
     top: 140px;
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
     width: 80vw;
 }
 
@@ -287,3 +289,31 @@ body {
     border-radius: 10px;
 }
 
+.login .text-wrapper-6 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: var(--white);
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+    color: #f6f6f6;
+}
+
+.login .text-wrapper-7 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter", Helvetica;
+    font-weight: 500;
+    color: var(--white);
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+    color: #f6f6f6;
+}
