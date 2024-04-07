@@ -9,7 +9,7 @@ body {
     background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
 }
 
-.ccontainer {
+.container {
     position: relative;
     width: 100vh;
     height: 100vh;
