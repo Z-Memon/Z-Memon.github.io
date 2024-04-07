@@ -78,13 +78,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function prevSlide() {
+        if (currentIndex === 0) {
+            // If already on the first slide, exit the function
+            return;
+        }
         currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
         showSlide(currentIndex);
     }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const closeButton = document.getElementById("closeButton");
 
     // Event listener for clicks on the close button image
     closeButton.addEventListener("click", function() {
