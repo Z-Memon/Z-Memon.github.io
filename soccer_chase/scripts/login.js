@@ -4,6 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // Select all the divs you want to trigger the script
     const signInButtons = document.querySelectorAll('.continue-with, .continue-with-google, .continue-with-apple');
 
+    // Select the sign-in button
+    const signInButton = document.querySelector('.sign-in');
+
+    // Function to check if both fields are filled
+    function checkFieldsFilled() {
+        const usernameEmailField = document.querySelector('.user-email .text-wrapper-2');
+        const passwordField = document.querySelector('.user-password .text-wrapper-2');
+        return usernameEmailField.textContent.trim() !== '' && passwordField.textContent.trim() !== '';
+    }
+
+    // Function to enable/disable sign-in button based on fields filled
+    function updateSignInButtonState() {
+        signInButton.disabled = !checkFieldsFilled();
+    }
+
     // Add click event listener to each div
     signInButtons.forEach(function(signInButton) {
         signInButton.addEventListener('click', function () {
@@ -11,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const passwordField = document.querySelector('.user-password .text-wrapper-2');
 
             // Check if both username/email and password fields are not empty
-            if (usernameEmailField.textContent.trim() !== '' && passwordField.textContent.trim() !== '') {
+            if (checkFieldsFilled()) {
                 // Change username or email text if not already changed
                 if (!fieldsModified && usernameEmailField.textContent === 'username or email') {
                     usernameEmailField.textContent = 'youremail@gmail.com';
@@ -42,4 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // Add input event listeners to username/email and password fields
+    const usernameEmailField = document.querySelector('.user-email .text-wrapper-2');
+    const passwordField = document.querySelector('.user-password .text-wrapper-2');
+    usernameEmailField.addEventListener('input', updateSignInButtonState);
+    passwordField.addEventListener('input', updateSignInButtonState);
+
+    // Initially check the state of the sign-in button
+    updateSignInButtonState();
 });
