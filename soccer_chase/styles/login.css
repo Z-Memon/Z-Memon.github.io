@@ -318,6 +318,7 @@ body {
     border: none;
     background: none;
     color: #f6f6f6;
+    -webkit-tap-highlight-color: transparent; /* Add this line */
 }
 
 .user-email input:focus, .user-password input:focus {
