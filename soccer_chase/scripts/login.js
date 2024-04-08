@@ -1,39 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let fieldsModified = false; // Flag to track if fields have been modified
+document.addEventListener("DOMContentLoaded", function() {
+    const userEmailInput = document.querySelector('.user-email input');
+    const userPasswordInput = document.querySelector('.user-password input');
+    const signInButton = document.querySelector('.sign-in');
 
-    // Select all the divs you want to trigger the script
-    const signInButtons = document.querySelectorAll('.sign-in, .continue-with, .continue-with-google, .continue-with-apple, .user-email, .user-password');
+    // Add click event listeners to the email and password fields
+    document.querySelector('.user-email').addEventListener('click', function() {
+        this.style.backgroundColor = '#f0f0f0'; // Change background color to light gray
+        document.querySelector('.user-email .text-wrapper-2').style.display = 'none'; // Hide text
+        userEmailInput.style.display = 'block'; // Show input field
+    });
 
-    // Add click event listener to each div
-    signInButtons.forEach(function(signInButton) {
-        signInButton.addEventListener('click', function () {
-            const usernameEmailField = document.querySelector('.user-email .text-wrapper-2');
-            const passwordField = document.querySelector('.user-password .text-wrapper-2');
+    document.querySelector('.user-password').addEventListener('click', function() {
+        this.style.backgroundColor = '#f0f0f0'; // Change background color to light gray
+        document.querySelector('.user-password .text-wrapper-2').style.display = 'none'; // Hide text
+        userPasswordInput.style.display = 'block'; // Show input field
+    });
 
-            // Change username or email text if not already changed
-            if (!fieldsModified && usernameEmailField.textContent === 'username or email') {
-                usernameEmailField.textContent = 'chrisrock@gmail.com';
-            }
+    // Function to check if both email and password fields are filled
+    function checkFields() {
+        return userEmailInput.value.trim() !== '' && userPasswordInput.value.trim() !== '';
+    }
 
-            // Change password text if not already changed
-            if (!fieldsModified && passwordField.textContent === 'password') {
-                passwordField.textContent = '************';
-            }
-
-            // If fields were modified once, navigate to home-page.html on second click
-            if (fieldsModified) {
-                window.location.href = 'home.html';
-            } else {
-                // Change user-email background color
-                const userEmailDiv = document.querySelector('.user-email');
-                userEmailDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
-
-                // Change password background color
-                const userPasswordDiv = document.querySelector('.login .user-password');
-                userPasswordDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
-
-                fieldsModified = true; // Set the flag to true after fields are modified once
-            }
-        });
+    // Add click event listener to the sign-in button
+    signInButton.addEventListener('click', function() {
+        if (checkFields()) {
+            // Redirect to home page or perform further actions
+            window.location.href = 'home.html'; // Change to your home page URL
+        } else {
+            alert('Please fill in both username/email and password.'); // Show an alert if fields are not filled
+        }
     });
 });
