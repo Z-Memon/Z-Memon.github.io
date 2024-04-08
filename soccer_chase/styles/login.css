@@ -317,4 +317,5 @@ body {
 .user-email input, .user-password input {
     border: none;
     background: none;
+    color: #f6f6f6;
 }
