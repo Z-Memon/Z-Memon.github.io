@@ -319,3 +319,7 @@ body {
     background: none;
     color: #f6f6f6;
 }
+
+.user-email input:focus, .user-password input:focus {
+    outline: none;
+}
