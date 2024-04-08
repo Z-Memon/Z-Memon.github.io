@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
         this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
         document.querySelector('.user-email .text-wrapper-2').style.display = 'none'; // Hide text
         userEmailInput.style.display = 'block'; // Show input field
+        this.style.border = 'none'; // Remove border
     });
 
     document.querySelector('.user-password').addEventListener('click', function() {
         this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
         document.querySelector('.user-password .text-wrapper-2').style.display = 'none'; // Hide text
         userPasswordInput.style.display = 'block'; // Show input field
+        this.style.border = 'none'; // Remove border
     });
 
     // Function to check if both email and password fields are filled
