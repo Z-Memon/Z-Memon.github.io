@@ -616,7 +616,9 @@ footer {
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-  background-color: var(#161616);
+  background-image: url('btn-images/rectangle-938-1.svg');
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--Secondary-Grey, #737373);
   font-size: 12px;
   font-weight: 400;
