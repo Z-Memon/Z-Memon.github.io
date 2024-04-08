@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const userEmailInput = document.querySelector('.user-email input');
     const userPasswordInput = document.querySelector('.user-password input');
-    const signInButton = document.querySelector('.sign-in');
-
+    
     // Function to reset the background color and border of email and password fields
     function resetStyles() {
         const userEmailDiv = document.querySelector('.user-email');
@@ -53,16 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
     function checkFields() {
         return userEmailInput.value.trim() !== '' && userPasswordInput.value.trim() !== '';
     }
-
-    // Add click event listener to the sign-in button
-    signInButton.addEventListener('click', function() {
-        if (checkFields()) {
-            // Redirect to home page or perform further actions
-            window.location.href = 'home.html'; // Change to your home page URL
-        } else {
-            alert('Please fill in both username/email and password.'); // Show an alert if fields are not filled
-        }
-    });
 
     // Add blur event listeners to the email and password input fields to reset background color
     userEmailInput.addEventListener('blur', resetBackground);
