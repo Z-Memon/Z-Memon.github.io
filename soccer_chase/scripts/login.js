@@ -3,6 +3,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const userPasswordInput = document.querySelector('.user-password input');
     const signInButton = document.querySelector('.sign-in');
 
+    // Function to reset the background color of email and password fields
+    function resetBackground() {
+        const userEmailDiv = document.querySelector('.user-email');
+        const userPasswordDiv = document.querySelector('.user-password');
+        
+        // Check if input fields are empty and inactive
+        if (userEmailInput.value.trim() === '' && !userEmailInput.matches(':focus')) {
+            userEmailDiv.style.backgroundColor = 'transparent'; // Reset background color
+            userEmailDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
+        }
+        if (userPasswordInput.value.trim() === '' && !userPasswordInput.matches(':focus')) {
+            userPasswordDiv.style.backgroundColor = 'transparent'; // Reset background color
+            userPasswordDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
+        }
+    }
+
     // Add click event listeners to the email and password fields
     document.querySelector('.user-email').addEventListener('click', function() {
         this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
@@ -32,4 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Please fill in both username/email and password.'); // Show an alert if fields are not filled
         }
     });
+
+    // Add blur event listeners to the email and password input fields to reset background color
+    userEmailInput.addEventListener('blur', resetBackground);
+    userPasswordInput.addEventListener('blur', resetBackground);
+
+    // Reset background color when the page loads
+    resetBackground();
 });
