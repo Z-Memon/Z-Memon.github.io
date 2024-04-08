@@ -10,29 +10,35 @@ document.addEventListener("DOMContentLoaded", function () {
             const usernameEmailField = document.querySelector('.user-email .text-wrapper-2');
             const passwordField = document.querySelector('.user-password .text-wrapper-2');
 
-            // Change username or email text if not already changed
-            if (!fieldsModified && usernameEmailField.textContent === 'username or email') {
-                usernameEmailField.textContent = 'chrisrock@gmail.com';
-            }
+            // Check if both username/email and password fields are not empty
+            if (usernameEmailField.textContent.trim() !== '' && passwordField.textContent.trim() !== '') {
+                // Change username or email text if not already changed
+                if (!fieldsModified && usernameEmailField.textContent === 'username or email') {
+                    usernameEmailField.textContent = 'youremail@gmail.com';
+                }
 
-            // Change password text if not already changed
-            if (!fieldsModified && passwordField.textContent === 'password') {
-                passwordField.textContent = '************';
-            }
+                // Change password text if not already changed
+                if (!fieldsModified && passwordField.textContent === 'password') {
+                    passwordField.textContent = '************';
+                }
 
-            // If fields were modified once, navigate to home-page.html on second click
-            if (fieldsModified) {
-                window.location.href = 'home.html';
+                // If fields were modified once, navigate to home-page.html on second click
+                if (fieldsModified) {
+                    window.location.href = 'home.html';
+                } else {
+                    // Change user-email background color
+                    const userEmailDiv = document.querySelector('.user-email');
+                    userEmailDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
+
+                    // Change password background color
+                    const userPasswordDiv = document.querySelector('.login .user-password');
+                    userPasswordDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
+
+                    fieldsModified = true; // Set the flag to true after fields are modified once
+                }
             } else {
-                // Change user-email background color
-                const userEmailDiv = document.querySelector('.user-email');
-                userEmailDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
-
-                // Change password background color
-                const userPasswordDiv = document.querySelector('.login .user-password');
-                userPasswordDiv.style.backgroundColor = 'rgba(113, 113, 113, 0.447)';
-
-                fieldsModified = true; // Set the flag to true after fields are modified once
+                // Display a message or perform some action to indicate that fields are empty
+                console.log("Please fill in both username/email and password fields.");
             }
         });
     });
