@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", function() {
     function resetBackground() {
         const userEmailDiv = document.querySelector('.user-email');
         const userPasswordDiv = document.querySelector('.user-password');
-        
-        // Check if input fields are empty and inactive
-        if (userEmailInput.value.trim() === '' && !userEmailInput.matches(':focus')) {
+
+        // Check if input fields are not in focus
+        if (!userEmailInput.matches(':focus')) {
             userEmailDiv.style.backgroundColor = 'transparent'; // Reset background color
             userEmailDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
         }
-        if (userPasswordInput.value.trim() === '' && !userPasswordInput.matches(':focus')) {
+        if (!userPasswordInput.matches(':focus')) {
             userPasswordDiv.style.backgroundColor = 'transparent'; // Reset background color
             userPasswordDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
         }
