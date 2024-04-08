@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let fieldsModified = false; // Flag to track if fields have been modified
 
     // Select all the divs you want to trigger the script
-    const signInButtons = document.querySelectorAll('.sign-in, .continue-with, .continue-with-google, .continue-with-apple, .user-email, .user-password');
+    const signInButtons = document.querySelectorAll('.continue-with, .continue-with-google, .continue-with-apple, .user-email, .user-password');
 
     // Add click event listener to each div
     signInButtons.forEach(function(signInButton) {
