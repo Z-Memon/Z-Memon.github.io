@@ -3,17 +3,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const userPasswordInput = document.querySelector('.user-password input');
     const signInButton = document.querySelector('.sign-in');
 
-    // Function to reset the background color of email and password fields
-    function resetBackground() {
+    // Function to reset the background color and border of email and password fields
+    function resetStyles() {
         const userEmailDiv = document.querySelector('.user-email');
         const userPasswordDiv = document.querySelector('.user-password');
 
-        // Check if input fields are not in focus
-        if (!userEmailInput.matches(':focus')) {
+        userEmailDiv.style.backgroundColor = 'transparent'; // Reset background color
+        userEmailDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
+
+        userPasswordDiv.style.backgroundColor = 'transparent'; // Reset background color
+        userPasswordDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
+    }
+
+    // Function to reset the background color and border of email and password fields
+    function resetBackground() {
+        resetStyles();
+        
+        // Check if input fields are empty and inactive
+        if (userEmailInput.value.trim() === '' && !userEmailInput.matches(':focus')) {
             userEmailDiv.style.backgroundColor = 'transparent'; // Reset background color
             userEmailDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
         }
-        if (!userPasswordInput.matches(':focus')) {
+        if (userPasswordInput.value.trim() === '' && !userPasswordInput.matches(':focus')) {
             userPasswordDiv.style.backgroundColor = 'transparent'; // Reset background color
             userPasswordDiv.style.border = '1px solid var(--secondary-black)'; // Reset border
         }
@@ -21,17 +32,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add click event listeners to the email and password fields
     document.querySelector('.user-email').addEventListener('click', function() {
+        resetStyles(); // Reset styles of all fields
         this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
         document.querySelector('.user-email .text-wrapper-2').style.display = 'none'; // Hide text
         userEmailInput.style.display = 'block'; // Show input field
         this.style.border = 'none'; // Remove border
+        userEmailInput.focus(); // Focus on the input field
     });
 
     document.querySelector('.user-password').addEventListener('click', function() {
+        resetStyles(); // Reset styles of all fields
         this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
         document.querySelector('.user-password .text-wrapper-2').style.display = 'none'; // Hide text
         userPasswordInput.style.display = 'block'; // Show input field
         this.style.border = 'none'; // Remove border
+        userPasswordInput.focus(); // Focus on the input field
     });
 
     // Function to check if both email and password fields are filled
