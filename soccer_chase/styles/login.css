@@ -81,8 +81,6 @@ body {
     flex: 0 0 auto;
     background-color: rgba(113, 113, 113, 0);
     border-radius: 6px 6px 0 0;
-    border: none;
-    background: none;
 }
 
 .login .div-3 {
@@ -128,8 +126,6 @@ body {
     flex: 0 0 auto;
     background-color: rgba(113, 113, 113, 0);
     border-radius: 6px 6px 0 0;
-    border: none;
-    background: none;
 }
 
 .login .password-container {
@@ -318,7 +314,7 @@ body {
     color: #f6f6f6;
 }
 
-.user-email, .user-password {
+.user-email input, .user-password input {
     border: none;
     background: none;
 }
