@@ -318,6 +318,7 @@ body {
     border: none;
     background: none;
     color: #f6f6f6;
+    font-size: 16px;
     -webkit-tap-highlight-color: transparent; /* Add this line */
 }
 
