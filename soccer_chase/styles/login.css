@@ -146,11 +146,12 @@ body {
     font-family: "Bitter", Helvetica;
     font-weight: 300;
     color: var(--white);
-    font-size: 9px;
+    font-size: 12px;
     text-align: right;
     letter-spacing: 0;
     line-height: normal;
     color: #f6f6f6;
+    text-decoration: underline;
 }
 
 .login .sign-in {
