@@ -69,20 +69,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Reset background color when the page loads
     resetBackground();
-    
-    // Autofill email and password when continue-with buttons are clicked
-    document.querySelector('.continue-with').addEventListener('click', function() {
-        userEmailInput.value = 'youremail@gmail.com';
-        userPasswordInput.value = '************';
-    });
-    
-    document.querySelector('.continue-with-google').addEventListener('click', function() {
-        userEmailInput.value = 'youremail@gmail.com';
-        userPasswordInput.value = '************';
-    });
-    
-    document.querySelector('.continue-with-apple').addEventListener('click', function() {
-        userEmailInput.value = 'youremail@gmail.com';
-        userPasswordInput.value = '************';
-    });
 });
