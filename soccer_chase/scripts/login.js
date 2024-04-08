@@ -56,12 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add click event listener to the sign-in button
     signInButton.addEventListener('click', function() {
-        if (checkFields()) {
-            // Redirect to home page or perform further actions
-            window.location.href = 'home.html'; // Change to your home page URL
-        } else {
-            alert('Please fill in both username/email and password.'); // Show an alert if fields are not filled
+        if (!checkFields()) {
+            return; // If fields are empty, do nothing
         }
+        // Redirect to home page or perform further actions
+        window.location.href = 'home.html'; // Change to your home page URL
     });
 
     // Add blur event listeners to the email and password input fields to reset background color
