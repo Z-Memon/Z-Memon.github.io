@@ -17,6 +17,7 @@ html,
 body {
   margin: 0px;
   height: 100%;
+  width: 100vw;
 }
 /* a blue color as a generic focus style */
 button:focus-visible {
@@ -37,11 +38,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* This ensures that the .homepage takes up at least the full height of the viewport */
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* This ensures that the .homepage takes up at least the full height of the viewport */
   }
 
 
