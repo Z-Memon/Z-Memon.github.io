@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add click event listeners to the email and password fields
     document.querySelector('.user-email').addEventListener('click', function() {
-        this.style.backgroundColor = '#f0f0f0'; // Change background color to light gray
+        this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
         document.querySelector('.user-email .text-wrapper-2').style.display = 'none'; // Hide text
         userEmailInput.style.display = 'block'; // Show input field
     });
 
     document.querySelector('.user-password').addEventListener('click', function() {
-        this.style.backgroundColor = '#f0f0f0'; // Change background color to light gray
+        this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
         document.querySelector('.user-password .text-wrapper-2').style.display = 'none'; // Hide text
         userPasswordInput.style.display = 'block'; // Show input field
     });
