@@ -1,13 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Flag to track if the username and password fields have been modified
-    let fieldsModified = false;
+    let fieldsModified = false; // Flag to track if fields have been modified
 
     // Select all the divs you want to trigger the script
-    const signInButtons = document.querySelectorAll('.sign-in, .continue-with, .continue-with-google, .continue-with-apple');
+    const signInButtons = document.querySelectorAll('.sign-in, .continue-with, .continue-with-google, .continue-with-apple, .user-email, .user-password');
 
     // Add click event listener to each div
     signInButtons.forEach(function(signInButton) {
         signInButton.addEventListener('click', function () {
+            const usernameEmailField = document.querySelector('.user-email .text-wrapper-2');
+            const passwordField = document.querySelector('.user-password .text-wrapper-2');
+
+            // Change username or email text if not already changed
+            if (!fieldsModified && usernameEmailField.textContent === 'username or email') {
+                usernameEmailField.textContent = 'chrisrock@gmail.com';
+            }
+
+            // Change password text if not already changed
+            if (!fieldsModified && passwordField.textContent === 'password') {
+                passwordField.textContent = '************';
+            }
+
             // If fields were modified once, navigate to home-page.html on second click
             if (fieldsModified) {
                 window.location.href = 'home.html';
@@ -23,29 +35,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 fieldsModified = true; // Set the flag to true after fields are modified once
             }
         });
-    });
-
-    // Select the username or email field
-    const usernameField = document.querySelector('.user-email .text-wrapper-2');
-
-    // Add click event listener to the username field
-    usernameField.addEventListener('click', function () {
-        // Allow users to directly type their username or email
-        usernameField.contentEditable = true;
-        usernameField.focus();
-        // Make the placeholder text disappear
-        usernameField.textContent = '';
-    });
-
-    // Select the password field
-    const passwordField = document.querySelector('.user-password .text-wrapper-2');
-
-    // Add click event listener to the password field
-    passwordField.addEventListener('click', function () {
-        // Allow users to directly type their password
-        passwordField.contentEditable = true;
-        passwordField.focus();
-        // Make the placeholder text disappear
-        passwordField.textContent = '';
     });
 });
