@@ -71,16 +71,22 @@ document.addEventListener("DOMContentLoaded", function() {
     resetBackground();
     
     // Autofill email and password when continue-with buttons are clicked
-    document.querySelector('.continue-with').addEventListener('click', function() {
-        autofillCredentials();
+    document.querySelectorAll('.continue-with').forEach(function(button) {
+        button.addEventListener('click', function() {
+            autofillCredentials();
+        });
     });
     
-    document.querySelector('.continue-with-google').addEventListener('click', function() {
-        autofillCredentials();
+    document.querySelectorAll('.continue-with-google').forEach(function(button) {
+        button.addEventListener('click', function() {
+            autofillCredentials();
+        });
     });
     
-    document.querySelector('.continue-with-apple').addEventListener('click', function() {
-        autofillCredentials();
+    document.querySelectorAll('.continue-with-apple').forEach(function(button) {
+        button.addEventListener('click', function() {
+            autofillCredentials();
+        });
     });
     
     function autofillCredentials() {
