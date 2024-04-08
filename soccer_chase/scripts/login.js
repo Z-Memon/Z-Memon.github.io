@@ -49,6 +49,25 @@ document.addEventListener("DOMContentLoaded", function() {
         userPasswordInput.focus(); // Focus on the input field
     });
 
+    // Function to autofill username and password
+    function autoFillCredentials(username, password) {
+        userEmailInput.value = username;
+        userPasswordInput.value = password;
+    }
+
+    // Add click event listener to the buttons for autofilling credentials
+    document.querySelector('.continue-with').addEventListener('click', function() {
+        autoFillCredentials('youremail@gmail.com', '************');
+    });
+
+    document.querySelector('.continue-with-google').addEventListener('click', function() {
+        autoFillCredentials('youremail@gmail.com', '************');
+    });
+
+    document.querySelector('.continue-with-apple').addEventListener('click', function() {
+        autoFillCredentials('youremail@gmail.com', '************');
+    });
+
     // Function to check if both email and password fields are filled
     function checkFields() {
         return userEmailInput.value.trim() !== '' && userPasswordInput.value.trim() !== '';
