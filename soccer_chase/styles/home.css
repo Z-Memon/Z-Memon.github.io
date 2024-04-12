@@ -16,6 +16,7 @@
 html,
 body {
   margin: 0px;
+  padding: 0px;
   height: 100%;
 }
 
@@ -47,7 +48,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* This ensures that the .homepage takes up at least the full height of the viewport */
-  }
+  margin: 0px;
+  padding: 0px;
+}
 
 
 .homepage .div {
