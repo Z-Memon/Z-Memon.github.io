@@ -587,16 +587,27 @@ const triviaData = [
       optionElement.style.display = "flex"; // Make the option box a flex container
       optionElement.style.justifyContent = "center"; // Center children horizontally
       optionElement.style.alignItems = "center"; // Center children vertically
-      optionElement.addEventListener("click", () => checkAnswer(option, currentQuestion.points));
-      optionsElement.appendChild(optionElement);
+       // Add event listeners for touchstart and touchend
+    optionElement.addEventListener('touchstart', function() {
+      this.style.backgroundColor = 'green';
     });
+
+    optionElement.addEventListener('touchend', function() {
+      this.style.backgroundColor = '';
+    });
+
+    optionElement.addEventListener("click", () => checkAnswer(option, currentQuestion.points));
+    optionsElement.appendChild(optionElement);
+  });
+
+    };
     // Hide next question button if last question is reached
     if (currentQuestionIndex === triviaData.length - 1) {
       nextQuestionBtn.style.display = "none";
     } else {
       nextQuestionBtn.style.display = "block";
-    }
-  }
+    };
+  
 
   function checkAnswer(selectedAnswer, points) {
     const currentQuestion = triviaData[currentQuestionIndex];
