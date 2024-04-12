@@ -587,27 +587,28 @@ const triviaData = [
       optionElement.style.display = "flex"; // Make the option box a flex container
       optionElement.style.justifyContent = "center"; // Center children horizontally
       optionElement.style.alignItems = "center"; // Center children vertically
-       // Add event listeners for touchstart and touchend
+      // Add event listeners for touchstart and touchend
     optionElement.addEventListener('touchstart', function() {
       this.style.color = "var(--Accent-Green, #D7FF32)";
       this.style.borderColor = "var(--Accent-Green, #D7FF32)";
     });
 
     optionElement.addEventListener('touchend', function() {
-      this.style.backgroundColor = '';
+      this.style.color = "#F6F6F6";
+      this.style.borderColor = "2px solid var(--Light-gradient, rgba(115, 115, 115, 0.80))";
     });
 
     optionElement.addEventListener("click", () => checkAnswer(option, currentQuestion.points));
     optionsElement.appendChild(optionElement);
   });
 
-    };
-    // Hide next question button if last question is reached
-    if (currentQuestionIndex === triviaData.length - 1) {
-      nextQuestionBtn.style.display = "none";
-    } else {
-      nextQuestionBtn.style.display = "block";
-    };
+  // Hide next question button if last question is reached
+  if (currentQuestionIndex === triviaData.length - 1) {
+    nextQuestionBtn.style.display = "none";
+  } else {
+    nextQuestionBtn.style.display = "block";
+  }
+}
   
 
   function checkAnswer(selectedAnswer, points) {
