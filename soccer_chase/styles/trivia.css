@@ -161,6 +161,11 @@ p {
 
 /* Choose Category Page */
 
+#category-buttons button.active {
+  color: var(--Accent-Green, #D7FF32);
+  border: 2px solid var(--Accent-Green, #D7FF32);
+}
+
 #next {
     display: flex;
     justify-content: center;
