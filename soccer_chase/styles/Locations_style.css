@@ -53,6 +53,7 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   position: absolute;
   top: 559px;
   left: 31px;
+  border-radius: 17px;
 }
 
 .store .frame-2 {
