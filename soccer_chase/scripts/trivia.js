@@ -589,7 +589,8 @@ const triviaData = [
       optionElement.style.alignItems = "center"; // Center children vertically
        // Add event listeners for touchstart and touchend
     optionElement.addEventListener('touchstart', function() {
-      this.style.backgroundColor = 'green';
+      this.style.color = "var(--Accent-Green, #D7FF32)";
+      this.style.borderColor = "var(--Accent-Green, #D7FF32)";
     });
 
     optionElement.addEventListener('touchend', function() {
