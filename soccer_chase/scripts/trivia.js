@@ -687,17 +687,17 @@ const triviaData = [
         item.classList.add('active');
       }
     });
-
     // Select the buttons
-    const difficultyButton = document.querySelector('#difficulty-button');
-    const categoryButton = document.querySelector('#category-button');
+  const difficultyButtons = document.querySelectorAll('#difficulty-buttons button');
 
-    // Add event listeners to the buttons
-    difficultyButton.addEventListener('click', function() {
-      this.style.backgroundColor = 'green';
+  // Add event listeners to the buttons
+  difficultyButtons.forEach(button => {
+    button.addEventListener('touchstart', function() {
+      this.classList.add('active');
     });
 
-    categoryButton.addEventListener('click', function() {
-      this.style.backgroundColor = 'green';
+    button.addEventListener('touchend', function() {
+      this.classList.remove('active');
     });
-};
+  });
+  };

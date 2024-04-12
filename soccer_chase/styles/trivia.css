@@ -126,10 +126,10 @@ p {
     margin-bottom: 10px;
   }  
 
-#difficulty-buttons button:active {
-  color: var(--Accent-Green, #D7FF32);
-  border: 2px solid var(--Accent-Green, #D7FF32);
-}
+  #difficulty-buttons button.active {
+    color: var(--Accent-Green, #D7FF32);
+    border: 2px solid var(--Accent-Green, #D7FF32);
+  }
 
   #move-page-btn{
     display: flex;
