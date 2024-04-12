@@ -126,14 +126,10 @@ p {
     margin-bottom: 10px;
   }  
 
-  #difficulty-buttons button:active {
-    border-color: var(--Accent-Green, #D7FF32);
+#difficulty-buttons button:active {
+  color: var(--Accent-Green, #D7FF32);
+  border: 2px solid var(--Accent-Green, #D7FF32);
 }
-
-  .selected {
-    color: var(--Accent-Green, #D7FF32) !important;
-    border: 2px solid var(--Accent-Green, #D7FF32) !important;
-  } 
 
   #move-page-btn{
     display: flex;
@@ -350,3 +346,5 @@ footer {
 .active {
   color: var(--Accent-Green, #D7FF32)!important;
 }
+
+
