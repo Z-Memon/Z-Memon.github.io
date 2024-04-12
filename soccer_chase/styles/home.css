@@ -18,6 +18,11 @@ body {
   margin: 0px;
   height: 100%;
 }
+
+body {
+  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+  }
+
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
@@ -592,13 +597,12 @@ body {
 }
 
 footer {
-  position: center;
+  position: fixed;
   bottom: 0;
   width: 100%;
   color: var(--Secondary-Grey, #737373);
   text-align: center;
   padding: 10px 0;
-  margin-top: 260px;
 }
 
 
@@ -609,16 +613,23 @@ footer {
 }
 
 #bottom-navbar {
-  width: 393px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;  /* add this */
+  transform: translateX(-50%);  /* add this */
+  width: 100%;  /* adjust this as needed */
+  max-width: 600px; /* Adjust this as needed */
   height: 80px;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-  background-image: url('btn-images/rectangle-938-1.svg');
-  background-position: center;
-  background-repeat: no-repeat;
+  padding-top: 15px;
+  background-color: var(--secondary-black, #0C0C0C);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  filter: drop-shadow(0px -1px 5px rgba(215, 255, 50, 0.50));
   color: var(--Secondary-Grey, #737373);
   font-size: 12px;
   font-weight: 400;
@@ -635,3 +646,6 @@ footer {
 .active {
   color: var(--Accent-Green, #D7FF32)!important;
 }
+
+
+
