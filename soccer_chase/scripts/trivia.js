@@ -713,17 +713,4 @@ const triviaData = [
       this.classList.remove('active');
     });
   });
-  // Select the buttons
-  const categoryButtons = document.querySelectorAll('#category-buttons button');
-
-  // Add event listeners to the buttons
-  categoryButtons.forEach(button => {
-    button.addEventListener('touchstart', function() {
-      this.classList.add('active');
-    });
-
-    button.addEventListener('touchend', function() {
-      this.classList.remove('active');
-    });
-  });
   };
