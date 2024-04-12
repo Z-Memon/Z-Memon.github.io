@@ -266,9 +266,9 @@ p {
 
 /* Questions */
 .trophy{
-    width: 183.545px;
-    height: 188px;
-    margin-top: -50px;
+    width: 250px;
+    height: 200px;
+    margin-top: -130px;
 }
 
 .score{
@@ -311,7 +311,7 @@ p {
     color: var(--Accent-Green, #D7FF32);
     border: 1px solid var(--Accent-Green, #D7FF32);
     background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%)); /* Change this */
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 /* NavBar */
