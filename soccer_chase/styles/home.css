@@ -20,7 +20,6 @@ body {
   height: 100%;
 }
 
-
 /* a blue color as a generic focus style */
 button:focus-visible {
   outline: 2px solid #4a90e2 !important;
@@ -34,6 +33,7 @@ a {
 body {
   background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
 }
+
 
 .homepage {
   background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
@@ -616,7 +616,6 @@ footer {
   left: 50%;  /* add this */
   transform: translateX(-50%);  /* add this */
   width: 100%;  /* adjust this as needed */
-  max-width: 600px; /* Adjust this as needed */
   height: 80px;
   display: inline-flex;
   flex-direction: row;
