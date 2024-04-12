@@ -211,7 +211,7 @@ const triviaData = [
     },
     {
       question: "Which soccer legend has won the most FIFA Ballon d'Or awards?",
-      options: ["Johan Cruyff", "Lionel Messi", "cristiano ronaldo", "Diego Maradona"],
+      options: ["Johan Cruyff", "Lionel Messi", "Cristiano ronaldo", "Diego Maradona"],
       answer: "Lionel Messi",
       points: 15,
       difficulty: "Hard",
@@ -340,7 +340,7 @@ const triviaData = [
     {
       question: "What's a 'golden goal'?",
       options: ["Five Goals", "Winning goal", "Penalty Goal", "Extra Time Goal"],
-      answer: "Extra Time goal", 
+      answer: "Extra Time Goal", 
       points: 10,
       difficulty: "Medium",
       category: "Soccer Slang & Lingo"
