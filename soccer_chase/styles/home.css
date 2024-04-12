@@ -20,9 +20,6 @@ body {
   height: 100%;
 }
 
-body {
-  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
-  }
 
 /* a blue color as a generic focus style */
 button:focus-visible {
