@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 100hw;
   display: flex;
   justify-content: center;
   align-items: center;
