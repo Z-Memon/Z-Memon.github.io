@@ -1,0 +1,256 @@
+.store {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.store .div {
+  background-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(180deg, rgb(12, 12, 12) 0%, rgb(17.87, 17.87, 17.87) 100%);
+  width: 393px;
+  height: 852px;
+  position: relative;
+}
+
+.store .text-wrapper {
+  position: absolute;
+  top: 54px;
+  left: 159px;
+  font-family: "Bitter", Helvetica;
+  font-weight: 500;
+  color: var(--white);
+  font-size: 30px;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.store .frame {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 40px;
+  position: absolute;
+  top: 559px;
+  left: 31px;
+}
+
+.store .frame-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.store .frame-3 {
+  display: flex;
+  width: 146px;
+  height: 130px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 40px;
+  position: relative;
+  border-radius: 17px;
+  overflow: hidden;
+  border: 2px solid;
+  border-color: transparent;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(115, 115, 115, 0.8),
+      rgba(115, 115, 115, 0),
+      rgba(199.54, 199.54, 199.54, 0.6) 100%
+    )
+    1;
+  background: linear-gradient(
+    180deg,
+    rgba(23.45, 23.45, 23.45, 0.75) 0%,
+    rgba(119.37, 119.37, 119.37, 0) 100%,
+    rgba(119.37, 119.37, 119.37, 0.2) 100%
+  );
+}
+
+.store .esso-logo {
+  position: relative;
+  width: 89px;
+  height: 65px;
+  margin-left: -11.5px;
+  margin-right: -11.5px;
+  object-fit: cover;
+}
+
+.store .text-wrapper-2 {
+  position: relative;
+  width: fit-content;
+  font-family: "Bitter", Helvetica;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.store .starbucks {
+  position: relative;
+  width: 68px;
+  height: 69px;
+  margin-left: -1px;
+  margin-right: -1px;
+  object-fit: cover;
+}
+
+.store .frame-4 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  position: absolute;
+  top: 159px;
+  left: 30px;
+}
+
+.store .frame-5 {
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.store .element-shoppers-drug {
+  position: relative;
+  width: 125px;
+  height: 28px;
+  margin-left: -29.5px;
+  margin-right: -29.5px;
+  object-fit: cover;
+}
+
+.store .tim-hortons-logo {
+  position: relative;
+  width: 123px;
+  height: 33px;
+  margin-left: -28.5px;
+  margin-right: -28.5px;
+  object-fit: cover;
+}
+
+.store .frame-6 {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.store .popeyes-logo-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.store .popeyes-logo {
+  position: relative;
+  width: 68px;
+  height: 60px;
+}
+
+.store .walmart-logo {
+  position: relative;
+  width: 113px;
+  height: 27px;
+  margin-left: -23.5px;
+  margin-right: -23.5px;
+  object-fit: cover;
+}
+
+.store .navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  top: 772px;
+  left: 0;
+}
+
+.store .rectangle {
+  position: relative;
+  width: 393px;
+  height: 91px;
+  margin-top: -11px;
+}
+
+.store .options {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 60px;
+  position: absolute;
+  top: 15px;
+  left: 37px;
+}
+
+.store .div-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.store .img {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.store .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--secondary-grey);
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.store .shop {
+  position: relative;
+  width: 26.69px;
+  height: 30px;
+}
+
+.store .text-wrapper-4 {
+  position: relative;
+  width: fit-content;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: var(--accent-green);
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.store .console {
+  position: relative;
+  width: 41.88px;
+  height: 30px;
+}

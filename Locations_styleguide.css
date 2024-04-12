@@ -1,0 +1,8 @@
+:root {
+  --accent-green: rgba(215, 255, 50, 1);
+  --white: rgba(246, 246, 246, 1);
+  --main-black: rgba(12, 12, 12, 1);
+  --secondary-black: rgba(22, 22, 22, 1);
+  --secondary-grey: rgba(115, 115, 115, 1);
+  --dark-green: rgba(118, 140, 26, 1);
+}
