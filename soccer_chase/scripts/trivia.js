@@ -687,4 +687,17 @@ const triviaData = [
         item.classList.add('active');
       }
     });
-  };
+
+    // Select the buttons
+    const difficultyButton = document.querySelector('#difficulty-button');
+    const categoryButton = document.querySelector('#category-button');
+
+    // Add event listeners to the buttons
+    difficultyButton.addEventListener('click', function() {
+      this.style.backgroundColor = 'green';
+    });
+
+    categoryButton.addEventListener('click', function() {
+      this.style.backgroundColor = 'green';
+    });
+};
