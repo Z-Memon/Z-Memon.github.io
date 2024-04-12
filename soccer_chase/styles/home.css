@@ -62,7 +62,7 @@ body {
   border-color: var(--secondary-black);
   background: linear-gradient(180deg, rgb(12, 12, 12) 0%, rgb(17.87, 17.87, 17.87) 100%);
   width: 100hw;
-  height: 852px;
+  height: 100vh;
   position: relative;
 }
 
