@@ -44,8 +44,9 @@ document.addEventListener("DOMContentLoaded", function() {
 userEmailInput.addEventListener('input', function() {
     // Store the inputted username in local storage
     localStorage.setItem('username', this.value);
+    console.log('Setting username in local storage');
+
 });
-console.log('Setting username in local storage');
 
     document.querySelector('.user-password').addEventListener('click', function() {
         resetStyles(); // Reset styles of all fields
