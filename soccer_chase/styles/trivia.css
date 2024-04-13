@@ -126,10 +126,10 @@ p {
     margin-bottom: 10px;
   }  
 
-  .selected {
-    color: var(--Accent-Green, #D7FF32) !important;
-    border: 2px solid var(--Accent-Green, #D7FF32) !important;
-  } 
+  #difficulty-buttons button.active {
+    color: var(--Accent-Green, #D7FF32);
+    border: 2px solid var(--Accent-Green, #D7FF32);
+  }
 
   #move-page-btn{
     display: flex;
@@ -151,7 +151,7 @@ p {
   }
 
 .material-icons-outlined {
-    font-size: 60px; /* Adjust size as needed */
+  font-size: 60px; /* Adjust size as needed */
 }
 
 .material-symbols-outlined{
@@ -160,6 +160,11 @@ p {
 }
 
 /* Choose Category Page */
+
+#category-buttons button.active {
+  color: var(--Accent-Green, #D7FF32);
+  border: 2px solid var(--Accent-Green, #D7FF32);
+}
 
 #next {
     display: flex;
@@ -179,25 +184,7 @@ p {
     background-repeat: no-repeat;
     margin-top: 100px;
   }
-  
-  #previous {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 30px;
-    border-radius: 30px;
-    border: 1px solid var(--Accent-Green, #D7FF32);
-    background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%)); /* Change this */
-    gap: 10px;
-    margin: auto;
-    color: var(--Accent-Green, #D7FF32);
-    font-size: 16px;
-    font-weight: 400;
-    background-image: url('btn-images/arrow\ back.png');
-    background-position: left 15px center;
-    background-repeat: no-repeat;
-    margin-top: 100px;
-  }
+
 
 /* Questions */
 #question{
@@ -266,9 +253,9 @@ p {
 
 /* Questions */
 .trophy{
-    width: 183.545px;
-    height: 188px;
-    margin-top: -50px;
+    width: 250px;
+    height: 200px;
+    margin-top: -130px;
 }
 
 .score{
@@ -311,7 +298,7 @@ p {
     color: var(--Accent-Green, #D7FF32);
     border: 1px solid var(--Accent-Green, #D7FF32);
     background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%)); /* Change this */
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 /* NavBar */
@@ -337,7 +324,6 @@ footer {
   left: 50%;  /* add this */
   transform: translateX(-50%);  /* add this */
   width: 100%;  /* adjust this as needed */
-  max-width: 600px; /* Adjust this as needed */
   height: 80px;
   display: inline-flex;
   flex-direction: row;
@@ -365,3 +351,5 @@ footer {
 .active {
   color: var(--Accent-Green, #D7FF32)!important;
 }
+
+

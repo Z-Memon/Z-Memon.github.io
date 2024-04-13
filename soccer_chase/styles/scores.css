@@ -60,7 +60,6 @@ footer {
   left: 50%;  /* add this */
   transform: translateX(-50%);  /* add this */
   width: 100%;  /* adjust this as needed */
-  max-width: 600px; /* Adjust this as needed */
   height: 80px;
   display: inline-flex;
   flex-direction: row;

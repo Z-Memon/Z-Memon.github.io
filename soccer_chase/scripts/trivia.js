@@ -211,7 +211,7 @@ const triviaData = [
     },
     {
       question: "Which soccer legend has won the most FIFA Ballon d'Or awards?",
-      options: ["Johan Cruyff", "Lionel Messi", "cristiano ronaldo", "Diego Maradona"],
+      options: ["Johan Cruyff", "Lionel Messi", "Cristiano ronaldo", "Diego Maradona"],
       answer: "Lionel Messi",
       points: 15,
       difficulty: "Hard",
@@ -340,7 +340,7 @@ const triviaData = [
     {
       question: "What's a 'golden goal'?",
       options: ["Five Goals", "Winning goal", "Penalty Goal", "Extra Time Goal"],
-      answer: "Extra Time goal", 
+      answer: "Extra Time Goal", 
       points: 10,
       difficulty: "Medium",
       category: "Soccer Slang & Lingo"
@@ -519,6 +519,18 @@ const triviaData = [
       categoryBtn.style.cursor = "pointer"; // Change the cursor on hover
       categoryBtn.style.width = "146px"; // Set the width
       categoryBtn.style.height = "130px"; // Set the height
+
+ // Add event listeners for touchstart and touchend
+ categoryBtn.addEventListener('touchstart', function() {
+  this.style.color = "var(--Accent-Green, #D7FF32)";
+  this.style.borderColor = "var(--Accent-Green, #D7FF32)";
+});
+
+categoryBtn.addEventListener('touchend', function() {
+  this.style.color = "var(--Accent-Green, #D7FF32)";
+  this.style.borderColor = "var(--Accent-Green, #D7FF32)";
+});
+
       categoryBtn.addEventListener("click", () => startGame(category));
       buttonContainer.appendChild(categoryBtn);
     });
@@ -687,4 +699,18 @@ const triviaData = [
         item.classList.add('active');
       }
     });
+    // Select the buttons
+  const difficultyButtons = document.querySelectorAll('#difficulty-buttons button');
+
+  // Add event listeners to the buttons
+  difficultyButtons.forEach(button => {
+    button.addEventListener('touchstart', function() {
+      this.classList.add('active');
+    });
+
+    button.addEventListener('touchend', function() {
+      this.classList.remove('active');
+    });
+  });
+  
   };
