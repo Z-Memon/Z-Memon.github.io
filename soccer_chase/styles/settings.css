@@ -73,54 +73,40 @@ body {
   top: 80px;
 }
 
-.name_settings {
+.name_settings,
+.username_settings,
+.password_settings,
+.profile_picture_settings,
+.language_settings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   position: absolute;
-  top: 177px;
   width: 266px;
   height: 45px;
-  flex-shrink: 0;
   border-radius: 25px;
   background: var(--White, #F6F6F6);
+}
+
+.name_settings {
+  top: 177px;
 }
 
 .username_settings {
-  position: absolute;
   top: 246px;
-  width: 266px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 25px;
-  background: var(--White, #F6F6F6);
 }
 
 .password_settings {
-  position: absolute;
   top: 315px;
-  width: 266px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 25px;
-  background: var(--White, #F6F6F6);
 }
 
 .profile_picture_settings {
-  position: absolute;
   top: 384px;
-  width: 266px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 25px;
-  background: var(--White, #F6F6F6);
 }
 
 .language_settings {
-  position: absolute;
   top: 684px;
-  width: 266px;
-  height: 45px;
-  flex-shrink: 0;
-  border-radius: 25px;
-  background: var(--White, #F6F6F6);
 }
 
 .game_settings {
@@ -140,9 +126,38 @@ body {
   line-height: normal;
 }
 
+.text {
+  flex-shrink: 0;
+  color: #000;
+  font-family: Bitter;
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 20px;
+}
 
+.line {
+  width: 1px;
+  height: 14px;
+  background: #000;
+  position: absolute;
+  right: 60px;
+}
 
-
+.edit {
+  width: 27px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #2968A3;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  position: absolute;
+  right: 20px;
+}
 
 
 
