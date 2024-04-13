@@ -18,10 +18,6 @@
     }
   });
 
-  document.querySelector('#today').addEventListener('click', function() {
-    updateDisplayedScores(userId, 'today');
-  });
-  
   document.querySelector('#thisWeek').addEventListener('click', function() {
     updateDisplayedScores(userId, 'thisWeek');
   });
