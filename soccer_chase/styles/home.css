@@ -63,9 +63,6 @@ body {
 
 .settings_icon {
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
   position: absolute;
   top: 38px;
   left: 31px;
