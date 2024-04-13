@@ -502,14 +502,43 @@ const triviaData = [
     // Set the display to grid
     buttonContainer.style.display = "grid";
     buttonContainer.style.gridTemplateColumns = "repeat(2, 1fr)";
-    buttonContainer.style.gap = "20px";
+    buttonContainer.style.gap = "25px";
     
     // Extract unique categories
     categories = [...new Set(triviaData.map(question => question.category))];
     // Create buttons for each category
+    const categoryIcons = {
+      'World Cup History': 'history',
+      'FIFA World Cup Hosts': 'diversity_3',
+      'Soccer Legends': 'directions_run', 
+      "Women's Soccer": 'woman',
+      'Soccer Slang & Lingo': 'chat_bubble_outline',
+      'Rules & Regulations': 'gavel',
+
+      // Add more categories and icons as needed
+    };
+    
     categories.forEach(category => {
       const categoryBtn = document.createElement("button");
-      categoryBtn.textContent = category;
+    
+      // Use the category to look up the icon
+      const iconName = categoryIcons[category];
+    
+      // Create a span element for the icon
+      const icon = document.createElement("div");
+      icon.classList.add("material-icons");
+      icon.textContent = iconName;
+
+      const text = document.createElement("div");
+      text.textContent = category;
+      text.style.marginTop = "15px"; // Adjust this value as needed
+
+
+      icon.style.fontSize = "50px"; // Adjust this value as needed
+      categoryBtn.style.display = "flex";
+      categoryBtn.style.flexDirection = "column";
+      categoryBtn.style.alignItems = "center";
+      categoryBtn.style.justifyContent = "center";
       categoryBtn.style.color = "#F6F6F6"; // Change the text color
       categoryBtn.style.background = "linear-gradient(45deg, rgba(23, 23, 23, 0.75), rgba(119, 119, 119, 0.00), rgba(119, 119, 119, 0.20))";
       categoryBtn.style.border = "2px solid var(--Light-gradient, rgba(115, 115, 115, 0.80))"; // Set the border
@@ -519,6 +548,15 @@ const triviaData = [
       categoryBtn.style.cursor = "pointer"; // Change the cursor on hover
       categoryBtn.style.width = "146px"; // Set the width
       categoryBtn.style.height = "130px"; // Set the height
+    
+      const btnContainer = document.createElement("div");
+
+
+// Append the icon to the button
+  categoryBtn.appendChild(icon);
+  btnContainer.appendChild(categoryBtn);
+  btnContainer.appendChild(text);
+  buttonContainer.appendChild(btnContainer);
 
  // Add event listeners for touchstart and touchend
  categoryBtn.addEventListener('touchstart', function() {
@@ -532,7 +570,6 @@ categoryBtn.addEventListener('touchend', function() {
 });
 
       categoryBtn.addEventListener("click", () => startGame(category));
-      buttonContainer.appendChild(categoryBtn);
     });
   
     // Append the button container to the category container
@@ -657,15 +694,43 @@ categoryBtn.addEventListener('touchend', function() {
   function showAnswerFeedback(feedback, isCorrect) {
     questionContainer.style.display = "none";
     answerContainer.style.display = "block";
-    answerFeedbackElement.textContent = feedback;
-    pointsElement.textContent = score + " Points";
+    
+    const icon = document.createElement("span");
+    icon.classList.add("material-icons");
+    icon.style.fontSize = "100px"; // Adjust this value as needed
+
     if (isCorrect) {
-      pointsElement.style.color = "#D7FF32"; // Style for correct answer
+        // If the answer is correct, use a check icon
+        icon.textContent = "check";
+        icon.style.color = "#D7FF32"; // Style for correct answer
+        pointsElement.style.color = "#D7FF32"; // Style for correct answer
     } else {
-      pointsElement.style.color = "#FF8832"; // Style for incorrect answer
+        // If the answer is incorrect, use a close icon
+        icon.textContent = "close";
+        icon.style.color = "#FF8832"; // Style for incorrect answer
+        pointsElement.style.color = "#FF8832"; // Style for incorrect answer
     }
-      
-  }
+
+    // Set the innerHTML of the answerFeedbackElement to feedback
+  answerFeedbackElement.innerHTML = feedback;
+
+  // Set the display to flex and flexDirection to column
+  answerFeedbackElement.style.display = "flex";
+  answerFeedbackElement.style.flexDirection = "column";
+
+  // Create a new div element
+  const iconDiv = document.createElement("div");
+  // Append the icon to the div
+  iconDiv.appendChild(icon);
+  iconDiv.style.marginTop = "30px"; // Adjust this value as needed
+
+  // Append the div to the answerFeedbackElement
+  answerFeedbackElement.appendChild(iconDiv);
+
+
+    pointsElement.textContent = score + " Points";
+}
+
 
   function showFeedbackNextButton() {
     nextQuestionBtn.textContent = "Next";
