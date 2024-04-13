@@ -62,8 +62,11 @@ body {
 }
 
 .settings_icon {
+  position: absolute;
+  width: 36px;
+  height: 36px;
   top: 38px;
-  left: 31px;
+  left: 327px;
 }
 
 .homepage .frame {
