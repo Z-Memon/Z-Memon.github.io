@@ -1,53 +1,54 @@
- // score.js
- window.onload = function() {
-  const username = localStorage.getItem('currentUsername');
-const userScores = JSON.parse(localStorage.getItem(username)) || {
-  pointsEarned: 0,
-  pointsLost: 0,
-  pointsRedeemed: 0,
-  overallScore: 0
-};
+// Function to update scores for the current user
+function updateCurrentUserScores(pointsEarned, pointsLost, pointsRedeemed) {
+  // Retrieve current username from local storage
+  const username = localStorage.getItem('username');
 
-const pointsEarned = userScores.pointsEarned;
-const pointsLost = userScores.pointsLost;
-const pointsRedeemed = userScores.pointsRedeemed;
-const overallScore = userScores.overallScore;
+  // If username exists, update scores for that username
+  if (username) {
+      // Retrieve existing scores from local storage or initialize an empty object if it doesn't exist
+      let userScores = JSON.parse(localStorage.getItem('userScores')) || {};
 
-  document.querySelector('#points-earned').textContent = pointsEarned;
-  document.querySelector('#points-lost').textContent = pointsLost;
-  document.querySelector('#points-redeemed').textContent = pointsRedeemed;
-  document.querySelector('#overall-score').textContent = overallScore;
+      // Update scores for the current username
+      userScores[username] = {
+          pointsEarned: pointsEarned,
+          pointsLost: pointsLost,
+          pointsRedeemed: pointsRedeemed,
+          overallScore: pointsEarned - pointsLost - pointsRedeemed
+      };
 
-  const currentPage = window.location.pathname.split('/').pop();
-  const navItems = document.querySelectorAll('.nav-item');
-  navItems.forEach(item => {
-    if (item.href.includes(currentPage)) {
-      item.classList.add('active');
-    }
-  });
+      // Store the updated scores back in local storage
+      localStorage.setItem('userScores', JSON.stringify(userScores));
+  } else {
+      console.error('Username not found in local storage');
+  }
+}
 
-  document.querySelector('#thisWeek').addEventListener('click', function() {
-    updateDisplayedScores(userId, 'thisWeek');
-  });
-  
-  document.querySelector('#allTime').addEventListener('click', function() {
-    updateDisplayedScores(userId, 'allTime');
-  });
-   // Trigger a click event on the 'today' button
-document.querySelector('#today').click();
-};
+// Function to retrieve scores for the current user
+function getCurrentUserScores() {
+  // Retrieve current username from local storage
+  const username = localStorage.getItem('username');
 
+  // If username exists, retrieve scores for that username
+  if (username) {
+      // Retrieve scores object from local storage
+      let userScores = JSON.parse(localStorage.getItem('userScores')) || {};
 
-const scoreButtons = document.querySelectorAll('.score_options button');
+      // Return scores for the current username, or empty scores if the username doesn't exist
+      return userScores[username] || { pointsEarned: 0, pointsLost: 0, pointsRedeemed: 0, overallScore: 0 };
+  } else {
+      console.error('Username not found in local storage');
+      return { pointsEarned: 0, pointsLost: 0, pointsRedeemed: 0, overallScore: 0 }; // Return empty scores
+  }
+}
 
-scoreButtons.forEach(btn => {
-btn.addEventListener('click', function() {
-  // Remove 'active-btn' class from all buttons
-  scoreButtons.forEach(button => {
-    button.classList.remove('active-btn');
-  });
+// Example usage:
+const pointsEarned = 10;
+const pointsLost = 5;
+const pointsRedeemed = 2;
 
-  // Add 'active-btn' class to the clicked button
-  this.classList.add('active-btn');
-});
-});
+// Update scores for the current user
+updateCurrentUserScores(pointsEarned, pointsLost, pointsRedeemed);
+
+// Retrieve scores for the current user
+const currentUserScores = getCurrentUserScores();
+console.log(currentUserScores); // Output the scores for the current user
