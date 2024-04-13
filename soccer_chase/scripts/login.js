@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function() {
         userEmailInput.focus(); // Focus on the input field
     });
 
+    // Add input event listener to the email input field
+userEmailInput.addEventListener('input', function() {
+    // Store the inputted username in local storage
+    localStorage.setItem('username', this.value);
+});
+
     document.querySelector('.user-password').addEventListener('click', function() {
         resetStyles(); // Reset styles of all fields
         this.style.backgroundColor = 'rgba(113, 113, 113, 0.447)'; // Change background color to light gray
@@ -89,4 +95,3 @@ document.addEventListener("DOMContentLoaded", function() {
     // Reset background color when the page loads
     resetBackground();
 });
-
