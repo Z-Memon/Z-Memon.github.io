@@ -50,21 +50,51 @@ btn.addEventListener('click', function() {
   updateDisplayedScores(userId, this.id);
 });
 });
+
 function updateDisplayedScores(userId, timeframe) {
-  fetch(`/scores?userId=${userId}&timeframe=${timeframe}`)
-    .then(response => response.json())
-    .then(data => {
+  // Other code...
+
+  if (timeframe === 'thisWeek') {
+    const now = new Date();
+    const currentWeekNumber = getWeekNumber(now);
+
+    const lastUpdatedDate = new Date(localStorage.getItem('lastUpdatedDate'));
+    const lastUpdatedWeekNumber = getWeekNumber(lastUpdatedDate);
+
+    if (currentWeekNumber !== lastUpdatedWeekNumber) {
+      localStorage.setItem('pointsEarned', '0');
+      localStorage.setItem('lastUpdatedDate', now.toString());
+    }
+  }
+
+  // Other code...
+}
+
+function getWeekNumber(d) {
+  d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return weekNo;
+}
+
+
+
+//function updateDisplayedScores(userId, timeframe) {
+  //fetch(`/scores?userId=${userId}&timeframe=${timeframe}`)
+   // .then(response => response.json())
+    //.then(data => {
       // Assuming the server returns an object with the scores
-      document.querySelector('#points-earned').textContent = data.pointsEarned;
-      document.querySelector('#points-lost').textContent = data.pointsLost;
-      document.querySelector('#points-redeemed').textContent = data.pointsRedeemed;
-      document.querySelector('#overall-score').textContent = data.overallScore;
+      //document.querySelector('#points-earned').textContent = data.pointsEarned;
+      //document.querySelector('#points-lost').textContent = data.pointsLost;
+      //document.querySelector('#points-redeemed').textContent = data.pointsRedeemed;
+      //document.querySelector('#overall-score').textContent = data.overallScore;
 
       // Store the updated scores in the local storage
-      localStorage.setItem('pointsEarned', data.pointsEarned);
-      localStorage.setItem('pointsLost', data.pointsLost);
-      localStorage.setItem('pointsRedeemed', data.pointsRedeemed);
-      localStorage.setItem('overallScore', data.overallScore);
-    })
-    .catch(error => console.error('Error:', error));
-}
+      //localStorage.setItem('pointsEarned', data.pointsEarned);
+      //localStorage.setItem('pointsLost', data.pointsLost);
+      //localStorage.setItem('pointsRedeemed', data.pointsRedeemed);
+      //localStorage.setItem('overallScore', data.overallScore);
+    //})
+    //.catch(error => console.error('Error:', error));
+//}
