@@ -585,12 +585,21 @@ categoryBtn.addEventListener('touchend', function() {
         return question.difficulty === selectedDifficulty && question.category === category;
       });
     }
+
+     // Get the heading element
+  const headingElement = document.getElementById("category-title");
+  // Set the text content of the heading element to the selected category
+  headingElement.textContent = category;
+  headingElement.style.color = "var(--Accent-Green, #D7FF32)"; // Replace "red" with the desired color
+  headingElement.style.marginBottom = "10px"; // Adjust this value as needed
+
     if (filteredQuestions.length > 0) {
       triviaData.length = 0; // Clear existing questions
       filteredQuestions.forEach(question => {
         triviaData.push(question); // Add filtered questions
       });
       sortQuestions();
+      shuffleQuestions();
       showQuestion();
       categoryContainer.style.display = "none"; // Hide category container
       questionContainer.style.display = "block"; // Show question container
@@ -611,6 +620,23 @@ categoryBtn.addEventListener('touchend', function() {
         return a.category.localeCompare(b.category);
       }
     });
+  }
+
+  function shuffleQuestions() {
+    let currentIndex = triviaData.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = triviaData[currentIndex];
+      triviaData[currentIndex] = triviaData[randomIndex];
+      triviaData[randomIndex] = temporaryValue;
+    }
   }
 
   function showQuestion() {
