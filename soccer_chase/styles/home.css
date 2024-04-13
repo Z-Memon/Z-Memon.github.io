@@ -62,8 +62,6 @@ body {
 }
 
 .settings_icon {
-  display: inline-flex;
-  position: absolute;
   top: 38px;
   left: 31px;
 }
