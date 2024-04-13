@@ -37,39 +37,35 @@ document.addEventListener("DOMContentLoaded", function() {
         userEmailInput.focus();
     });
 
-   // ... previous code ...
+    // Add input event listener to the email input field
+    userEmailInput.addEventListener('input', function() {
+        // Get the existing usernames from local storage or initialize an empty array if it doesn't exist
+        let usernames = JSON.parse(localStorage.getItem('usernames')) || [];
+        // Add the new username to the array if it doesn't already exist
+        if (!usernames.includes(this.value)) {
+            usernames.push(this.value);
+            localStorage.setItem('usernames', JSON.stringify(usernames));
+            console.log('Setting username in local storage:', this.value);
+        } else {
+            console.log('Username already exists in local storage:', this.value);
+        }
+    });
 
-// Add input event listener to the email input field
-userEmailInput.addEventListener('input', function() {
-    // Get the existing usernames from local storage or initialize an empty array if it doesn't exist
-    let usernames = JSON.parse(localStorage.getItem('usernames')) || [];
-    // Add the new username to the array if it doesn't already exist
-    if (!usernames.includes(this.value)) {
-        usernames.push(this.value);
-        localStorage.setItem('usernames', JSON.stringify(usernames));
-        console.log('Setting username in local storage:', this.value);
-    } else {
-        console.log('Username already exists in local storage:', this.value);
-    }
-});
-
-// Add input event listener to the password input field
-userPasswordInput.addEventListener('input', function() {
-    // Get the existing username from the email input field
-    let username = userEmailInput.value;
-    // Get the existing usernames from local storage or initialize an empty array if it doesn't exist
-    let usernames = JSON.parse(localStorage.getItem('usernames')) || [];
-    // Add the username to the array if it doesn't already exist
-    if (!usernames.includes(username)) {
-        usernames.push(username);
-        localStorage.setItem('usernames', JSON.stringify(usernames));
-        console.log('Setting username in local storage:', username);
-    } else {
-        console.log('Username already exists in local storage:', username);
-    }
-});
-
-// ... rest of the provided code ...
+    // Add input event listener to the password input field
+    userPasswordInput.addEventListener('input', function() {
+        // Get the existing username from the email input field
+        let username = userEmailInput.value;
+        // Get the existing usernames from local storage or initialize an empty array if it doesn't exist
+        let usernames = JSON.parse(localStorage.getItem('usernames')) || [];
+        // Add the username to the array if it doesn't already exist
+        if (!usernames.includes(username)) {
+            usernames.push(username);
+            localStorage.setItem('usernames', JSON.stringify(usernames));
+            console.log('Setting username in local storage:', username);
+        } else {
+            console.log('Username already exists in local storage:', username);
+        }
+    });
 
     userPasswordDiv.addEventListener('click', function() {
         resetStyles();
