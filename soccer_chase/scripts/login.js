@@ -39,8 +39,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add input event listener to the email input field
     userEmailInput.addEventListener('input', function() {
-        localStorage.setItem('username', this.value);
-        console.log('Setting username in local storage');
+        // Get the existing usernames from local storage or initialize an empty array if it doesn't exist
+        let usernames = JSON.parse(localStorage.getItem('usernames')) || [];
+        // Add the new username to the array if it doesn't already exist
+        if (!usernames.includes(this.value)) {
+            usernames.push(this.value);
+            localStorage.setItem('usernames', JSON.stringify(usernames));
+            console.log('Setting usernames in local storage');
+        }
     });
 
     userPasswordDiv.addEventListener('click', function() {
