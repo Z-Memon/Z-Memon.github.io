@@ -45,9 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!usernames.includes(this.value)) {
             usernames.push(this.value);
             localStorage.setItem('usernames', JSON.stringify(usernames));
-            console.log('Setting username in local storage:', this.value);
-        } else {
-            console.log('Username already exists in local storage:', this.value);
+            console.log('Setting usernames in local storage');
         }
     });
 
@@ -61,9 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!usernames.includes(username)) {
             usernames.push(username);
             localStorage.setItem('usernames', JSON.stringify(usernames));
-            console.log('Setting username in local storage:', username);
-        } else {
-            console.log('Username already exists in local storage:', username);
+            console.log('Setting usernames in local storage');
         }
     });
 
