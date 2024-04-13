@@ -1,14 +1,18 @@
  // score.js
  window.onload = function() {
-  const pointsEarned = Number(localStorage.getItem('pointsEarned')) || 0;
-  const pointsLost = Number(localStorage.getItem('pointsLost')) || 0;
-  const pointsRedeemed = Number(localStorage.getItem('pointsRedeemed')) || 0;
-  const overallScore = Number(localStorage.getItem('overallScore')) || 0;
+  const username = localStorage.getItem('username') || 'defaultUser';
+  
+  const pointsEarned = Number(localStorage.getItem(username + '_pointsEarned')) || 0;
+  const pointsLost = Number(localStorage.getItem(username + '_pointsLost')) || 0;
+  const pointsRedeemed = Number(localStorage.getItem(username + '_pointsRedeemed')) || 0;
+  const overallScore = Number(localStorage.getItem(username + '_overallScore')) || 0;
 
   document.querySelector('#points-earned').textContent = pointsEarned;
   document.querySelector('#points-lost').textContent = pointsLost;
   document.querySelector('#points-redeemed').textContent = pointsRedeemed;
   document.querySelector('#overall-score').textContent = overallScore;
+
+  // Rest of the code...
 
   const currentPage = window.location.pathname.split('/').pop();
   const navItems = document.querySelectorAll('.nav-item');
