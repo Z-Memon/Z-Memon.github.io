@@ -1,9 +1,17 @@
  // score.js
  window.onload = function() {
-  const pointsEarned = Number(localStorage.getItem('pointsEarned')) || 0;
-  const pointsLost = Number(localStorage.getItem('pointsLost')) || 0;
-  const pointsRedeemed = Number(localStorage.getItem('pointsRedeemed')) || 0;
-  const overallScore = Number(localStorage.getItem('overallScore')) || 0;
+  const username = localStorage.getItem('currentUsername');
+const userScores = JSON.parse(localStorage.getItem(username)) || {
+  pointsEarned: 0,
+  pointsLost: 0,
+  pointsRedeemed: 0,
+  overallScore: 0
+};
+
+const pointsEarned = userScores.pointsEarned;
+const pointsLost = userScores.pointsLost;
+const pointsRedeemed = userScores.pointsRedeemed;
+const overallScore = userScores.overallScore;
 
   document.querySelector('#points-earned').textContent = pointsEarned;
   document.querySelector('#points-lost').textContent = pointsLost;
