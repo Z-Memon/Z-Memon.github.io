@@ -36,11 +36,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* This ensures that the .homepage takes up at least the full height of the viewport */
   margin: 0px;
   padding: 0px;
 }
-
 
 .div {
   display: flex;
@@ -106,12 +104,10 @@ body {
 }
 
 .language_settings {
-  top: 684px;
+  top: 704px;
 }
 
 .game_settings {
-  position: absolute;
-  top: 503px;
   width: 265px;
   height: 43px;
   flex-shrink: 0;
@@ -124,6 +120,13 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  color: var(--accent-green);
+  font-family: Bitter, sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  width: 100%;
 }
 
 .text {
@@ -159,109 +162,97 @@ body {
   right: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.game_settings_container {
+  position: absolute;
+  top: 480px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 0 30px;
+}
+
+.sound_container,
+.notification_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  color: var(--white);
+}
+
+.sound_text,
+.notification_text {
+  font-family: Bitter, sans-serif;
+  font-size: 18px;
+  color: var(--white);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: var(--accent-green);
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--accent-green);
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider:after {
+  /* content: attr(data-off); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-family: Bitter, sans-serif;
+  transition: .4s;
+  color: #000000;
+}
+
+input:checked + .slider:after {
+  /* content: attr(data-on);*/
+  transform: translate(-50%, -50%);
+}
 
 footer {
   position: fixed;
@@ -272,25 +263,19 @@ footer {
   padding: 10px 0;
 }
 
-
 #bottom-navbar a {
   color: var(--Secondary-Grey, #737373);
   text-decoration: none;
   margin: 0 10px;
-  /* Adjust the margin between navbar items as needed */
 }
 
 #bottom-navbar {
   position: fixed;
   bottom: 0;
   left: 50%;
-  /* add this */
   transform: translateX(-50%);
-  /* add this */
   width: 100%;
-  /* adjust this as needed */
   max-width: 600px;
-  /* Adjust this as needed */
   height: 80px;
   display: inline-flex;
   flex-direction: row;
@@ -308,7 +293,6 @@ footer {
   font-family: Inter;
 }
 
-
 .icon-text {
   display: flex;
   flex-direction: column;
@@ -317,4 +301,8 @@ footer {
 
 .active {
   color: var(--Accent-Green, #D7FF32) !important;
+}
+
+.slider:after, .slider:before {
+  font-size: 16px;
 }

@@ -18,3 +18,26 @@ document.addEventListener("DOMContentLoaded", function () {
     window.history.back();
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const editButtons = document.querySelectorAll('.edit');
+
+  editButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      alert('Edit feature coming soon!');
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Existing DOMContentLoaded content
+
+  // Toggle event listeners
+  document.getElementById('sound_toggle').addEventListener('change', function () {
+    console.log('Sound setting: ' + (this.checked ? 'ON' : 'OFF'));
+  });
+
+  document.getElementById('notification_toggle').addEventListener('change', function () {
+    console.log('Notification setting: ' + (this.checked ? 'ON' : 'OFF'));
+  });
+});
