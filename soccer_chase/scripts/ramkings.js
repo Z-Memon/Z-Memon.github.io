@@ -37,7 +37,7 @@ updateRankingsData(newRankingsData);
 
 function updateRanking(user, score) {
   // Retrieve the current rankings from local storage
-  let rankings = localStorage.getItem('usernames');
+  let rankings = localStorage.getItem('rankings');
 
   // Parse the rankings into an array if they exist, or create an empty array
   rankings = rankings ? JSON.parse(rankings) : [];
@@ -54,7 +54,7 @@ function updateRanking(user, score) {
   }
 
   // Store the updated rankings back to local storage
-  localStorage.setItem('usernames', JSON.stringify(rankings));
+  localStorage.setItem('rankings', JSON.stringify(rankings));
 }
 
 // Usage:
