@@ -61,7 +61,7 @@ body {
   position: relative;
 }
 
-.homepage .side-menu {
+.settings_icon {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
