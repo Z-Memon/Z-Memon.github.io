@@ -12,6 +12,12 @@
   document.querySelector('#points-redeemed').textContent = pointsRedeemed;
   document.querySelector('#overall-score').textContent = overallScore;
 
+  // Save the updated scores to local storage
+  localStorage.setItem(username + '_pointsEarned', pointsEarned);
+  localStorage.setItem(username + '_pointsLost', pointsLost);
+  localStorage.setItem(username + '_pointsRedeemed', pointsRedeemed);
+  localStorage.setItem(username + '_overallScore', overallScore);
+
   // Rest of the code...
 
   const currentPage = window.location.pathname.split('/').pop();
