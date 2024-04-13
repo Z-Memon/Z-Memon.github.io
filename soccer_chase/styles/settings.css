@@ -9,12 +9,14 @@
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import url("https://fonts.googleapis.com/css?family=Bitter:500,400|Inter:400");
+
 * {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0px;
   padding: 0px;
   height: 100%;
@@ -33,7 +35,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* This ensures that the .homepage takes up at least the full height of the viewport */
+  min-height: 100vh;
+  /* This ensures that the .homepage takes up at least the full height of the viewport */
   margin: 0px;
   padding: 0px;
 }
@@ -58,6 +61,193 @@ body {
   left: 327px;
 }
 
+.settings_title {
+  position: absolute;
+  color: var(--White, #F6F6F6);
+  text-align: center;
+  font-family: Bitter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  top: 80px;
+}
+
+.name_settings {
+  position: absolute;
+  top: 177px;
+  width: 266px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: var(--White, #F6F6F6);
+}
+
+.username_settings {
+  position: absolute;
+  top: 246px;
+  width: 266px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: var(--White, #F6F6F6);
+}
+
+.password_settings {
+  position: absolute;
+  top: 315px;
+  width: 266px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: var(--White, #F6F6F6);
+}
+
+.profile_picture_settings {
+  position: absolute;
+  top: 384px;
+  width: 266px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: var(--White, #F6F6F6);
+}
+
+.language_settings {
+  position: absolute;
+  top: 684px;
+  width: 266px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: var(--White, #F6F6F6);
+}
+
+.game_settings {
+  position: absolute;
+  top: 503px;
+  width: 265px;
+  height: 43px;
+  flex-shrink: 0;
+  color: var(--Accent-Green, #D7FF32);
+  text-align: center;
+  leading-trim: both;
+  text-edge: cap;
+  font-family: Bitter;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 footer {
   position: fixed;
   bottom: 0;
@@ -71,16 +261,21 @@ footer {
 #bottom-navbar a {
   color: var(--Secondary-Grey, #737373);
   text-decoration: none;
-  margin: 0 10px; /* Adjust the margin between navbar items as needed */
+  margin: 0 10px;
+  /* Adjust the margin between navbar items as needed */
 }
 
 #bottom-navbar {
   position: fixed;
   bottom: 0;
-  left: 50%;  /* add this */
-  transform: translateX(-50%);  /* add this */
-  width: 100%;  /* adjust this as needed */
-  max-width: 600px; /* Adjust this as needed */
+  left: 50%;
+  /* add this */
+  transform: translateX(-50%);
+  /* add this */
+  width: 100%;
+  /* adjust this as needed */
+  max-width: 600px;
+  /* Adjust this as needed */
   height: 80px;
   display: inline-flex;
   flex-direction: row;
@@ -106,8 +301,5 @@ footer {
 }
 
 .active {
-  color: var(--Accent-Green, #D7FF32)!important;
+  color: var(--Accent-Green, #D7FF32) !important;
 }
-
-
-

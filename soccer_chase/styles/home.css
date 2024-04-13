@@ -62,7 +62,15 @@ body {
 }
 
 .settings_icon {
-  
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 34px;
+  right: 327px;
+}
+
+.notifications {
+  position: absolute;
   width: 36px;
   height: 36px;
   top: 38px;
@@ -314,14 +322,6 @@ body {
   left: -12px;
   background-image: url(./btn-images/news-cover.png);
   background-size: 100% 100%;
-}
-
-.homepage .notifications {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  top: 38px;
-  left: 327px;
 }
 
 .homepage .overlap-2 {
