@@ -30,9 +30,12 @@ body {
   width: 393px;
   height: 852px;
   position: relative;
+  margin-top: 20px; /* Adjust this value as needed */
+
 }
 
 .store .text-wrapper {
+  margin-top: 100px; /* Increase as needed */
   position: absolute;
   top: 54px;
   left: 159px;
@@ -44,6 +47,13 @@ body {
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
+}
+
+/* Media query for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+  body {
+    overflow-y: auto;
+  }
 }
 
 .store .points-can-only-be {
@@ -207,6 +217,7 @@ body {
 }
 
 .store .next {
+  margin-top: -70px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
