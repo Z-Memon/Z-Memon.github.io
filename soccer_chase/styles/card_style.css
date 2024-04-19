@@ -1,3 +1,7 @@
+html {
+  overflow: hidden;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -14,6 +18,7 @@ body {
 
 body {
   padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+  overflow: hidden;
   }
 
 .store {
