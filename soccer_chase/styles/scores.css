@@ -101,3 +101,14 @@ img{
     margin-bottom: 30px;
 }
 
+#backButton {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  margin: auto;
+  color: var(--Accent-Green, #D7FF32);
+  background: none;
+  border: none;
+  font-size: 70px;  /* Adjust this value as needed */
+}
+
