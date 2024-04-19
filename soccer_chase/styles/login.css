@@ -1,3 +1,11 @@
+html {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -7,6 +15,7 @@ body {
     margin: 0;
     padding: 0;
     background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+    overflow: hidden;
 }
 
 .login .div {
@@ -110,9 +119,12 @@ body {
 }
 
 .line {
-    height: 1px; /* Adjust as needed */
-    width: 100%; /* This ensures the line spans the entire width of its container */
-    background-color:rgb(255, 255, 255); /* Change to your desired line color */
+    height: 1px;
+    /* Adjust as needed */
+    width: 100%;
+    /* This ensures the line spans the entire width of its container */
+    background-color: rgb(255, 255, 255);
+    /* Change to your desired line color */
 }
 
 .login .user-password {
@@ -184,7 +196,8 @@ body {
 
 .login .text-wrapper-5 {
     position: absolute;
-    top: 390px; /* Adjusted top position */
+    top: 390px;
+    /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     font-family: "Bitter", Helvetica;
@@ -201,7 +214,8 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 640px; /* Adjusted top position */
+    top: 640px;
+    /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
@@ -215,7 +229,8 @@ body {
     justify-content: center;
     gap: 20px;
     position: absolute;
-    top: 440px; /* Adjusted top position */
+    top: 440px;
+    /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
 }
@@ -315,14 +330,17 @@ body {
     color: #f6f6f6;
 }
 
-.user-email input, .user-password input {
+.user-email input,
+.user-password input {
     border: none;
     background: none;
     color: #f6f6f6;
     font-size: 16px;
-    -webkit-tap-highlight-color: transparent; /* Add this line */
+    -webkit-tap-highlight-color: transparent;
+    /* Add this line */
 }
 
-.user-email input:focus, .user-password input:focus {
+.user-email input:focus,
+.user-password input:focus {
     outline: none;
 }
