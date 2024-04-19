@@ -19,7 +19,6 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
 /* welcome page*/
 #welcome-container{
     display: inline-flex;
-    padding-top: 30px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
