@@ -106,7 +106,6 @@ img{
   color: var(--Accent-Green, #D7FF32);
   background: none;
   border: none;
-  font-size: 70px;  /* Adjust this value as needed */
 }
 
 #backButtonContainer {
