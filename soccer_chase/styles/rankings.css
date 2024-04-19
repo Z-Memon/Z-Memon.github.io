@@ -16,7 +16,9 @@
 html,
 body {
   margin: 0px;
+  padding: 0px;
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   display: flex;
@@ -81,12 +83,15 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   height: 665px;
   align-items: center;
   gap: 10px;
-  padding: 15px 0px 0px;
+  padding: 10px 0;
   position: absolute;
   top: 0;
-  left: 29px;
-  overflow: hidden;
+  left: 50%; /* Center relative to the parent width */
+  transform: translateX(-50%); /* Shift it back by 50% of its own width to truly center it */
+  width: 340px; /* Define a width if needed */
   overflow-y: scroll;
+  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-y: auto; /* Ensures scrollability */
 }
 
 .rankings .gamer-container {
@@ -105,13 +110,17 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   flex: 0 0 auto;
   border-radius: 10px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 99.99%, rgba(249, 249, 249, 0) 100%);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .rankings .ellipse {
   position: relative;
   width: 47px;
-  height: 47px;
+  height: auto;
   object-fit: cover;
+  max-width: 100%;
 }
 
 .rankings .name-and-rating {
@@ -265,6 +274,7 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  padding-right: 5px;
 }
 
 .rankings .img {
@@ -295,6 +305,7 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  padding-right: 5px;
 }
 
 
@@ -312,15 +323,25 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+  padding-right: 5px;
 }
 
 .rankings .gamer-container-2{
   width: 375px;
+  width: calc(100% - 10px); /* Subtract any horizontal padding or margins */
+  box-sizing: border-box; /* Include padding and borders in the element's total width */
+  margin: 0 auto; /* Center it */
 }
 
 
+@media (max-width: 600px) {
+  .rankings .player-list {
+    width: 90%; /* Adjust width on smaller screens */
+  }
 
-
-
+  .rankings .gamer-container-2 {
+    padding: 2px; /* Smaller padding on small screens */
+  }
+}
 
 
