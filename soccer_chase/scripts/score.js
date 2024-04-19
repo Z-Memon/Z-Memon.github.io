@@ -47,3 +47,7 @@ btn.addEventListener('click', function() {
   this.classList.add('active-btn');
 });
 });
+
+function goBack() {
+  window.history.back();
+}
