@@ -118,6 +118,15 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   margin: 0 auto;
 }
 
+.gamer-container-2 a,
+.gamer-container-2 a:active,
+.gamer-container-2 a:visited,
+.gamer-container-2 a:hover,
+.gamer-container-2 a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
 .rankings .ellipse {
   position: relative;
   width: 47px;
