@@ -23,3 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error('Settings icon not found!');
   }
 });
+
+// This script will disable scrolling on input focus and re-enable it on input blur
+document.addEventListener('DOMContentLoaded', function() {
+  var inputs = document.getElementsByTagName('input');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener('focus', function() {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    });
+    inputs[i].addEventListener('blur', function() {
+      document.body.style.overflow = ''; // Re-enable scrolling
+    });
+  }
+});
