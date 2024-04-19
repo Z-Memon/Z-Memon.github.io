@@ -93,6 +93,8 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   overflow-x: hidden; /* Hide horizontal overflow */
   overflow-y: auto; /* Ensures scrollability */
   -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS devices */
+  padding-bottom: 100px; /* Add enough padding at the bottom to ensure items are not hidden */
+  max-height: calc(100vh - 150px); /* Adjust this value to control the visible area, considering header/footer height */
 }
 
 .rankings .gamer-container {
