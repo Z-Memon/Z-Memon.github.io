@@ -13,12 +13,13 @@
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-html,
-body {
+html, body {
   margin: 0px;
   padding: 0px;
   height: 100%;
   overflow-x: hidden;
+  overflow: hidden; /* This prevents scrolling on the main page */
+  height: 100%; /* It's important to set a height to make overflow work as expected */
 }
 body {
   display: flex;
@@ -89,9 +90,9 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
   left: 50%; /* Center relative to the parent width */
   transform: translateX(-50%); /* Shift it back by 50% of its own width to truly center it */
   width: 340px; /* Define a width if needed */
-  overflow-y: scroll;
   overflow-x: hidden; /* Hide horizontal overflow */
   overflow-y: auto; /* Ensures scrollability */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS devices */
 }
 
 .rankings .gamer-container {
