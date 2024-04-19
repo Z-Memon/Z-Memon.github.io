@@ -102,7 +102,7 @@ img{
 }
 
 #backButton {
-  position: fixed;
+  position: sticky;
   color: var(--Accent-Green, #D7FF32);
   background: none;
   border: none;
