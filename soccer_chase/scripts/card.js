@@ -6,8 +6,4 @@ window.onload = function() {
         item.classList.add('active');
       }
     });
-  };
-
-  function goBack() {
-    window.history.back();
-  }
+};
