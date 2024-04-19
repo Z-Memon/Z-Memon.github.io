@@ -102,6 +102,7 @@ img{
 }
 
 #backButton {
+  position: fixed;
   color: var(--Accent-Green, #D7FF32);
   background: none;
   border: none;
@@ -117,6 +118,9 @@ img{
   padding: 20px;
   z-index: 1000; /* any large number */
 }
+
+
+
 
 
 
