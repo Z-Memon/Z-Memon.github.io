@@ -112,15 +112,11 @@ img{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  position: sticky;
+  position: fixed;
   top: 20px;  /* Adjust this value as needed */
   left: 20px;  /* Adjust this value as needed */
   padding: 20px;
-  z-index: 1000; /* any large number */
 }
-
-
-
 
 
 
