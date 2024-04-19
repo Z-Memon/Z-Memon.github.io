@@ -82,7 +82,7 @@ p {
     background-position: right 15px center;
     background-repeat: no-repeat;
     margin-bottom: 70px;
-    margin-top: -80px;
+    margin-top: -90px;
 }
 
 /* Choose Difficulty Page */
@@ -147,7 +147,7 @@ p {
     background-image: url('btn-images/arrow.png');
     background-position: right 15px center;
     background-repeat: no-repeat;
-    margin-top: 100px;
+    margin-top: 75px;
   }
 
 .material-icons-outlined {
@@ -182,7 +182,7 @@ p {
     background-image: url('btn-images/arrow.png');
     background-position: right 15px center;
     background-repeat: no-repeat;
-    margin-top: 100px;
+    margin-top: 75px;
   }
 
 
@@ -249,7 +249,7 @@ p {
     background-image: url('btn-images/arrow.png');
     background-position: right 15px center;
     background-repeat: no-repeat;
-    margin-top: 100px;
+    margin-top: 60px;
   }
 
 
