@@ -102,7 +102,6 @@ img{
 }
 
 #backButton {
-  position: sticky;
   color: var(--Accent-Green, #D7FF32);
   background: none;
   border: none;
@@ -112,10 +111,11 @@ img{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  position: fixed;
+  position: sticky;
   top: 20px;  /* Adjust this value as needed */
   left: 20px;  /* Adjust this value as needed */
   padding: 20px;
+  z-index: 1000; /* any large number */
 }
 
 
