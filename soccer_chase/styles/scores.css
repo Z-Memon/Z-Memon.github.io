@@ -27,8 +27,14 @@ h1{
     font-family: Bitter;
     font-size: 40px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 450;
     line-height: normal;
+}
+
+.material-icons-outlined{
+    color: var(--White, #F6F6F6);
+    font-size: 200px;
+    font-weight: lighter; /* Adjust this value to increase or decrease the thickness */
 }
 
 .score_options{
@@ -79,3 +85,18 @@ h1{
     margin: 10px;
 }
 
+img{
+    margin-top: 30px;
+}
+
+#username {
+    color: #FFF;
+    text-align: center;
+    font-family: Bitter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
