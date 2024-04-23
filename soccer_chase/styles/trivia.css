@@ -259,3 +259,12 @@ p {
     margin-top: 50px;
 }
 
+@media (max-width: 600px) {
+  h1 {
+      font-size: 24px; /* Adjust as needed */
+  }
+
+  .welcome {
+      width: 50px; /* Adjust as needed */
+  }
+}
