@@ -66,27 +66,21 @@ p {
 
 #start-game-btn {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 10px 30px;
     border-radius: 30px;
     border: 1px solid var(--Accent-Green, #D7FF32);
     background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%)); /* Change this */
     gap: 10px;
-    margin: auto;
     color: var(--Accent-Green, #D7FF32);
     font-size: 16px;
     font-weight: 400;
-    background-image: url('btn-images/arrow.png');
-    background-position: right 15px center;
-    background-repeat: no-repeat;
     margin-bottom: 70px;
     margin-top: -90px;
 }
 
 /* Choose Difficulty Page */
-
-
 .container {
     display: none;
   }
@@ -130,25 +124,6 @@ p {
     border: 2px solid var(--Accent-Green, #D7FF32);
   }
 
-  #move-page-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 30px;
-    border-radius: 30px;
-    border: 1px solid var(--Accent-Green, #D7FF32);
-    background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%)); /* Change this */
-    gap: 10px;
-    margin: auto;
-    color: var(--Accent-Green, #D7FF32);
-    font-size: 16px;
-    font-weight: 400;
-    background-image: url('btn-images/arrow.png');
-    background-position: right 15px center;
-    background-repeat: no-repeat;
-    margin-top: 60px;
-  }
-
 .material-icons-outlined {
   font-size: 60px; /* Adjust size as needed */
 }
@@ -164,26 +139,6 @@ p {
   color: var(--Accent-Green, #D7FF32);
   border: 2px solid var(--Accent-Green, #D7FF32);
 }
-
-#next {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 30px;
-    border-radius: 30px;
-    border: 1px solid var(--Accent-Green, #D7FF32);
-    background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%)); /* Change this */
-    gap: 10px;
-    margin: auto;
-    color: var(--Accent-Green, #D7FF32);
-    font-size: 16px;
-    font-weight: 400;
-    background-image: url('btn-images/arrow.png');
-    background-position: right 15px center;
-    background-repeat: no-repeat;
-    margin-top: 75px;
-  }
-
 
 /* Questions */
 #question{
@@ -245,9 +200,6 @@ p {
     color: var(--Accent-Green, #D7FF32);
     font-size: 16px;
     font-weight: 400;
-    background-image: url('btn-images/arrow.png');
-    background-position: right 15px center;
-    background-repeat: no-repeat;
     margin-top: 60px;
   }
 

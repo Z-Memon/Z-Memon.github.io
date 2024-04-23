@@ -759,7 +759,6 @@ categoryBtn.addEventListener('touchend', function() {
 
 
   function showFeedbackNextButton() {
-    nextQuestionBtn.textContent = "Next";
     nextQuestionBtn.removeEventListener("click", nextQuestion);
     nextQuestionBtn.addEventListener("click", showSummary);
     nextQuestionBtn.style.display = "block";
