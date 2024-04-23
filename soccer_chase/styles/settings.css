@@ -61,7 +61,7 @@ body {
 
 .settings_title {
   position: absolute;
-  color: var(--White, #F6F6F6);
+  color: var(--Accent-Green, #D7FF32);
   text-align: center;
   font-family: Bitter;
   font-size: 30px;
