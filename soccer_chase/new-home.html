@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <link rel="stylesheet" href="styles/nav_bar.css">
+    <link rel="stylesheet" href="styles/new-home.css">
+</head>
+<body>
+    <div class="header">
+        <div class="icon-container">
+            <img class="settings_icon" src="images/settings_icon.svg" alt="Settings" />
+            <img class="notifications" src="images/state-default.svg" />
+        </div>
+    
+        <nav class="navbar">
+            <a id="All" href="#" data-category="all">All</a>
+            <a href="#" data-category="fashion">Fashion</a>
+            <a href="#" data-category="technology">Technology</a>
+            <a href="#" data-category="history">History</a>
+            <a href="#" data-category="matches">Matches</a>
+
+            <!-- Add more navbar items as needed -->
+          </nav>
+          
+          <div class="carousel">
+            <div class="card" data-category="fashion">
+              <img src="styles/btn-images/news-cover.png" alt="Image 1">
+            </div>
+            <div class="card" data-category="technology">
+              <img src="styles/btn-images/news-cover-1.png" alt="Image 2">
+            </div>
+            <div class="card" data-category="history">
+                <img src="styles/btn-images/news-cover-3.png" alt="Image 3">
+            </div>
+            <div class="card" data-category="matches">
+                <img src="images/flag-1.png" alt="Image 4">
+            </div>
+            <!-- Add more cards as needed -->
+          </div>
+    
+    <footer>
+        <nav class="centered-nav" id="bottom-navbar">
+          <!-- Add your navbar items here -->
+          <a class="nav-item" href="new-home.html">
+            <div class="icon-text">
+              <i class="material-symbols-outlined">sports_and_outdoors</i>
+              <span>Home</span>
+            </div>
+          </a>
+          <a id="ranksButton" class="nav-item" href="rankings.html">
+            <div class="icon-text">
+              <i class="material-icons">emoji_events</i>
+              <span>Ranks</span>
+            </div>
+          </a>
+          <a class="nav-item" href="card.html">
+            <div class="icon-text">
+              <i class="material-icons">local_mall</i>
+              <span>Store</span>
+            </div>
+          </a>
+          <a class="nav-item" href="trivia.html">
+            <div class="icon-text">
+              <i class="material-icons">sports_esports</i>
+              <span>Game</span>
+            </div>
+          </a>
+        </nav>
+      </footer>
+    
+
+    <script src="scripts/new-home.js"></script>
+
+</body>
+</html>
