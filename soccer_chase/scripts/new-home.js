@@ -26,7 +26,6 @@ window.onload = function () {
     // Simulate a click on the '#All' element after all event listeners have been set up
     document.querySelector('#All').click();
 };
-// ... rest of your code ...
 
 document.addEventListener("DOMContentLoaded", function () {
     // Select the settings icon by its class
@@ -44,44 +43,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+  // This script will disable scrolling on input focus and re-enable it on input blur
   document.addEventListener('DOMContentLoaded', function() {
     var inputs = document.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener('focus', function() {
-            document.body.style.overflow = 'hidden'; // Disable scrolling
-        });
-        inputs[i].addEventListener('blur', function() {
-            document.body.style.overflow = ''; // Re-enable scrolling
-        });
+      inputs[i].addEventListener('focus', function() {
+        document.body.style.overflow = 'hidden'; // Disable scrolling
+      });
+      inputs[i].addEventListener('blur', function() {
+        document.body.style.overflow = ''; // Re-enable scrolling
+      });
     }
-
-    var carousel = document.querySelector('.carousel');
-var cards = document.querySelectorAll('.card');
-var currentIndex = 0;
-
-setInterval(function() {
-    cards[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % cards.length; // Loop back to 0 when we've reached the end
-    cards[currentIndex].classList.add('active');
-    carousel.scrollLeft = cards[currentIndex].offsetLeft;
-}, 5000); // Change card every 3 seconds
-});
-
-var navbarItems = document.querySelectorAll('.navbar a');
-var cards = document.querySelectorAll('.card');
-
-navbarItems.forEach(function(navbarItem) {
-  navbarItem.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    var category = this.getAttribute('data-category');
-
-    cards.forEach(function(card) {
-      if (category === 'all' || card.getAttribute('data-category') === category) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
   });
+
+  document.querySelectorAll('.navbar a').forEach(a => {
+    a.addEventListener('click', e => {
+        e.preventDefault();
+        const category = a.dataset.category;
+        document.querySelectorAll('.carousel-item').forEach(item => {
+            if (category === 'all') {
+                item.style.display = 'block';
+            } else {
+                item.style.display = item.dataset.category === category ? 'block' : 'none';
+            }
+        });
+    });
 });
+
+
+
+        
