@@ -8,7 +8,8 @@ body {
   color: var(--White, #F6F6F6);
   text-align: center;
   font-family: Bitter;
-  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
+  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+  overflow: hidden; /* Add this line */
 }
 
 body {
@@ -19,7 +20,6 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
 .header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
