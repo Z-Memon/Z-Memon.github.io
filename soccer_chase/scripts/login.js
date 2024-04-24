@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return; // If fields are empty, do nothing
         }
         // Redirect to home page or perform further actions
-        window.location.href = 'home.html'; // Change to your home page URL
+        window.location.href = 'new-home.html'; // Change to your home page URL
     });
 
     // Add blur event listeners to the email and password input fields to reset background color
