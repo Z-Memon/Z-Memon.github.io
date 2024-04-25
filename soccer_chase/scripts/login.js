@@ -40,17 +40,3 @@ login.addEventListener('click', function (event) {
       // ..
     });
 });
-
-
-
-
-
-
-function onSignIn(googleUser) {
-  try {
-    // Ваш код для обработки входа пользователя.
-    window.location = 'https://z-memon.github.io/soccer_chase/new-home.html'; // Укажите ваш URI перенаправления.
-  } catch (error) {
-    console.error('Error during sign-in:', error);
-  }
-}
