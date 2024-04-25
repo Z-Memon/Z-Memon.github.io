@@ -20,10 +20,13 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100%;
+  overflow-y: auto;
 }
 
 body {
   background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
+    padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+    
 }
 
 .homepage {
@@ -49,13 +52,14 @@ body {
   width: 393px;
   height: 852px;
   position: relative;
+  margin-top: -50px;
 }
 
 .close {
   position: absolute;
   width: 36px;
   height: 36px;
-  top: 38px;
+  top: 65px;
   left: 327px;
 }
 
@@ -68,8 +72,10 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  top: 80px;
+  top: 70px;
+  margin-top: 30px;
 }
+
 
 .name_settings,
 .username_settings,
@@ -260,6 +266,20 @@ input:checked + .slider:after {
 
 .sign-out {
   position: relative;
-  top: -285px;
+  bottom: -350px;
   align-items: center;
+}
+
+#logout{
+  font-family: "Bitter", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: var(--Accent-Green, #D7FF32);
+  color: var(--Main-Black, #0C0C0C);
+  border-radius: 30px;
+  border: 1px solid var(--Accent-Green, #D7FF32);
+  padding: 5px 100px;
+
+
+
 }
