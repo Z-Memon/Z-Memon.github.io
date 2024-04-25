@@ -1,0 +1,104 @@
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--White, #F6F6F6);
+  text-align: center;
+  font-family: Bitter;
+  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+  overflow: hidden; /* Add this line */
+}
+
+body {
+padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px; /* Adjust this value as needed */
+    padding: 0 20px; /* Adjust this value as needed */
+}
+
+/* Setting & Notifications */
+.settings_icon {
+    width: 36px;
+    height: 36px;
+    top: 34px;
+    right: 327px;
+    margin-top: 30px;
+  }
+  
+  .notifications {
+    width: 36px;
+    height: 36px;
+    top: 38px;
+    left: 327px;
+    margin-top: 30px;
+  }
+  
+/* Top Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-top: 20px; /* Adjust this value as needed */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px; /* This adds 10px of space to the left and right of each link */
+}
+
+.navbar a.active-2 {
+    color: var(--Accent-Green, #D7FF32);
+}
+
+/* carousel */
+.carousel {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory;
+    width: 75vw; /* Full viewport width */
+    scroll-behavior: smooth; /* Add this line */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    width: 70vw; /* Full viewport width */
+    height: 75vw; /* Adjust this value to fit your design */
+    background-color: #fff; /* Card background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    display: flex;
+    transform: scale(0.8); /* Scale down the size */
+    z-index: 1; /* Stack order */
+    transition: transform 0.5s ease; /* Add this line */
+    margin-right: -20px; /* Adjust this value as needed */
+}
+
+.carousel-item img {
+    width: 100%; /* Full width */
+    height: 100%; /* Keep aspect ratio */
+    object-fit: cover; /* Do not distort images */
+    margin: 0; /* Center image */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.hidden {
+    display: none;
+  }
