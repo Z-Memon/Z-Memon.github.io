@@ -54,7 +54,7 @@ body {
     width: 80vw;
 }
 
-#email, #password {
+#email, #password, #username {
     display: flex;
     width: 332px;
     align-items: flex-end;
