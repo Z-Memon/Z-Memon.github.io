@@ -32,11 +32,12 @@ function clearAllCookies() {
 
 const logout = document.getElementById('logout');
 logout.addEventListener('click', function () {
-    signOut(auth).then(() => {
-        window.location.href = "index.html";
-        // Sign-out successful.
-      }).catch((error) => {
-        // An error happened.
-      })
+  signOut(auth).then(() => {
+      clearAllCookies();
+      window.location.href = "index.html";
+      // Sign-out successful.
+  }).catch((error) => {
+      // An error happened.
+  })
 });
 
