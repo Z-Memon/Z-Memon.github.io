@@ -70,6 +70,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-        

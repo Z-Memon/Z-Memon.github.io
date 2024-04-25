@@ -79,7 +79,7 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
 .carousel-item {
     flex: 0 0 auto;
     scroll-snap-align: center;
-    width: 75vw; /* Full viewport width */
+    width: 70vw; /* Full viewport width */
     height: 75vw; /* Adjust this value to fit your design */
     background-color: #fff; /* Card background color */
     border-radius: 10px; /* Rounded corners */
@@ -88,6 +88,7 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
     transform: scale(0.8); /* Scale down the size */
     z-index: 1; /* Stack order */
     transition: transform 0.5s ease; /* Add this line */
+    margin-right: -20px; /* Adjust this value as needed */
 }
 
 .carousel-item img {
@@ -97,3 +98,7 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
     margin: 0; /* Center image */
     border-radius: 10px; /* Rounded corners */
 }
+
+.hidden {
+    display: none;
+  }
