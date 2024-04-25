@@ -6,15 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Document</title>
   <link rel="shortcut icon" type="image/jpg" href="images/football_favicon.ico"/>
-  <link rel="stylesheet" href="styles/login.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="globals.css" />
-  <link rel="stylesheet" href="styleguide.css" />
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="styles/login.css">
+
+  <script type="module" src="scripts/login.js" defer></script>
+
+
 </head>
 
 <body>
@@ -27,7 +29,7 @@
             <div class="user-email">
               <div class="div-3">
                 <img class="img" src="images/user.svg" />
-                <input type="text" placeholder="Enter username or email" /> <!-- Input field for email -->
+                <input id="email" type="text" placeholder="Enter username or email" /> <!-- Input field for email -->
               </div>
               <div class="line"></div>
             </div>
@@ -35,7 +37,7 @@
               <div class="password-container">
                 <div class="div-3">
                   <img class="img" src="images/password.svg" />
-                  <input type="password" placeholder="Enter password" /> <!-- Input field for password -->
+                  <input id="password" type="password" placeholder="Enter password" /> <!-- Input field for password -->
                 </div>
                 <div class="line"></div>
               </div>
@@ -44,7 +46,7 @@
           </div>
         </div>
         <div class="sign-in">
-          <div class="text-wrapper-4">Sign In</div>
+          <button id="sign-in">Sign In</button>
         </div>
       </div>
       <div class="text-wrapper-5">Or login with</div>
@@ -64,12 +66,11 @@
       </div>
       <div class="sign-up">
         <div class="text-wrapper-6">Don’t have an Account?</div>
-        <div class="text-wrapper-7">Sign up</div>
+        <div class="text-wrapper-7"><span><a href="sign-up.html">Sign Up</a></span></div>
       </div>
     </div>
   </div>
 
-  <script src="scripts/login.js"></script>
 </body>
 
 </html>

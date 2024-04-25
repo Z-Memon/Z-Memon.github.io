@@ -1,0 +1,85 @@
+html {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+    overflow: hidden;
+    color: #f6f6f6;
+}
+
+
+#sign-up {
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    position: relative;
+    flex: 0 0 auto;
+    border-radius: 30px;
+    display: inline-flex;
+    gap: 10px;
+    border-radius: 30px;
+    background: var(--Accent-Green, #D7FF32);
+    color: var(--Main-Black, #0C0C0C);
+    font-family: "Bitter", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    border: 1px solid var(--Accent-Green, #D7FF32);
+    outline: none;
+}
+
+.frame {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+    width: 80vw;
+}
+
+#email, #password {
+    display: flex;
+    width: 332px;
+    align-items: flex-end;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+
+    position: relative;
+    flex: 1;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+    color: #f6f6f6;
+
+    align-items: flex-start;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 332px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: rgba(113, 113, 113, 0);
+    border-radius: 6px 6px 0 0;
+}
+
