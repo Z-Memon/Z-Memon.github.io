@@ -19,6 +19,62 @@ body {
     color: #f6f6f6;
 }
 
+h2 {
+    font-family: "Bitter", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+.div-3 {
+    display: flex;
+    width: 332px;
+    align-items: flex-end;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.user-email {
+    align-items: flex-start;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: rgba(113, 113, 113, 0);
+    border-radius: 6px 6px 0 0;
+}
+
+.line {
+    height: 1px;
+    /* Adjust as needed */
+    width: 100%;
+    /* This ensures the line spans the entire width of its container */
+    background-color: rgb(255, 255, 255);
+    /* Change to your desired line color */
+}
+
+.img {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+#username, #email, #password, #confirm-password {
+    display: flex;
+    width: 332px;
+    align-items: flex-end;
+    gap: 10px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: rgba(113, 113, 113, 0);
+    color: #f6f6f6;
+    border: none;
+    outline: none;
+}
 
 #sign-up {
     align-items: center;
@@ -54,32 +110,4 @@ body {
     width: 80vw;
 }
 
-#email, #password, #username {
-    display: flex;
-    width: 332px;
-    align-items: flex-end;
-    gap: 10px;
-    position: relative;
-    flex: 0 0 auto;
-
-    position: relative;
-    flex: 1;
-    font-family: "Inter", Helvetica;
-    font-weight: 300;
-    color: var(--white);
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 20px;
-    color: #f6f6f6;
-
-    align-items: flex-start;
-    gap: 8px;
-    display: flex;
-    flex-direction: column;
-    width: 332px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color: rgba(113, 113, 113, 0);
-    border-radius: 6px 6px 0 0;
-}
 

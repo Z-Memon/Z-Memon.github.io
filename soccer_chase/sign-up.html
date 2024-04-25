@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/sign-up.css">
     <script type="module"  src="scripts/sign-up.js" defer></script>
 </head>
 <body>
     <div class="frame">
-    <input type="text" id="email" placeholder="Email">
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
+        <h2>Sign Up</h2>
+
+        <div class="user-email">
+            <div class="div-3">
+              <img class="img" src="images/user.svg" />
+              <input id="username" type="text" placeholder="Username" /> <!-- Input field for email -->
+            </div>
+            <div class="line"></div>
+        </div>
+
+        <div class="user-email">
+            <div class="div-3">
+              <img class="img" src="images/user.svg" />
+              <input id="email" type="text" placeholder="Email" /> <!-- Input field for email -->
+            </div>
+            <div class="line"></div>
+        </div>
+
+        <div class="user-email">
+            <div class="div-3">
+              <img class="img" src="images/password.svg" />
+              <input id="password" type="password" placeholder="Password" /> <!-- Input field for email -->
+            </div>
+            <div class="line"></div>
+        </div>
+
+        <div class="user-email">
+            <div class="div-3">
+              <img class="img" src="images/password.svg" />
+              <input id="confirm-password" type="password" placeholder="Confirm Password" /> <!-- Input field for email -->
+            </div>
+            <div class="line"></div>
+        </div>
 
     <button id="sign-up">Sign Up</button>
 </div>
