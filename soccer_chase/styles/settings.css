@@ -257,3 +257,9 @@ input:checked + .slider:after {
 .slider:after, .slider:before {
   font-size: 16px;
 }
+
+.sign-out {
+  position: relative;
+  top: -285px;
+  align-items: center;
+}
