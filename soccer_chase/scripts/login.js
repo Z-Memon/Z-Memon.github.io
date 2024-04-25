@@ -46,26 +46,9 @@
 
 
 
-
-
   function onSignIn(googleUser) {
-    // Получаем информацию о пользователе
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId());
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail());
-
-    // Токен ID, который можно отправить на сервер
-    var id_token = googleUser.getAuthResponse().id_token;
-    console.log('ID Token: ' + id_token);
-  }
-
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
+    // ... (обработка информации пользователя)
+    
+    // Перенаправляем пользователя после входа
+    window.location.href = 'https://z-memon.github.io/soccer_chase/new-home.html';
   }
