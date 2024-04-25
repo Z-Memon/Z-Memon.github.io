@@ -1,6 +1,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+  import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,8 +27,12 @@
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const username = document.getElementById('username').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
 
-
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
     createUserWithEmailAndPassword(auth, email, password, username)
   .then((userCredential) => {
     // Signed up 

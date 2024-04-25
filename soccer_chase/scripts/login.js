@@ -67,13 +67,4 @@ login.addEventListener('click', function (event) {
     });
 });
 
-const logout = document.getElementById('sign-out');
-logout.addEventListener('click', function () {
-    signOut(auth).then(() => {
-        window.location.href = "index.html";
-        // Sign-out successful.
-      }).catch((error) => {
-        // An error happened.
-      })
-});
 

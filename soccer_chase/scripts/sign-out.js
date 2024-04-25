@@ -19,7 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const logout = document.getElementById('sign-out');
+const logout = document.getElementById('logout');
 logout.addEventListener('click', function () {
     signOut(auth).then(() => {
         window.location.href = "index.html";
