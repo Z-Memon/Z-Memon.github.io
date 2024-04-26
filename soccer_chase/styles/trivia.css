@@ -258,11 +258,3 @@ p {
     margin-top: 50px;
 }
 
-/* Styles for screens with a maximum width of 900px */
-@media (max-width: 600px) {
-  * {
-      font-size: 18px; /* Adjust as needed */
-      margin: 0; /* Adjust as needed */
-      padding: 0; /* Adjust as needed */
-  }
-}
