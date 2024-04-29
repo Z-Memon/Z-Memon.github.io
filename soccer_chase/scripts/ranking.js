@@ -59,12 +59,6 @@ window.onload = function() {
         localStorage.setItem('currentUserData', JSON.stringify(userData));
       // Navigate to the user stats page
       window.location.href = "score.html";
- 
-
-        document.querySelector('#email').textContent = userData.email; // Assuming the points earned are stored here
-        document.querySelector('#points-earned').textContent = userData.pointsEarned; // Assuming the points earned are stored here
-        document.querySelector('#points-lost').textContent = userData.pointsLost; // Assuming the points lost are stored here
-        document.querySelector('#overall-score').textContent = userData.overallScore; // Assuming the overall score is stored here
       });
 
       ranksContainer.appendChild(rankItem);
