@@ -18,6 +18,10 @@ padding-bottom: 80px; /* Adjust this to match the height of your navbar */
 
 .score_page{
   box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
 }
 
