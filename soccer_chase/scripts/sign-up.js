@@ -1,7 +1,8 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-  import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-storage.js";
+  import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+  import { getDatabase, ref, set, get, child} from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,6 +20,7 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+  const db = getDatabase(app);
  
   const login = document.getElementById('sign-up');
   login.addEventListener('click', function(event){
@@ -26,24 +28,24 @@
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const username = document.getElementById('username').value;
+    const username = document.getElementById('username').value; // Add this line
     const confirmPassword = document.getElementById('confirm-password').value;
 
     if (password !== confirmPassword) {
         alert("Passwords do not match");
         return;
       }
-    createUserWithEmailAndPassword(auth, email, password, username)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    window.location.href = "new-home.html";
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-    // ..
-  });
-  });
+      createUserWithEmailAndPassword(auth, email, password, username)
+      .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          window.location.href = "new-home.html";
+
+      })
+      .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage)
+          // ..
+      });
+});

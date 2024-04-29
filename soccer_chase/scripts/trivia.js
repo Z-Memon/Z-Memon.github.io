@@ -673,49 +673,93 @@ categoryBtn.addEventListener('touchend', function() {
     }
   }
 
-  function checkAnswer(selectedAnswer, points) {
-    const currentQuestion = triviaData[currentQuestionIndex];
-    let isCorrect;
-    let pointsChange; // Points earned or lost for this question
-    if (selectedAnswer === currentQuestion.answer) {
-      score += points;
-      isCorrect = true;
-      pointsChange = points; // Points earned
-  
-      // Update points earned in localStorage
-      let pointsEarned = localStorage.getItem('pointsEarned');
-      pointsEarned = pointsEarned ? Number(pointsEarned) + points : points;
-      localStorage.setItem('pointsEarned', pointsEarned.toString());
-    } else {
-      score -= points;
-      isCorrect = false;
-      pointsChange = -points; // Points lost
-  
-      // Update points lost in localStorage
-      let pointsLost = localStorage.getItem('pointsLost');
-      pointsLost = pointsLost ? Number(pointsLost) + pointsChange : pointsChange;
-      localStorage.setItem('pointsLost', pointsLost.toString());
-    }
-  
-    // Calculate overall score as points earned minus points lost
-    let pointsEarned = Number(localStorage.getItem('pointsEarned'));
-    let pointsLost = Number(localStorage.getItem('pointsLost'));
-    let overallScore = pointsEarned - (-pointsLost);
-  
-    // Update overall score in localStorage
-    localStorage.setItem('overallScore', overallScore.toString());
-  
-    showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
-  
-    // Show summary screen after showing feedback for last question
-    if (currentQuestionIndex === triviaData.length - 1) {
-      setTimeout(() => {
-        showFeedbackNextButton();
-      }, 0); // Wait for 2 seconds before showing feedback
-    }
-    pointsElement.textContent = pointsChange + " Points"; // Show pointsChange instead of total score
+ // Initialize Firebase
+var firebaseConfig = {
+  // Your Firebase configuration here
+  apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
+  authDomain: "soccer-chase-587aa.firebaseapp.com",
+  projectId: "soccer-chase-587aa",
+  storageBucket: "soccer-chase-587aa.appspot.com",
+  messagingSenderId: "280880784635",
+  appId: "1:280880784635:web:767a93850f056f448c7c5e"
+};
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 
+function checkAnswer(selectedAnswer, points) {
+  const currentQuestion = triviaData[currentQuestionIndex];
+  let isCorrect;
+  let pointsChange;
+
+  // Get the current user's ID
+  let user = firebase.auth().currentUser;
+  if (!user) {
+    // The user is not signed in
+    return;
   }
+
+  let userId = user.uid;
+  let userEmail = user.email;
+  let now = new Date().toISOString();
+
+  if (selectedAnswer === currentQuestion.answer) {
+    score += points;
+    isCorrect = true;
+    pointsChange = points;
+
+    // Update points earned in Firebase for the current user
+    let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
+    pointsEarnedRef.once('value', function(snapshot) {
+      let pointsEarned = snapshot.val() ? snapshot.val() + points : points;
+      pointsEarnedRef.set(pointsEarned);
+    });
+    let dateRef = database.ref('scores/' + userId + '/date');
+    dateRef.set(now);
+  } else {
+    score -= points;
+    isCorrect = false;
+    pointsChange = -points;
+
+    // Update points lost in Firebase for the current user
+    let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
+    pointsLostRef.once('value', function(snapshot) {
+      let pointsLost = snapshot.val() ? snapshot.val() + pointsChange : pointsChange;
+      pointsLostRef.set(pointsLost);
+    });
+    let dateRef = database.ref('scores/' + userId + '/date');
+    dateRef.set(now);
+  }
+
+  // Calculate overall score as points earned minus points lost for the current user
+  let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
+  let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
+  pointsEarnedRef.once('value', function(snapshot) {
+    let pointsEarned = snapshot.val();
+    pointsLostRef.once('value', function(snapshot) {
+      let pointsLost = snapshot.val();
+      let overallScore = pointsEarned - (-pointsLost);
+
+      // Update overall score in Firebase for the current user
+      let overallScoreRef = database.ref('scores/' + userId + '/overallScore');
+      overallScoreRef.set(overallScore);
+
+      // Update email in Firebase for the current user
+      let emailRef = database.ref('scores/' + userId + '/email');
+      emailRef.set(userEmail);
+      });
+    });
+ 
+
+  showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
+
+  if (currentQuestionIndex === triviaData.length - 1) {
+    setTimeout(() => {
+      showFeedbackNextButton();
+    }, 0);
+  }
+  pointsElement.textContent = pointsChange + " Points";
+}
+
 
   function showAnswerFeedback(feedback, isCorrect) {
     questionContainer.style.display = "none";

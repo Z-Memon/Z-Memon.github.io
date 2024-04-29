@@ -1,6 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -18,9 +20,11 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-auth.languageCode = 'en';
+const db = getDatabase(app);
+
 const provider = new GoogleAuthProvider();
 const googleSignIn = document.getElementById('google-sign-in');
+
 googleSignIn.addEventListener('click', function () {
     signInWithPopup(auth, provider)
   .then((result) => {
@@ -31,6 +35,9 @@ googleSignIn.addEventListener('click', function () {
     const user = result.user;
     console.log(user);
     window.location.href = "new-home.html";
+
+    // Save the email to the database.
+    set(ref(db, 'users/' + user.uid + '/email'), user.email);
     // IdP data available using getAdditionalUserInfo(result)
     // ...
   }).catch((error) => {
@@ -57,6 +64,9 @@ login.addEventListener('click', function (event) {
       // Signed up 
       const user = userCredential.user;
       window.location.href = "new-home.html";
+
+      // Save the email to the database.
+      set(ref(db, 'users/' + user.uid + '/email'), user.email);
       // ...
     })
     .catch((error) => {
@@ -66,5 +76,4 @@ login.addEventListener('click', function (event) {
       // ..
     });
 });
-
 
