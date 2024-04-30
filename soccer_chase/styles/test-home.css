@@ -37,17 +37,14 @@ body {
 .settings_icon {
     width: 36px;
     height: 36px;
-    top: 34px;
-    left: 10vw;
+    right: 10vw; /* Adjust this value as needed */
     margin-top: 30px;
-    float: right;
+    position: absolute; /* Add position absolute to make right property work */
 }
 
 .notifications {
     width: 36px;
     height: 36px;
-    top: 38px;
-    left: 327px;
     margin-top: 30px;
 }
 
@@ -153,4 +150,7 @@ body {
 
 .email_beside {
     color: white;
+    position: absolute;
+    margin-top: 45.5px;
+    left: 20vw;
 }
