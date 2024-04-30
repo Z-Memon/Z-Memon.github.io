@@ -191,7 +191,7 @@ body {
 
 .login .text-wrapper-5 {
     position: absolute;
-    top: 390px;
+    top: 450px;
     /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
@@ -224,21 +224,10 @@ body {
     justify-content: center;
     gap: 20px;
     position: absolute;
-    top: 440px;
+    top: 500px;
     /* Adjusted top position */
     left: 50%;
     transform: translateX(-50%);
-}
-
-.login .continue-with {
-    display: flex;
-    width: 80vw;
-    padding: 10px 15px;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    background-color: #1877f2;
-    border-radius: 10px;
 }
 
 .login .img-2 {
@@ -284,19 +273,6 @@ body {
     background-color: transparent;
     border-radius: 0px;
     border: none;
-}
-
-.login .continue-with-apple {
-    display: flex;
-    width: 80vw;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px 15px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color: #000000;
-    border-radius: 10px;
 }
 
 .login .text-wrapper-6 {
