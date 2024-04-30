@@ -6,7 +6,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
+    background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+    overflow: hidden;
 }
 
 .container {
