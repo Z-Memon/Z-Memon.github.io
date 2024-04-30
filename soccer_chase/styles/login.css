@@ -282,7 +282,7 @@ body {
     font-family: "Inter", Helvetica;
     font-weight: 300;
     color: var(--white);
-    font-size: 12px;
+    font-size: 14px;
     text-align: right;
     letter-spacing: 0;
     line-height: normal;
@@ -295,7 +295,7 @@ body {
     font-family: "Inter", Helvetica;
     font-weight: 500;
     color: var(--white);
-    font-size: 12px;
+    font-size: 14px;
     text-align: right;
     letter-spacing: 0;
     line-height: normal;
@@ -316,4 +316,8 @@ body {
 .user-email input:focus,
 .user-password input:focus {
     outline: none;
+}
+
+a:visited {
+    color: blue;
 }
