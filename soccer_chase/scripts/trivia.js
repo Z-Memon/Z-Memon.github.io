@@ -700,6 +700,8 @@ function checkAnswer(selectedAnswer, points) {
 
   let userId = user.uid;
   let userEmail = user.email;
+  let displayName = user.displayName;
+
   let now = new Date().toISOString();
 
   if (selectedAnswer === currentQuestion.answer) {
@@ -746,9 +748,10 @@ function checkAnswer(selectedAnswer, points) {
       // Update email in Firebase for the current user
       let emailRef = database.ref('scores/' + userId + '/email');
       emailRef.set(userEmail);
+      let displayNameRef = database.ref('scores/' + userId + '/displayName');
+      displayNameRef.set(displayName);
+      });
     });
-  });
-
 
   showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
 

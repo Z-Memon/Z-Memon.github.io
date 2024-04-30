@@ -101,3 +101,30 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+var firebaseConfig = {
+    // Your Firebase configuration here
+    apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
+    authDomain: "soccer-chase-587aa.firebaseapp.com",
+    projectId: "soccer-chase-587aa",
+    storageBucket: "soccer-chase-587aa.appspot.com",
+    messagingSenderId: "280880784635",
+    appId: "1:280880784635:web:767a93850f056f448c7c5e"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var database = firebase.database();
+
+  window.onload = function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in, display the user display name
+        let displayNameElement = document.querySelector('#display-name'); 
+        if (displayNameElement) {
+          displayNameElement.textContent = user.displayName;
+        }
+      } else {
+        // No user is signed in
+        console.log('No user is signed in');
+      }
+    });
+  };

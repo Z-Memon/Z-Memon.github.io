@@ -23,29 +23,33 @@
   const db = getDatabase(app);
  
   const login = document.getElementById('sign-up');
-  login.addEventListener('click', function(event){
-    event.preventDefault();
+login.addEventListener('click', function(event){
+  event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const username = document.getElementById('username').value; // Add this line
-    const confirmPassword = document.getElementById('confirm-password').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const username = document.getElementById('username').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match");
-        return;
-      }
-      createUserWithEmailAndPassword(auth, email, password, username)
-      .then((userCredential) => {
-          // Signed up 
-          const user = userCredential.user;
-          window.location.href = "new-home.html";
+  if (password !== confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
 
-      })
-      .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          alert(errorMessage)
-          // ..
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+
+      // Set the display name
+      return updateProfile(user, { displayName: username }).then(() => {
+        // Update successful
+        window.location.href = "test-home.html";
       });
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
 });
