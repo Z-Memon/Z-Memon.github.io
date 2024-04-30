@@ -262,6 +262,7 @@ input:checked + .slider:after {
   position: relative;
   bottom: -360px;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 #logout{
