@@ -282,4 +282,6 @@ input:checked + .slider:after {
   height: 40px;
   position: relative;
   bottom: -380px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
