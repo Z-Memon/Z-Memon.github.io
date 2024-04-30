@@ -1,26 +1,27 @@
-html, body {
+html,
+body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
   color: var(--White, #F6F6F6);
   text-align: center;
   font-family: Bitter;
   background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
-  overflow: hidden;
 }
 
 body {
-  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+  padding-bottom: 80px;
+  /* Adjust this to match the height of your navbar */
   overflow: hidden;
-  }
+}
 
 .store {
   background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
@@ -36,9 +37,8 @@ body {
   width: 393px;
   height: 852px;
   position: relative;
-  margin-top: 20px; /* Adjust this value as needed */
-  overflow: hidden;
-
+  margin-top: 20px;
+  /* Adjust this value as needed */
 }
 
 .store .text-wrapper {
@@ -104,12 +104,10 @@ body {
   border-radius: 17px;
   border: 0.5px solid;
   border-color: var(--accent-green);
-  background: linear-gradient(
-    180deg,
-    rgba(23.45, 23.45, 23.45, 0.75) 0%,
-    rgba(119.37, 119.37, 119.37, 0) 100%,
-    rgba(119.37, 119.37, 119.37, 0.2) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(23.45, 23.45, 23.45, 0.75) 0%,
+      rgba(119.37, 119.37, 119.37, 0) 100%,
+      rgba(119.37, 119.37, 119.37, 0.2) 100%);
 }
 
 .store .overlap {
@@ -331,5 +329,3 @@ body {
   width: 41.88px;
   height: 30px;
 }
-
-
