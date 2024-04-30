@@ -856,6 +856,9 @@ function checkAnswer(selectedAnswer, points) {
   let isCorrect;
   let pointsChange;
 
+  // Check sound setting from local storage
+  const soundEnabled = localStorage.getItem('soundEnabled') === 'true';
+
   // Audio elements
   const correctSound = document.getElementById('correct-sound');
   const incorrectSound = document.getElementById('incorrect-sound');
@@ -864,12 +867,12 @@ function checkAnswer(selectedAnswer, points) {
     score += points;
     isCorrect = true;
     pointsChange = points;
-    correctSound.play();  // Play correct sound
+    if (soundEnabled) correctSound.play();  // Play correct sound only if enabled
   } else {
     score -= points;
     isCorrect = false;
     pointsChange = -points;
-    incorrectSound.play();  // Play incorrect sound
+    if (soundEnabled) incorrectSound.play();  // Play incorrect sound only if enabled
   }
 
   // Continue with your existing logic...
@@ -882,3 +885,4 @@ function checkAnswer(selectedAnswer, points) {
   }
   pointsElement.textContent = pointsChange + " Points";
 }
+
