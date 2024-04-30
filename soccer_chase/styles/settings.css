@@ -276,3 +276,10 @@ input:checked + .slider:after {
   height: 45px;
   width: 266px;
 }
+
+
+.empty_space {
+  height: 40px;
+  position: relative;
+  bottom: -380px;
+}
