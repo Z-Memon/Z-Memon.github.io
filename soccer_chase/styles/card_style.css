@@ -40,7 +40,6 @@ body {
 }
 
 .store .text-wrapper {
-  margin-top: 100px; /* Increase as needed */
   position: absolute;
   top: 54px;
   left: 159px;
@@ -65,7 +64,7 @@ body {
   position: absolute;
   width: 271px;
   height: 43px;
-  top: 473px;
+  top: 400px;
   left: 61px;
   font-family: "Bitter", Helvetica;
   font-weight: 400;
@@ -92,7 +91,7 @@ body {
   position: absolute;
   width: 311px;
   height: 187px;
-  top: 256px;
+  top: 160px;
   left: 43px;
 }
 
@@ -217,7 +216,7 @@ body {
   position: absolute;
   width: 159px;
   height: 39px;
-  top: 600px;
+  top: 530px;
   left: 117px;
 }
 
