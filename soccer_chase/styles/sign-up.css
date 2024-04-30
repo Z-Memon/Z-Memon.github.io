@@ -63,7 +63,7 @@ h2 {
     flex: 0 0 auto;
 }
 
-#username, #email, #password, #confirm-password {
+#username, #email, #password, #confirm-password, #profile-picture {
     display: flex;
     width: 332px;
     align-items: flex-end;

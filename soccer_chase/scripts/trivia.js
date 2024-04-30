@@ -676,13 +676,16 @@ function showQuestion() {
 // Initialize Firebase
 var firebaseConfig = {
   // Your Firebase configuration here
-  apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
-  authDomain: "soccer-chase-587aa.firebaseapp.com",
-  projectId: "soccer-chase-587aa",
-  storageBucket: "soccer-chase-587aa.appspot.com",
-  messagingSenderId: "280880784635",
-  appId: "1:280880784635:web:767a93850f056f448c7c5e"
+  apiKey: "AIzaSyBT7mB8uKFLA9UFjHsqNxInorgJDdGvFuc",
+  authDomain: "soccer-chase-2.firebaseapp.com",
+  databaseURL: "https://soccer-chase-2-default-rtdb.firebaseio.com",
+  projectId: "soccer-chase-2",
+  storageBucket: "soccer-chase-2.appspot.com",
+  messagingSenderId: "511702165893",
+  appId: "1:511702165893:web:280ba273f8c2fd83113cec"
+
 };
+
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
@@ -694,7 +697,7 @@ function checkAnswer(selectedAnswer, points) {
   // Get the current user's ID
   let user = firebase.auth().currentUser;
   if (!user) {
-    // The user is not signed in
+    console.log("No user is signed in");
     return;
   }
 
@@ -711,6 +714,7 @@ function checkAnswer(selectedAnswer, points) {
 
     // Update points earned in Firebase for the current user
     let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
+    database.ref('scores/' + userId).set(scoreData).catch(error => console.log(error));
     pointsEarnedRef.once('value', function (snapshot) {
       let pointsEarned = snapshot.val() ? snapshot.val() + points : points;
       pointsEarnedRef.set(pointsEarned);
@@ -737,6 +741,8 @@ function checkAnswer(selectedAnswer, points) {
   let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
   pointsEarnedRef.once('value', function (snapshot) {
     let pointsEarned = snapshot.val();
+    pointsEarnedRef.set(pointsEarned).catch(error => console.log(error));
+
     pointsLostRef.once('value', function (snapshot) {
       let pointsLost = snapshot.val();
       let overallScore = pointsEarned - (-pointsLost);
