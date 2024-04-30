@@ -38,6 +38,7 @@ body {
   min-height: 100vh;
   margin: 0px;
   padding: 0px;
+  padding-bottom: 50px;
 }
 
 .div {
@@ -249,12 +250,13 @@ input:checked+.slider:before {
   color: #000000;
 }
 
-input:checked + .slider:after {
+input:checked+.slider:after {
   /* content: attr(data-on);*/
   transform: translate(-50%, -50%);
 }
 
-.slider:after, .slider:before {
+.slider:after,
+.slider:before {
   font-size: 16px;
 }
 
@@ -264,7 +266,7 @@ input:checked + .slider:after {
   align-items: center;
 }
 
-#logout{
+#logout {
   font-family: "Bitter", Helvetica;
   font-size: 15px;
   font-weight: 600;
@@ -275,13 +277,4 @@ input:checked + .slider:after {
   padding: 5px 100px;
   height: 45px;
   width: 266px;
-}
-
-
-.empty_space {
-  height: 40px;
-  position: relative;
-  bottom: -380px;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
