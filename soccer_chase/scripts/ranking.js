@@ -38,10 +38,15 @@ window.onload = function() {
       let userInfo = document.createElement('div');
       userInfo.className = 'user-info';
     
-      let userEmail = document.createElement('p');
-      userEmail.textContent = `${userData.email}`;
-      userEmail.className = 'user-email';
-      userInfo.appendChild(userEmail);
+      //let userEmail = document.createElement('p');
+      //userEmail.textContent = `${userData.email}`;
+      //userEmail.className = 'user-email';
+      //userInfo.appendChild(userEmail);
+
+      let userDisplayName = document.createElement('p');
+      userDisplayName.textContent = `${userData.displayName}`;
+      userDisplayName.className = 'user-display-name';
+      userInfo.appendChild(userDisplayName);
     
       let userPoints = document.createElement('p');
       userPoints.textContent = `Points: ${userData.overallScore}`;

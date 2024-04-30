@@ -34,7 +34,7 @@ googleSignIn.addEventListener('click', function () {
     // The signed-in user info.
     const user = result.user;
     console.log(user);
-    window.location.href = "new-home.html";
+    window.location.href = "test-home.html";
 
     // Save the email to the database.
     set(ref(db, 'users/' + user.uid + '/email'), user.email);
@@ -63,7 +63,8 @@ login.addEventListener('click', function (event) {
     .then((userCredential) => {
       // Signed up 
       const user = userCredential.user;
-      window.location.href = "new-home.html";
+      console.log(user);
+      window.location.href = "test-home.html";
 
       // Save the email to the database.
       set(ref(db, 'users/' + user.uid + '/email'), user.email);
