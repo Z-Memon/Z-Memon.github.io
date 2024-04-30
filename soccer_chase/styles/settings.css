@@ -262,17 +262,17 @@ input:checked + .slider:after {
   position: relative;
   bottom: -360px;
   align-items: center;
-  padding-bottom: 30px;
 }
 
 #logout{
   font-family: "Bitter", Helvetica;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   background-color: var(--Accent-Green, #D7FF32);
   color: var(--Main-Black, #0C0C0C);
   border-radius: 30px;
   border: 1px solid var(--Accent-Green, #D7FF32);
   padding: 5px 100px;
-
+  height: 45px;
+  width: 266px;
 }
