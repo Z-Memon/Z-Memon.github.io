@@ -38,7 +38,7 @@ body {
     width: 36px;
     height: 36px;
     top: 34px;
-    right: 327px;
+    left: 10vw;
     margin-top: 30px;
 }
 
@@ -148,4 +148,8 @@ body {
     /* Apply styles for items that are "behind" in the depth */
     pointer-events: none; /* Disable interactions */
     transition: transform 0.5s ease, z-index 0.5s ease, left 0.5s ease, opacity 0.5s ease, margin 0.5s ease; /* Smooth transition for overlapping and margins */
+}
+
+.email_beside {
+    color: white;
 }
