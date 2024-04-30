@@ -260,7 +260,7 @@ input:checked + .slider:after {
 
 .sign-out {
   position: relative;
-  bottom: -330px;
+  bottom: -360px;
   align-items: center;
 }
 
