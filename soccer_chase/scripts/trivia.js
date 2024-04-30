@@ -678,7 +678,7 @@ var firebaseConfig = {
   // Your Firebase configuration here
   apiKey: "AIzaSyBT7mB8uKFLA9UFjHsqNxInorgJDdGvFuc",
   authDomain: "soccer-chase-2.firebaseapp.com",
-  databaseURL: "https://soccer-chase-2-default-rtdb.firebaseio.com",
+  databaseURL: "https://soccer-chase-2-default-rtdb.firebaseio.com:null",
   projectId: "soccer-chase-2",
   storageBucket: "soccer-chase-2.appspot.com",
   messagingSenderId: "511702165893",
@@ -687,6 +687,7 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+firebase.auth().currentUser;
 var database = firebase.database();
 
 function checkAnswer(selectedAnswer, points) {
