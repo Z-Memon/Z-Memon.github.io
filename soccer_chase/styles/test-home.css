@@ -82,6 +82,9 @@ body {
     /* Add this line */
     scrollbar-width: none;
     /* Hide scrollbar in Firefox */
+
+    perspective: 1000px; /* Add perspective for 3D-like effect */
+    perspective-origin: center; /* Center the perspective */
 }
 
 .carousel-item {
@@ -106,6 +109,10 @@ body {
     /* Add this line */
     margin-right: -20px;
     /* Adjust this value as needed */
+
+    margin-right: -30px; /* Overlapping cards */
+    transition: transform 0.5s ease, z-index 0.5s ease, left 0.5s ease, /* Add opacity to transition */
+    position: relative; /* Adjusted for dynamic positioning */
 }
 
 .carousel-item img {
@@ -131,4 +138,14 @@ body {
     padding-top: 5vh;
     padding-bottom: 10vh;
     text-align: justify;
+}
+
+.carousel-item:not(.active) {
+    left: -30px; /* Pull cards to the left to overlap */
+}
+
+.carousel-item.behind {
+    /* Apply styles for items that are "behind" in the depth */
+    pointer-events: none; /* Disable interactions */
+    transition: transform 0.5s ease, z-index 0.5s ease, left 0.5s ease, opacity 0.5s ease, margin 0.5s ease; /* Smooth transition for overlapping and margins */
 }
