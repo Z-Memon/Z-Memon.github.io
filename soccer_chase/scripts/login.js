@@ -1,7 +1,12 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+
+
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+
+
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -10,11 +15,19 @@ import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
+
   authDomain: "soccer-chase-587aa.firebaseapp.com",
+
+  databaseURL: "https://soccer-chase-587aa-default-rtdb.firebaseio.com",
+
   projectId: "soccer-chase-587aa",
+
   storageBucket: "soccer-chase-587aa.appspot.com",
+
   messagingSenderId: "280880784635",
+
   appId: "1:280880784635:web:767a93850f056f448c7c5e"
+
 };
 
 // Initialize Firebase
@@ -34,12 +47,14 @@ googleSignIn.addEventListener('click', function () {
     // The signed-in user info.
     const user = result.user;
     console.log(user);
+    // Save the user's information
+    localStorage.setItem('currentUserData', JSON.stringify(user));
+    // Create a new entry in the 'users' collection
+    const userRef = ref(db, 'users/' + user.uid);
+    set(userRef, {
+      photoURL: user.photoURL
+    });
     window.location.href = "test-home.html";
-
-    // Save the email to the database.
-    set(ref(db, 'users/' + user.uid + '/email'), user.email);
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -66,8 +81,8 @@ login.addEventListener('click', function (event) {
       console.log(user);
       window.location.href = "test-home.html";
 
-      // Save the email to the database.
-      set(ref(db, 'users/' + user.uid + '/email'), user.email);
+      localStorage.setItem('currentUserData', JSON.stringify(user));
+            window.location.href = "test-home.html";
       // ...
     })
     .catch((error) => {

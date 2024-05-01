@@ -565,8 +565,8 @@ function generateCategoryButtons() {
     });
 
     categoryBtn.addEventListener('touchend', function () {
-      this.style.color = "var(--Accent-Green, #D7FF32)";
-      this.style.borderColor = "var(--Accent-Green, #D7FF32)";
+      this.style.color = "var(--Light-gradient, rgba(115, 115, 115, 0.80)";
+      this.style.borderColor = "var(--Light-gradient, rgba(115, 115, 115, 0.80)";
     });
 
     categoryBtn.addEventListener("click", () => startGame(category));
@@ -683,18 +683,20 @@ var firebaseConfig = {
   messagingSenderId: "280880784635",
   appId: "1:280880784635:web:767a93850f056f448c7c5e"
 };
+
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
+var storage = firebase.storage();
+var storageRef = storage.ref();
 
 function checkAnswer(selectedAnswer, points) {
   const currentQuestion = triviaData[currentQuestionIndex];
   let isCorrect;
-  let pointsChange;
 
   // Get the current user's ID
   let user = firebase.auth().currentUser;
   if (!user) {
-    // The user is not signed in
+    console.log("No user is signed in");
     return;
   }
 
@@ -702,12 +704,42 @@ function checkAnswer(selectedAnswer, points) {
   let userEmail = user.email;
   let displayName = user.displayName;
 
+  if (user.photoURL) {
+    // The user logged in with Google, use the provided profile picture URL
+    let profilePic = user.photoURL;
+  
+    // Store the URL in Firebase Database
+    let profilePicRef = database.ref('scores/' + userId + '/profilePic');
+    profilePicRef.set(profilePic);
+  } else {
+    // The user did not log in with Google, try to get the profile picture URL from Firebase Storage
+    let profilePicRef = storageRef.child('profile_pictures/' + userId);
+    profilePicRef.getDownloadURL().then(function(url) {
+      // The URL of the user's profile picture
+      let profilePic = url;
+  
+      // Store the URL in Firebase Database
+      let profilePicRef = database.ref('scores/' + userId + '/profilePic');
+      profilePicRef.set(profilePic);
+    }).catch(function(error) {
+      console.log("Error getting profile picture URL: ", error);
+    });
+  }
+
   let now = new Date().toISOString();
+
+  // Check sound setting from local storage
+  const soundEnabled = localStorage.getItem('soundEnabled') === 'true';
+
+  // Audio elements
+  const correctSound = document.getElementById('correct-sound');
+  const incorrectSound = document.getElementById('incorrect-sound');
 
   if (selectedAnswer === currentQuestion.answer) {
     score += points;
     isCorrect = true;
     pointsChange = points;
+    if (soundEnabled) correctSound.play();  // Play correct sound only if enabled
 
     // Update points earned in Firebase for the current user
     let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
@@ -721,6 +753,7 @@ function checkAnswer(selectedAnswer, points) {
     score -= points;
     isCorrect = false;
     pointsChange = -points;
+    if (soundEnabled) incorrectSound.play();  // Play incorrect sound only if enabled
 
     // Update points lost in Firebase for the current user
     let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
@@ -732,26 +765,25 @@ function checkAnswer(selectedAnswer, points) {
     dateRef.set(now);
   }
 
-  // Calculate overall score as points earned minus points lost for the current user
-  let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
-  let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
-  pointsEarnedRef.once('value', function (snapshot) {
-    let pointsEarned = snapshot.val();
-    pointsLostRef.once('value', function (snapshot) {
-      let pointsLost = snapshot.val();
-      let overallScore = pointsEarned - (-pointsLost);
+  // Fetch pointsEarned and pointsLost together
+let scoresRef = database.ref('scores/' + userId);
+scoresRef.once('value', function (snapshot) {
+  let pointsEarned = snapshot.child('pointsEarned').val() || 0;
+  let pointsLost = snapshot.child('pointsLost').val() || 0;
 
-      // Update overall score in Firebase for the current user
-      let overallScoreRef = database.ref('scores/' + userId + '/overallScore');
-      overallScoreRef.set(overallScore);
+  // Calculate overall score
+  let overallScore = pointsEarned - (-pointsLost);
 
-      // Update email in Firebase for the current user
-      let emailRef = database.ref('scores/' + userId + '/email');
-      emailRef.set(userEmail);
-      let displayNameRef = database.ref('scores/' + userId + '/displayName');
-      displayNameRef.set(displayName);
-      });
-    });
+  // Update overall score in Firebase for the current user
+  let overallScoreRef = database.ref('scores/' + userId + '/overallScore');
+  overallScoreRef.set(overallScore);
+
+  // Update email in Firebase for the current user
+  let emailRef = database.ref('scores/' + userId + '/email');
+  emailRef.set(userEmail);
+  let displayNameRef = database.ref('scores/' + userId + '/displayName');
+  displayNameRef.set(displayName);
+});
 
   showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
 
@@ -853,39 +885,4 @@ window.onload = function () {
 };
 
 
-
-function checkAnswer(selectedAnswer, points) {
-  const currentQuestion = triviaData[currentQuestionIndex];
-  let isCorrect;
-  let pointsChange;
-
-  // Check sound setting from local storage
-  const soundEnabled = localStorage.getItem('soundEnabled') === 'true';
-
-  // Audio elements
-  const correctSound = document.getElementById('correct-sound');
-  const incorrectSound = document.getElementById('incorrect-sound');
-
-  if (selectedAnswer === currentQuestion.answer) {
-    score += points;
-    isCorrect = true;
-    pointsChange = points;
-    if (soundEnabled) correctSound.play();  // Play correct sound only if enabled
-  } else {
-    score -= points;
-    isCorrect = false;
-    pointsChange = -points;
-    if (soundEnabled) incorrectSound.play();  // Play incorrect sound only if enabled
-  }
-
-  // Continue with your existing logic...
-  showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
-
-  if (currentQuestionIndex === triviaData.length - 1) {
-    setTimeout(() => {
-      showFeedbackNextButton();
-    }, 0);
-  }
-  pointsElement.textContent = pointsChange + " Points";
-}
 

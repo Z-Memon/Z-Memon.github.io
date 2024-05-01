@@ -3,11 +3,20 @@
 var firebaseConfig = {
   // Your Firebase configuration here
   apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
+
   authDomain: "soccer-chase-587aa.firebaseapp.com",
+
+  databaseURL: "https://soccer-chase-587aa-default-rtdb.firebaseio.com",
+
   projectId: "soccer-chase-587aa",
+
   storageBucket: "soccer-chase-587aa.appspot.com",
+
   messagingSenderId: "280880784635",
+
   appId: "1:280880784635:web:767a93850f056f448c7c5e"
+
+
 };
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
@@ -29,19 +38,19 @@ window.onload = function() {
     let sortedScores = Object.entries(scores).sort((a, b) => b[1].overallScore - a[1].overallScore);
     
     // Update ranks page with sorted scores
-    let ranksContainer = document.querySelector('#ranks-container');
-    ranksContainer.innerHTML = '';
-    sortedScores.forEach(([userId, userData], index) => {
-      let rankItem = document.createElement('div');
-      rankItem.className = 'rank-item';
-    
-      let userInfo = document.createElement('div');
-      userInfo.className = 'user-info';
-    
-      //let userEmail = document.createElement('p');
-      //userEmail.textContent = `${userData.email}`;
-      //userEmail.className = 'user-email';
-      //userInfo.appendChild(userEmail);
+let ranksContainer = document.querySelector('#ranks-container');
+ranksContainer.innerHTML = '';
+sortedScores.forEach(([userId, userData], index) => {
+  let rankItem = document.createElement('div');
+  rankItem.className = 'rank-item';
+
+  let userInfo = document.createElement('div');
+  userInfo.className = 'user-info';
+
+  let userProfilePicture = document.createElement('img');
+  userProfilePicture.src = userData.profilePicture || userData.profilePic;
+  userProfilePicture.className = 'user-profile-picture';
+  userInfo.appendChild(userProfilePicture);
 
       let userDisplayName = document.createElement('p');
       userDisplayName.textContent = `${userData.displayName}`;
@@ -50,6 +59,7 @@ window.onload = function() {
     
       let userPoints = document.createElement('p');
       userPoints.textContent = `Points: ${userData.overallScore}`;
+      userPoints.style.display = 'block'; // Add this line
       userPoints.className = 'user-points';
       userInfo.appendChild(userPoints);
     
@@ -61,9 +71,23 @@ window.onload = function() {
       rankItem.appendChild(rankNumber);
     
       rankItem.addEventListener('click', function() {
-        localStorage.setItem('currentUserData', JSON.stringify(userData));
-      // Navigate to the user stats page
-      window.location.href = "score.html";
+        // Get the signed-in user's display name
+let currentUserData = JSON.parse(localStorage.getItem('currentUserData'));
+let currentDisplayName = currentUserData ? currentUserData.displayName : null;
+
+rankItem.addEventListener('click', function() {
+  // Check if the clicked rank item's display name matches the signed-in user's display name
+  if (userData.displayName === currentDisplayName) {
+    // The clicked rank item is the signed-in user's rank item
+    // Save the user's data to local storage and navigate to the "score.html" page
+    localStorage.setItem('currentUserData', JSON.stringify(userData));
+    window.location.href = "score.html";
+  } else {
+    // The clicked rank item is not the signed-in user's rank item
+    // Do nothing or display a message
+    alert('You can only view your own stats.');
+  }
+});
       });
 
       ranksContainer.appendChild(rankItem);
@@ -71,3 +95,13 @@ window.onload = function() {
   });
 };
 
+
+      //let userEmail = document.createElement('p');
+      //userEmail.textContent = `${userData.email}`;
+      //userEmail.className = 'user-email';
+      //userInfo.appendChild(userEmail);
+       // Add profile picture
+    
+
+
+       

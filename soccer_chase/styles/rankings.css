@@ -5,7 +5,9 @@ body {
   padding: 0;
   color: var(--White, #F6F6F6);
   font-family: Bitter;
-  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
+  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+  overflow: hidden;
+  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
 }
 
 .content {
@@ -21,30 +23,28 @@ body {
   font-family: Bitter;
 }
 
-body {
-  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
-}
-
 #ranks-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: var(--White, #F6F6F6);
   font-family: Bitter;
+  overflow-y: auto;
+  padding-bottom: 200px;
 }
 
 #ranks-container div {
   padding: 10px;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.20) 100%, rgba(249, 249, 249, 0.00) 100%); 
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   width: 340px;
-  display: flex;
   justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .rank-number {
@@ -65,20 +65,19 @@ body {
 
 .user-info {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  width: 100px;
-  overflow: auto; /* Add this line */
 }
 
-.user-points {
-  margin-top: 10px; /* Adjust this to add more or less space */
+.profile-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-items: left;
 }
 
-.user-pic {
-  width: 50px; /* Adjust this to change the width of the profile picture */
-  height: 50px; /* Adjust this to change the height of the profile picture */
-  border-radius: 50%; /* This makes the profile picture circular */
-  object-fit: cover; /* This makes the image cover the entire space of the img element */
-  margin-right: 10px; /* This adds some space between the profile picture and the user info */
+.user-profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+ 
 }

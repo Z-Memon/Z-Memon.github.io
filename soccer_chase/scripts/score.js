@@ -25,11 +25,15 @@ document.querySelector('#today').click();
 
   let currentUserData = JSON.parse(localStorage.getItem('currentUserData'));
 
-  //document.querySelector('#email').textContent = currentUserData.email; 
   document.querySelector('#display-name').textContent = currentUserData.displayName;
   document.querySelector('#points-earned').textContent = currentUserData.pointsEarned;
   document.querySelector('#points-lost').textContent = currentUserData.pointsLost;
   document.querySelector('#overall-score').textContent = currentUserData.overallScore;
+  document.querySelector('#profile-pic').src = currentUserData.photoURL || currentUserData.profilePic;
+  console.log(currentUserData.photoURL);
+  console.log(currentUserData);
+
+  
 };
 
 

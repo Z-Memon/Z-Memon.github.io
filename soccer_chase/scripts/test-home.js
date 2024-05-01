@@ -105,11 +105,19 @@ document.addEventListener("DOMContentLoaded", function () {
 var firebaseConfig = {
     // Your Firebase configuration here
     apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
+
     authDomain: "soccer-chase-587aa.firebaseapp.com",
+  
+    databaseURL: "https://soccer-chase-587aa-default-rtdb.firebaseio.com",
+  
     projectId: "soccer-chase-587aa",
+  
     storageBucket: "soccer-chase-587aa.appspot.com",
+  
     messagingSenderId: "280880784635",
+  
     appId: "1:280880784635:web:767a93850f056f448c7c5e"
+  
   };
   firebase.initializeApp(firebaseConfig);
   var database = firebase.database();
@@ -121,6 +129,10 @@ var firebaseConfig = {
         let displayNameElement = document.querySelector('#display-name'); 
         if (displayNameElement) {
           displayNameElement.textContent = user.displayName;
+        }
+        let profilePictureElement = document.querySelector('#profile-picture'); // Replace with the id of your profile picture element
+        if (profilePictureElement) {
+        profilePictureElement.src = user.photoURL;
         }
       } else {
         // No user is signed in
