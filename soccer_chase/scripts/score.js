@@ -32,6 +32,8 @@ document.querySelector('#today').click();
   document.querySelector('#profile-pic').src = currentUserData.photoURL || currentUserData.profilePic;
   console.log(currentUserData.photoURL);
   console.log(currentUserData);
+
+  
 };
 
 

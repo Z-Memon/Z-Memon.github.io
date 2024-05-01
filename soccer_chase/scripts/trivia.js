@@ -728,10 +728,18 @@ function checkAnswer(selectedAnswer, points) {
 
   let now = new Date().toISOString();
 
+  // Check sound setting from local storage
+  const soundEnabled = localStorage.getItem('soundEnabled') === 'true';
+
+  // Audio elements
+  const correctSound = document.getElementById('correct-sound');
+  const incorrectSound = document.getElementById('incorrect-sound');
+
   if (selectedAnswer === currentQuestion.answer) {
     score += points;
     isCorrect = true;
     pointsChange = points;
+    if (soundEnabled) correctSound.play();  // Play correct sound only if enabled
 
     // Update points earned in Firebase for the current user
     let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
@@ -745,6 +753,7 @@ function checkAnswer(selectedAnswer, points) {
     score -= points;
     isCorrect = false;
     pointsChange = -points;
+    if (soundEnabled) incorrectSound.play();  // Play incorrect sound only if enabled
 
     // Update points lost in Firebase for the current user
     let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
