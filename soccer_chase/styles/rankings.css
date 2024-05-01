@@ -5,7 +5,9 @@ body {
   padding: 0;
   color: var(--White, #F6F6F6);
   font-family: Bitter;
-  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%))
+  background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
+  overflow: hidden;
+  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
 }
 
 .content {
@@ -19,10 +21,7 @@ body {
 .ranks-heading {
   font-size: 48px;
   font-family: Bitter;
-}
-
-body {
-  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+  padding: 20px;
 }
 
 #ranks-container {
@@ -35,6 +34,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: var(--White, #F6F6F6);
   font-family: Bitter;
+  overflow-y: auto;
+  padding-bottom: 130px;
 }
 
 #ranks-container div {
@@ -65,20 +66,19 @@ body {
 
 .user-info {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   width: 100px;
   overflow: auto; /* Add this line */
 }
 
 .user-points {
-  margin-top: 10px; /* Adjust this to add more or less space */
+  margin-top: 15px; /* Adjust this to add more or less space */
+  text-align: left;
 }
 
-.user-pic {
-  width: 50px; /* Adjust this to change the width of the profile picture */
-  height: 50px; /* Adjust this to change the height of the profile picture */
-  border-radius: 50%; /* This makes the profile picture circular */
-  object-fit: cover; /* This makes the image cover the entire space of the img element */
-  margin-right: 10px; /* This adds some space between the profile picture and the user info */
+
+.user-profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

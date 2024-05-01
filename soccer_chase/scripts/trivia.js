@@ -566,7 +566,7 @@ function generateCategoryButtons() {
 
     categoryBtn.addEventListener('touchend', function () {
       this.style.color = "var(--Accent-Green, #D7FF32)";
-      this.style.borderColor = "var(--Accent-Green, #D7FF32)";
+      this.style.borderColor = "var(--Light-gradient, rgba(115, 115, 115, 0.80)";
     });
 
     categoryBtn.addEventListener("click", () => startGame(category));
@@ -686,6 +686,8 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
+var storage = firebase.storage();
+var storageRef = storage.ref();
 
 function checkAnswer(selectedAnswer, points) {
   const currentQuestion = triviaData[currentQuestionIndex];
@@ -708,6 +710,19 @@ function checkAnswer(selectedAnswer, points) {
     score += points;
     isCorrect = true;
     pointsChange = points;
+   
+    // Get the user's profile picture
+    let profilePicRef = storageRef.child('profilePics/' + userId);
+    profilePicRef.getDownloadURL().then(function(url) {
+    // The URL of the user's profile picture
+    let profilePic = url;
+
+  // Store the URL in Firebase Database
+  let profilePicRef = database.ref('scores/' + userId + '/profilePic');
+  profilePicRef.set(profilePic);
+}).catch(function(error) {
+  console.log("Error getting profile picture URL: ", error);
+});
 
     // Update points earned in Firebase for the current user
     let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');

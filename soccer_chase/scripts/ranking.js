@@ -51,6 +51,11 @@ window.onload = function() {
       //userEmail.textContent = `${userData.email}`;
       //userEmail.className = 'user-email';
       //userInfo.appendChild(userEmail);
+       // Add profile picture
+      let userProfilePicture = document.createElement('img');
+      userProfilePicture.src = userData.profilePic;
+      userProfilePicture.className = 'user-profile-picture';
+      userInfo.appendChild(userProfilePicture);
 
       let userDisplayName = document.createElement('p');
       userDisplayName.textContent = `${userData.displayName}`;
