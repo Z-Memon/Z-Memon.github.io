@@ -676,18 +676,23 @@ function showQuestion() {
 // Initialize Firebase
 var firebaseConfig = {
   // Your Firebase configuration here
-  apiKey: "AIzaSyBT7mB8uKFLA9UFjHsqNxInorgJDdGvFuc",
-  authDomain: "soccer-chase-2.firebaseapp.com",
-  databaseURL: "https://soccer-chase-2-default-rtdb.firebaseio.com:null",
-  projectId: "soccer-chase-2",
-  storageBucket: "soccer-chase-2.appspot.com",
-  messagingSenderId: "511702165893",
-  appId: "1:511702165893:web:280ba273f8c2fd83113cec"
+  apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
+
+  authDomain: "soccer-chase-587aa.firebaseapp.com",
+
+  databaseURL: "https://soccer-chase-587aa-default-rtdb.firebaseio.com",
+
+  projectId: "soccer-chase-587aa",
+
+  storageBucket: "soccer-chase-587aa.appspot.com",
+
+  messagingSenderId: "280880784635",
+
+  appId: "1:280880784635:web:767a93850f056f448c7c5e"
 
 };
 
 firebase.initializeApp(firebaseConfig);
-firebase.auth().currentUser;
 var database = firebase.database();
 
 function checkAnswer(selectedAnswer, points) {
