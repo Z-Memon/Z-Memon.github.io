@@ -113,7 +113,6 @@ body {
     /* Add this line */
     margin-right: -20px;
     /* Adjust this value as needed */
-    height: 100vh;
 
     margin-right: -30px; /* Overlapping cards */
     transition: transform 0.5s ease, z-index 0.5s ease, left 0.5s ease, /* Add opacity to transition */
