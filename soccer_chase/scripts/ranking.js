@@ -71,9 +71,23 @@ sortedScores.forEach(([userId, userData], index) => {
       rankItem.appendChild(rankNumber);
     
       rankItem.addEventListener('click', function() {
-        localStorage.setItem('currentUserData', JSON.stringify(userData));
-      // Navigate to the user stats page
-      window.location.href = "score.html";
+        // Get the signed-in user's display name
+let currentUserData = JSON.parse(localStorage.getItem('currentUserData'));
+let currentDisplayName = currentUserData ? currentUserData.displayName : null;
+
+rankItem.addEventListener('click', function() {
+  // Check if the clicked rank item's display name matches the signed-in user's display name
+  if (userData.displayName === currentDisplayName) {
+    // The clicked rank item is the signed-in user's rank item
+    // Save the user's data to local storage and navigate to the "score.html" page
+    localStorage.setItem('currentUserData', JSON.stringify(userData));
+    window.location.href = "score.html";
+  } else {
+    // The clicked rank item is not the signed-in user's rank item
+    // Do nothing or display a message
+    alert('You can only view your own stats.');
+  }
+});
       });
 
       ranksContainer.appendChild(rankItem);

@@ -178,14 +178,54 @@ body {
   height: 10px;
   top: 67px;
   left: 89px;
+  margin-top: 16px;
 }
 
 .store .group-3 {
   position: absolute;
-  width: 104px;
-  height: 37px;
   top: 24px;
   left: 0;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+}
+
+#overall-score{
+  text-align: center;
+  font-family: Bitter;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 15px;
+}
+
+#profile-pic {
+  position: absolute;
+  top: 24px;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+#profile-container {
+  align-items: center;
+  justify-content: center;
+}
+
+#display-name {
+  position: relative;
+  width: 67px;
+  height: 21px;
+  flex-shrink: 0;
+  color: var(--White, #F6F6F6);
+  text-align: center;
+  font-family: Bitter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  margin-left: 40px;
+  margin-top: 30px;
 }
 
 .store .ellipse-3 {

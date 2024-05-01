@@ -29,7 +29,7 @@ document.querySelector('#today').click();
   document.querySelector('#points-earned').textContent = currentUserData.pointsEarned;
   document.querySelector('#points-lost').textContent = currentUserData.pointsLost;
   document.querySelector('#overall-score').textContent = currentUserData.overallScore;
-  document.querySelector('#profile-pic').src = currentUserData.profilePicture || currentUserData.profilePic;
+  document.querySelector('#profile-pic').src = currentUserData.photoURL || currentUserData.profilePic;
   console.log(currentUserData.photoURL);
   console.log(currentUserData);
 };
