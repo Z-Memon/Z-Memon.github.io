@@ -565,7 +565,7 @@ function generateCategoryButtons() {
     });
 
     categoryBtn.addEventListener('touchend', function () {
-      this.style.color = "var(--Accent-Green, #D7FF32)";
+      this.style.color = "var(--Light-gradient, rgba(115, 115, 115, 0.80)";
       this.style.borderColor = "var(--Light-gradient, rgba(115, 115, 115, 0.80)";
     });
 
