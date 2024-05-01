@@ -63,7 +63,11 @@ h2 {
     flex: 0 0 auto;
 }
 
-#username, #email, #password, #confirm-password, #profile-picture {
+#username,
+#email,
+#password,
+#confirm-password,
+#profile-picture {
     display: flex;
     width: 332px;
     align-items: flex-end;
@@ -74,16 +78,21 @@ h2 {
     color: #f6f6f6;
     border: none;
     outline: none;
-    font-size: 16px; /* Ensure the font size is at least 16px to prevent zooming */
-    padding: 10px; /* Add padding for better touch interaction */
+    font-size: 16px;
+    /* Ensure the font size is at least 16px to prevent zooming */
+    padding: 10px;
+    /* Add padding for better touch interaction */
 }
 
 #sign-up {
     align-items: center;
     justify-content: center;
-    padding: 20px 40px; /* Increase padding */
-    width: 200px; /* Set a specific width */
-    height: 50px; /* Set a specific height */
+    padding: 20px 40px;
+    /* Increase padding */
+    width: 200px;
+    /* Set a specific width */
+    height: 50px;
+    /* Set a specific height */
     position: relative;
     flex: 0 0 auto;
     border-radius: 30px;
@@ -118,5 +127,26 @@ h2 {
 input[type="text"],
 input[type="password"],
 input[type="email"] {
-    font-size: 16px; /* Set font size to at least 16px */
+    font-size: 16px;
+    /* Set font size to at least 16px */
+}
+
+
+/* Chrome, Safari */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    /* Transition used to delay the color change */
+    -webkit-text-fill-color: #f6f6f6 !important;
+    /* Ensures text color stays the same */
+    box-shadow: 0 0 0px 1000px #ffffff inset;
+    /* Change #ffffff to match your form's background color */
+}
+
+/* Firefox */
+input:-moz-ui-autofill {
+    background-color: #ffffff !important;
+    /* Change #ffffff to match your form's background color */
 }
