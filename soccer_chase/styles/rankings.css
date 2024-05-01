@@ -7,7 +7,7 @@ body {
   font-family: Bitter;
   background: var(--Background-Gradient, linear-gradient(180deg, #0C0C0C 0%, #121212 100%));
   overflow: hidden;
-  padding-bottom: 80px; /* Adjust this to match the height of your navbar */
+  padding-bottom: 110px; /* Adjust this to match the height of your navbar */
 }
 
 .content {
@@ -33,7 +33,7 @@ body {
   color: var(--White, #F6F6F6);
   font-family: Bitter;
   overflow-y: auto;
-  padding-bottom: 200px;
+  padding-bottom: 300px;
 }
 
 #ranks-container div {
@@ -73,19 +73,22 @@ body {
 
 .user-details div{
   width: 150px;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-details {
   display: flex;
   flex-direction: column;
-  margin-left: -10px;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile-pic{
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  align-items: left;
 }
 
 .user-profile-picture {
