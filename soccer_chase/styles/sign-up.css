@@ -132,21 +132,27 @@ input[type="email"] {
 }
 
 
-/* Chrome, Safari */
+/* Chrome, Safari, and Opera */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000s ease-in-out 0s;
-    /* Transition used to delay the color change */
+    transition: color 9999s ease-out, background-color 9999s ease-out;
     -webkit-text-fill-color: #f6f6f6 !important;
-    /* Ensures text color stays the same */
-    box-shadow: 0 0 0px 1000px #ffffff inset;
-    /* Change #ffffff to match your form's background color */
+    box-shadow: 0 0 0px 1000px #fff inset !important;
 }
 
 /* Firefox */
-input:-moz-ui-autofill {
-    background-color: #ffffff !important;
-    /* Change #ffffff to match your form's background color */
+input:-moz-ui-autofill,
+input:-moz-ui-autofill:hover,
+input:-moz-ui-autofill:focus,
+input:-moz-ui-autofill:active {
+    background-color: #fff !important;
+    transition: background-color 9999s ease-out;
+}
+
+/* For other browsers that support the autofill pseudoelement */
+input:autofill {
+    background-color: #fff !important;
+    transition: background-color 9999s ease-out;
 }
