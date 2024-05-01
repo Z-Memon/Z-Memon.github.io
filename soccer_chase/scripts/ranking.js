@@ -70,11 +70,10 @@ sortedScores.forEach(([userId, userData], index) => {
     
       let rankNumber = document.createElement('p');
       rankNumber.textContent = `${index + 1}`;
-      rankNumber.className = 'rank-number';
-      rankItem.appendChild(rankNumber);
-    
-      rankItem.addEventListener('click', function() {
-        // Get the signed-in user's display name
+rankNumber.className = 'rank-number';
+rankItem.appendChild(rankNumber);
+
+// Get the signed-in user's display name
 let currentUserData = JSON.parse(localStorage.getItem('currentUserData'));
 let currentDisplayName = currentUserData ? currentUserData.displayName : null;
 
@@ -91,9 +90,8 @@ rankItem.addEventListener('click', function() {
     alert('You can only view your own stats.');
   }
 });
-      });
 
-      ranksContainer.appendChild(rankItem);
+ranksContainer.appendChild(rankItem);
     });
   });
 };
