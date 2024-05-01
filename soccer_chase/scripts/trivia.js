@@ -705,7 +705,7 @@ function checkAnswer(selectedAnswer, points) {
   let displayName = user.displayName;
 
   // Get the user's profile picture
-  let profilePicRef = storageRef.child('profile_pictures/' + userId);
+  let profilePicRef = storageRef.child('profile-pictures/' + userId);
   profilePicRef.getDownloadURL().then(function(url) {
   // The URL of the user's profile picture
   let profilePic = url;
