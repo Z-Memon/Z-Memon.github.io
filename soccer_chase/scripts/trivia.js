@@ -718,6 +718,16 @@ function checkAnswer(selectedAnswer, points) {
     isCorrect = true;
     pointsChange = points;
 
+    let scoreData = {
+      score: score,
+      isCorrect: isCorrect,
+      pointsChange: pointsChange,
+      timestamp: now,
+      userEmail: userEmail,
+      displayName: displayName
+    };
+
+
     // Update points earned in Firebase for the current user
     let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
     database.ref('scores/' + userId).set(scoreData).catch(error => console.log(error));
@@ -866,38 +876,4 @@ window.onload = function () {
 
 
 
-function checkAnswer(selectedAnswer, points) {
-  const currentQuestion = triviaData[currentQuestionIndex];
-  let isCorrect;
-  let pointsChange;
-
-  // Check sound setting from local storage
-  const soundEnabled = localStorage.getItem('soundEnabled') === 'true';
-
-  // Audio elements
-  const correctSound = document.getElementById('correct-sound');
-  const incorrectSound = document.getElementById('incorrect-sound');
-
-  if (selectedAnswer === currentQuestion.answer) {
-    score += points;
-    isCorrect = true;
-    pointsChange = points;
-    if (soundEnabled) correctSound.play();  // Play correct sound only if enabled
-  } else {
-    score -= points;
-    isCorrect = false;
-    pointsChange = -points;
-    if (soundEnabled) incorrectSound.play();  // Play incorrect sound only if enabled
-  }
-
-  // Continue with your existing logic...
-  showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
-
-  if (currentQuestionIndex === triviaData.length - 1) {
-    setTimeout(() => {
-      showFeedbackNextButton();
-    }, 0);
-  }
-  pointsElement.textContent = pointsChange + " Points";
-}
 
