@@ -21,7 +21,7 @@ body {
 .ranks-heading {
   font-size: 48px;
   font-family: Bitter;
-  padding: 20px;
+  padding: 5px;
 }
 
 #ranks-container {
@@ -35,7 +35,7 @@ body {
   color: var(--White, #F6F6F6);
   font-family: Bitter;
   overflow-y: auto;
-  padding-bottom: 130px;
+  padding-bottom: 80px;
 }
 
 #ranks-container div {
