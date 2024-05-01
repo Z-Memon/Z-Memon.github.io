@@ -40,8 +40,7 @@
   const storage = getStorage(app);
  
   const login = document.getElementById('sign-up');
-login.addEventListener('click', function(event){
-  event.preventDefault();
+login.addEventListener('click', function(){
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
