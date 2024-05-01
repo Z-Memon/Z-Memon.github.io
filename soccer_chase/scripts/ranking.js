@@ -47,22 +47,25 @@ sortedScores.forEach(([userId, userData], index) => {
   let userInfo = document.createElement('div');
   userInfo.className = 'user-info';
 
+  let userDetails = document.createElement('div');
+  userDetails.className = 'user-details';
+
   let userProfilePicture = document.createElement('img');
   userProfilePicture.src = userData.profilePicture || userData.profilePic;
   userProfilePicture.className = 'user-profile-picture';
   userInfo.appendChild(userProfilePicture);
 
-      let userDisplayName = document.createElement('p');
-      userDisplayName.textContent = `${userData.displayName}`;
-      userDisplayName.className = 'user-display-name';
-      userInfo.appendChild(userDisplayName);
+      let username = document.createElement('div');
+      username.className = 'username';    
+      username.textContent = `${userData.displayName}`;
     
-      let userPoints = document.createElement('p');
-      userPoints.textContent = `Points: ${userData.overallScore}`;
-      userPoints.style.display = 'block'; // Add this line
-      userPoints.className = 'user-points';
-      userInfo.appendChild(userPoints);
+      let points = document.createElement('div');
+      points.className = 'points';
+      points.textContent = `Points: ${userData.overallScore}`;
     
+      userDetails.appendChild(username);
+      userDetails.appendChild(points);
+      userInfo.appendChild(userDetails);
       rankItem.appendChild(userInfo);
     
       let rankNumber = document.createElement('p');

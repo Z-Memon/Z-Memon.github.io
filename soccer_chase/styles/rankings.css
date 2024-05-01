@@ -38,10 +38,8 @@ body {
 
 #ranks-container div {
   padding: 10px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.20) 100%, rgba(249, 249, 249, 0.00) 100%); 
-  border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 340px;
+  border-radius: 10px;
+  background: #3E3E3E;
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -61,11 +59,26 @@ body {
 .rank-item {
   display: flex;
   justify-content: space-between;
+  width: 100%; /* adjust as needed */
 }
 
 .user-info {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex: 1; /* this makes .user-info take up the remaining space */
+  height: 100px; /* adjust as needed */
+}
+
+.user-details div{
+  width: 150px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: -10px;
 }
 
 .profile-pic{
@@ -81,3 +94,10 @@ body {
   border-radius: 50%;
  
 }
+
+
+
+
+
+
+
