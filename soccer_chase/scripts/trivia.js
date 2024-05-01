@@ -704,18 +704,27 @@ function checkAnswer(selectedAnswer, points) {
   let userEmail = user.email;
   let displayName = user.displayName;
 
-  // Get the user's profile picture
-  let profilePicRef = storageRef.child('profile_pictures/' + userId);
-  profilePicRef.getDownloadURL().then(function(url) {
-  // The URL of the user's profile picture
-  let profilePic = url;
-
-// Store the URL in Firebase Database
-let profilePicRef = database.ref('scores/' + userId + '/profilePic');
-profilePicRef.set(profilePic);
-}).catch(function(error) {
-console.log("Error getting profile picture URL: ", error);
-});
+  if (user.photoURL) {
+    // The user logged in with Google, use the provided profile picture URL
+    let profilePic = user.photoURL;
+  
+    // Store the URL in Firebase Database
+    let profilePicRef = database.ref('scores/' + userId + '/profilePic');
+    profilePicRef.set(profilePic);
+  } else {
+    // The user did not log in with Google, try to get the profile picture URL from Firebase Storage
+    let profilePicRef = storageRef.child('profile_pictures/' + userId);
+    profilePicRef.getDownloadURL().then(function(url) {
+      // The URL of the user's profile picture
+      let profilePic = url;
+  
+      // Store the URL in Firebase Database
+      let profilePicRef = database.ref('scores/' + userId + '/profilePic');
+      profilePicRef.set(profilePic);
+    }).catch(function(error) {
+      console.log("Error getting profile picture URL: ", error);
+    });
+  }
 
   let now = new Date().toISOString();
 
