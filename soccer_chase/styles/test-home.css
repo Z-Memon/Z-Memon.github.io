@@ -86,6 +86,8 @@ body {
 
     perspective: 1000px; /* Add perspective for 3D-like effect */
     perspective-origin: center; /* Center the perspective */
+    padding: 40px;
+    margin-top: 30px;
 }
 
 .carousel-item {
@@ -114,6 +116,7 @@ body {
     margin-right: -30px; /* Overlapping cards */
     transition: transform 0.5s ease, z-index 0.5s ease, left 0.5s ease, /* Add opacity to transition */
     position: relative; /* Adjusted for dynamic positioning */
+
 }
 
 .carousel-item img {
@@ -156,4 +159,12 @@ body {
     position: absolute;
     margin-top: 40px;
     left: 20vw;
+}
+
+figcaption {
+    color: #D7FF32;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+
 }
