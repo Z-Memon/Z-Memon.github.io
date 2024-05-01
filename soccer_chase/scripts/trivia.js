@@ -690,7 +690,6 @@ var database = firebase.database();
 function checkAnswer(selectedAnswer, points) {
   const currentQuestion = triviaData[currentQuestionIndex];
   let isCorrect;
-  let pointsChange;
 
   // Get the current user's ID
   let user = firebase.auth().currentUser;
@@ -733,28 +732,25 @@ function checkAnswer(selectedAnswer, points) {
     dateRef.set(now);
   }
 
-  // Calculate overall score as points earned minus points lost for the current user
-  let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
-  let pointsLostRef = database.ref('scores/' + userId + '/pointsLost');
-  pointsEarnedRef.once('value', function (snapshot) {
-    let pointsEarned = snapshot.val();
-    pointsEarnedRef.set(pointsEarned).catch(error => console.log(error));
+  // Fetch pointsEarned and pointsLost together
+let scoresRef = database.ref('scores/' + userId);
+scoresRef.once('value', function (snapshot) {
+  let pointsEarned = snapshot.child('pointsEarned').val() || 0;
+  let pointsLost = snapshot.child('pointsLost').val() || 0;
 
-    pointsLostRef.once('value', function (snapshot) {
-      let pointsLost = snapshot.val();
-      let overallScore = pointsEarned - (-pointsLost);
+  // Calculate overall score
+  let overallScore = pointsEarned - (-pointsLost);
 
-      // Update overall score in Firebase for the current user
-      let overallScoreRef = database.ref('scores/' + userId + '/overallScore');
-      overallScoreRef.set(overallScore);
+  // Update overall score in Firebase for the current user
+  let overallScoreRef = database.ref('scores/' + userId + '/overallScore');
+  overallScoreRef.set(overallScore);
 
-      // Update email in Firebase for the current user
-      let emailRef = database.ref('scores/' + userId + '/email');
-      emailRef.set(userEmail);
-      let displayNameRef = database.ref('scores/' + userId + '/displayName');
-      displayNameRef.set(displayName);
-      });
-    });
+  // Update email in Firebase for the current user
+  let emailRef = database.ref('scores/' + userId + '/email');
+  emailRef.set(userEmail);
+  let displayNameRef = database.ref('scores/' + userId + '/displayName');
+  displayNameRef.set(displayName);
+});
 
   showAnswerFeedback(selectedAnswer, isCorrect, pointsChange);
 
