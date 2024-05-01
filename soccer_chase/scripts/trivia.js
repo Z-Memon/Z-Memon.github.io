@@ -677,19 +677,11 @@ function showQuestion() {
 var firebaseConfig = {
   // Your Firebase configuration here
   apiKey: "AIzaSyCEuVe3JZlNQpjbfKwu2tglXb-h6kU5HRo",
-
   authDomain: "soccer-chase-587aa.firebaseapp.com",
-
-  databaseURL: "https://soccer-chase-587aa-default-rtdb.firebaseio.com",
-
   projectId: "soccer-chase-587aa",
-
   storageBucket: "soccer-chase-587aa.appspot.com",
-
   messagingSenderId: "280880784635",
-
   appId: "1:280880784635:web:767a93850f056f448c7c5e"
-
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -718,19 +710,8 @@ function checkAnswer(selectedAnswer, points) {
     isCorrect = true;
     pointsChange = points;
 
-    let scoreData = {
-      score: score,
-      isCorrect: isCorrect,
-      pointsChange: pointsChange,
-      timestamp: now,
-      userEmail: userEmail,
-      displayName: displayName
-    };
-
-
     // Update points earned in Firebase for the current user
     let pointsEarnedRef = database.ref('scores/' + userId + '/pointsEarned');
-    database.ref('scores/' + userId).set(scoreData).catch(error => console.log(error));
     pointsEarnedRef.once('value', function (snapshot) {
       let pointsEarned = snapshot.val() ? snapshot.val() + points : points;
       pointsEarnedRef.set(pointsEarned);
@@ -873,7 +854,6 @@ window.onload = function () {
   });
 
 };
-
 
 
 
