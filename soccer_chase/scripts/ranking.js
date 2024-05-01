@@ -59,6 +59,7 @@ sortedScores.forEach(([userId, userData], index) => {
     
       let userPoints = document.createElement('p');
       userPoints.textContent = `Points: ${userData.overallScore}`;
+      userPoints.style.display = 'block'; // Add this line
       userPoints.className = 'user-points';
       userInfo.appendChild(userPoints);
     
