@@ -40,7 +40,10 @@
   const storage = getStorage(app);
  
   const login = document.getElementById('sign-up');
-login.addEventListener('click', function(){
+login.addEventListener('click', function(event){
+  login.disabled = true;
+
+  event.preventDefault();
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
@@ -76,15 +79,16 @@ uploadTask.on('state_changed',
           // Handle successful uploads on complete
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             console.log('File available at', downloadURL);
-            updateProfile(user, { displayName: username, photoURL: downloadURL })})
-            .then(() => {
-              // Profile updated
-              // Redirect to the home page
-              window.location.href = "test-home.html"; // Replace with the URL of your home page
-            })
-            .catch((error) => {
-              // Handle errors
-            });   
+            return updateProfile(user, { displayName: username, photoURL: downloadURL });
+          })
+          .then(() => {
+            // Profile updated
+            // Redirect to the home page
+            window.location.href = "test-home.html"; // Replace with the URL of your home page
+          })
+          .catch((error) => {
+            // Handle errors
+          });
          });
         }
       );
