@@ -686,7 +686,8 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
-
+var storage = firebase.storage();
+var storageRef = storage.ref();
 
 function checkAnswer(selectedAnswer, points) {
   const currentQuestion = triviaData[currentQuestionIndex];
@@ -703,7 +704,18 @@ function checkAnswer(selectedAnswer, points) {
   let userEmail = user.email;
   let displayName = user.displayName;
 
-  
+  // Get the user's profile picture
+  let profilePicRef = storageRef.child('profile_pictures/' + userId);
+  profilePicRef.getDownloadURL().then(function(url) {
+  // The URL of the user's profile picture
+  let profilePic = url;
+
+// Store the URL in Firebase Database
+let profilePicRef = database.ref('scores/' + userId + '/profilePic');
+profilePicRef.set(profilePic);
+}).catch(function(error) {
+console.log("Error getting profile picture URL: ", error);
+});
 
   let now = new Date().toISOString();
 

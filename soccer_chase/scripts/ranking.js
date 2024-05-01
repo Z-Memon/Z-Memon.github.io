@@ -38,24 +38,19 @@ window.onload = function() {
     let sortedScores = Object.entries(scores).sort((a, b) => b[1].overallScore - a[1].overallScore);
     
     // Update ranks page with sorted scores
-    let ranksContainer = document.querySelector('#ranks-container');
-    ranksContainer.innerHTML = '';
-    sortedScores.forEach(([userId, userData], index) => {
-      let rankItem = document.createElement('div');
-      rankItem.className = 'rank-item';
-    
-      let userInfo = document.createElement('div');
-      userInfo.className = 'user-info';
-    
-      //let userEmail = document.createElement('p');
-      //userEmail.textContent = `${userData.email}`;
-      //userEmail.className = 'user-email';
-      //userInfo.appendChild(userEmail);
-       // Add profile picture
-      let userProfilePicture = document.createElement('img');
-      userProfilePicture.src = userData.profilePic;
-      userProfilePicture.className = 'user-profile-picture';
-      userInfo.appendChild(userProfilePicture);
+let ranksContainer = document.querySelector('#ranks-container');
+ranksContainer.innerHTML = '';
+sortedScores.forEach(([userId, userData], index) => {
+  let rankItem = document.createElement('div');
+  rankItem.className = 'rank-item';
+
+  let userInfo = document.createElement('div');
+  userInfo.className = 'user-info';
+
+  let userProfilePicture = document.createElement('img');
+  userProfilePicture.src = userData.profilePicture || userData.profilePic;
+  userProfilePicture.className = 'user-profile-picture';
+  userInfo.appendChild(userProfilePicture);
 
       let userDisplayName = document.createElement('p');
       userDisplayName.textContent = `${userData.displayName}`;
@@ -85,3 +80,13 @@ window.onload = function() {
   });
 };
 
+
+      //let userEmail = document.createElement('p');
+      //userEmail.textContent = `${userData.email}`;
+      //userEmail.className = 'user-email';
+      //userInfo.appendChild(userEmail);
+       // Add profile picture
+    
+
+
+       

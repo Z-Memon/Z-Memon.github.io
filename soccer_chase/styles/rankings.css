@@ -34,13 +34,13 @@ body {
   color: var(--White, #F6F6F6);
   font-family: Bitter;
   overflow-y: auto;
-  padding-bottom: 80px;
+  padding-bottom: 200px;
 }
 
 #ranks-container div {
   padding: 10px;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.20) 100%, rgba(249, 249, 249, 0.00) 100%); 
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   width: 340px;
   display: flex;
@@ -65,6 +65,7 @@ body {
 
 .user-info {
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   width: 100px;
   overflow: auto; /* Add this line */
@@ -72,9 +73,16 @@ body {
 
 .user-points {
   margin-top: 15px; /* Adjust this to add more or less space */
-  text-align: left;
+  align-items: left;
 }
 
+
+.profile-pic{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-items: left;
+}
 
 .user-profile-picture {
   width: 50px;

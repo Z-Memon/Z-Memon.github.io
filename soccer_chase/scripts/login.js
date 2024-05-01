@@ -47,12 +47,14 @@ googleSignIn.addEventListener('click', function () {
     // The signed-in user info.
     const user = result.user;
     console.log(user);
+    // Save the user's information
+    localStorage.setItem('currentUserData', JSON.stringify(user));
+    // Create a new entry in the 'users' collection
+    const userRef = ref(db, 'users/' + user.uid);
+    set(userRef, {
+      photoURL: user.photoURL
+    });
     window.location.href = "test-home.html";
-
-    // Save the email to the database.
-    set(ref(db, 'users/' + user.uid + '/email'), user.email);
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -79,8 +81,8 @@ login.addEventListener('click', function (event) {
       console.log(user);
       window.location.href = "test-home.html";
 
-      // Save the email to the database.
-      set(ref(db, 'users/' + user.uid + '/email'), user.email);
+      localStorage.setItem('currentUserData', JSON.stringify(user));
+            window.location.href = "test-home.html";
       // ...
     })
     .catch((error) => {
