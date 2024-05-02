@@ -94,7 +94,7 @@ if (profilePicture) {
     });
 } else {
   // No profile picture provided, use a default placeholder image URL
-  updateProfile(user, { displayName: username, photoURL: 'https://example.com/placeholder.jpg' }) // replace this with your placeholder image URL
+  updateProfile(user, { displayName: username, photoURL: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png' }) // replace this with your placeholder image URL
     .then(() => {
       // Profile updated
       // Redirect to the home page
