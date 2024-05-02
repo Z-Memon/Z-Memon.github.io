@@ -40,7 +40,7 @@
   const storage = getStorage(app);
  
   const login = document.getElementById('sign-up');
-login.addEventListener('click', function(event){
+login.addEventListener('touchend', function(event){
   login.disabled = true;
 
   event.preventDefault();
