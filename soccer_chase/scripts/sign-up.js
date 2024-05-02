@@ -61,35 +61,49 @@ signup.addEventListener('click', function(event){
       // Signed up 
       const user = userCredential.user;
 
-      // Upload the profile picture
-      const profilePictureRef = storageRef(storage, `profile_pictures/${user.uid}`);
-const uploadTask = uploadBytesResumable(profilePictureRef, profilePicture);
+      // Check if a profile picture is provided
+if (profilePicture) {
+  // Upload the profile picture
+  const profilePictureRef = storageRef(storage, `profile_pictures/${user.uid}`);
+  const uploadTask = uploadBytesResumable(profilePictureRef, profilePicture);
 
-uploadTask.on('state_changed', 
-        (snapshot) => {
-          // Observe state change events such as progress, pause, and resume
-          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-        }, 
-        (error) => {
-          // Handle unsuccessful uploads
-        }, 
-        () => {
-          // Handle successful uploads on complete
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            console.log('File available at', downloadURL);
-            return updateProfile(user, { displayName: username, photoURL: downloadURL });
-          })
-          .then(() => {
-            // Profile updated
-            // Redirect to the home page
-            window.location.href = "test-home.html"; // Replace with the URL of your home page
-          })
-          .catch((error) => {
-            // Handle errors
-          });
+  uploadTask.on('state_changed', 
+    (snapshot) => {
+      // Observe state change events such as progress, pause, and resume
+      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+      var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log('Upload is ' + progress + '% done');
+    }, 
+    (error) => {
+      // Handle unsuccessful uploads
+    }, 
+    () => {
+      // Handle successful uploads on complete
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        console.log('File available at', downloadURL);
+        return updateProfile(user, { displayName: username, photoURL: downloadURL });
+      })
+      .then(() => {
+        // Profile updated
+        // Redirect to the home page
+        window.location.href = "test-home.html"; // Replace with the URL of your home page
+      })
+      .catch((error) => {
+        // Handle errors
+      });
+    });
+} else {
+  // No profile picture provided, use a default placeholder image URL
+  updateProfile(user, { displayName: username, photoURL: 'https://example.com/placeholder.jpg' }) // replace this with your placeholder image URL
+    .then(() => {
+      // Profile updated
+      // Redirect to the home page
+      window.location.href = "test-home.html"; // Replace with the URL of your home page
+    })
+    .catch((error) => {
+      // Handle errors
+    });
+}
          });
         }
       );
-    })
