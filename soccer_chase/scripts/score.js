@@ -44,48 +44,39 @@ document.querySelector('#today').click();
   console.log(currentUserData);
 
 
-  // Set an observer on the Auth object to listen for user state changes
-  firebase.auth().onAuthStateChanged((user) => {
+  firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      // User is signed in
-      firebase.database().ref(`scores/${user.uid}`).on('value', (snapshot) => {
-        const userData = snapshot.val();
+      // User is signed in, display the user display name
+      let displayNameElement = document.querySelector('#display-name'); 
+      if (displayNameElement) {
+        displayNameElement.textContent = user.displayName;
+      }
+      let profilePictureElement = document.querySelector('#profile-pic'); // Replace with the id of your profile picture element
+      if (profilePictureElement) {
+        profilePictureElement.src = user.photoURL;
+      }
+  
+      // Fetch the user's score data from the database
+      firebase.database().ref('users/' + user.uid).once('value', function(snapshot) {
+        let userData = snapshot.val();
         if (userData) {
-          // Update the text content and source of the corresponding HTML elements
-          document.querySelector('#display-name').textContent = userData.displayName;
-          document.querySelector('#overall-score').textContent =userData.overallScore;
-          document.querySelector('#points-earned').textContent =userData.pointsEarned;
-          document.querySelector('#points-lost').textContent =userData.pointsLost;
-          document.querySelector('#profile-pic').src = userData.photoURL || userData.profilePic;
+          // Display the user's score data
+          document.querySelector('#points-earned').textContent = userData.pointsEarned;
+          document.querySelector('#points-lost').textContent = userData.pointsLost;
+          document.querySelector('#overall-score').textContent = userData.overallScore;
         } else {
-          console.log("No such document!");
+          // No score data for this user, clear the score display
+          document.querySelector('#points-earned').textContent = '';
+          document.querySelector('#points-lost').textContent = '';
+          document.querySelector('#overall-score').textContent = '';
         }
-      }, (error) => {
-        console.log("Error getting data:", error);
       });
     } else {
-      // User is signed out
-      console.log("No user is signed in.");
+      // No user is signed in
+      console.log('No user is signed in');
     }
   });
-
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        // User is signed in, display the user display name
-        let displayNameElement = document.querySelector('#display-name'); 
-        if (displayNameElement) {
-          displayNameElement.textContent = user.displayName;
-        }
-        let profilePictureElement = document.querySelector('#profile-pic'); // Replace with the id of your profile picture element
-        if (profilePictureElement) {
-        profilePictureElement.src = user.photoURL;
-        }
-      } else {
-        // No user is signed in
-        console.log('No user is signed in');
-      }
-    });
-  };
+}
 
 
 
