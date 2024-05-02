@@ -39,9 +39,9 @@
   const db = getDatabase(app);
   const storage = getStorage(app);
  
-  const login = document.getElementById('sign-up');
-login.addEventListener('click', function(event){
-  login.disabled = true;
+  const signup = document.getElementById('sign-up');
+signup.addEventListener('click', function(event){
+  signup.disabled = true;
 
   event.preventDefault();
 
