@@ -82,13 +82,28 @@ rankItem.addEventListener('click', function() {
   if (userData.displayName === currentDisplayName) {
     // The clicked rank item is the signed-in user's rank item
     // Save the user's data to local storage and navigate to the "score.html" page
-    localStorage.setItem('currentUserData', JSON.stringify(userData));
     window.location.href = "score.html";
   } else {
     // The clicked rank item is not the signed-in user's rank item
     // Do nothing or display a message
     alert('You can only view your own stats.');
   }
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in, fetch the user's data from the database
+      firebase.database().ref('users/' + user.uid).once('value', function(snapshot) {
+        let userData = snapshot.val();
+        if (userData) {
+          // Update the local storage with the current user's data
+          localStorage.setItem('currentUserData', JSON.stringify(userData));
+        }
+      });
+    } else {
+      // No user is signed in
+      console.log('No user is signed in');
+    }
+  });
 });
 
 ranksContainer.appendChild(rankItem);
@@ -96,12 +111,6 @@ ranksContainer.appendChild(rankItem);
   });
 };
 
-
-      //let userEmail = document.createElement('p');
-      //userEmail.textContent = `${userData.email}`;
-      //userEmail.className = 'user-email';
-      //userInfo.appendChild(userEmail);
-       // Add profile picture
     
 
 
