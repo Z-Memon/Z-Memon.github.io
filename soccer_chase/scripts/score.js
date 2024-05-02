@@ -68,8 +68,25 @@ document.querySelector('#today').click();
       console.log("No user is signed in.");
     }
   });
-  
-};
+
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        // User is signed in, display the user display name
+        let displayNameElement = document.querySelector('#display-name'); 
+        if (displayNameElement) {
+          displayNameElement.textContent = user.displayName;
+        }
+        let profilePictureElement = document.querySelector('#profile-pic'); // Replace with the id of your profile picture element
+        if (profilePictureElement) {
+        profilePictureElement.src = user.photoURL;
+        }
+      } else {
+        // No user is signed in
+        console.log('No user is signed in');
+      }
+    });
+  };
+
 
 
 const scoreButtons = document.querySelectorAll('.score_options button');
