@@ -92,7 +92,7 @@ rankItem.addEventListener('click', function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in, fetch the user's data from the database
-      firebase.database().ref('users/' + user.uid).once('value', function(snapshot) {
+      firebase.database().ref('scores/' + user.uid).once('value', function(snapshot) {
         let userData = snapshot.val();
         if (userData) {
           // Update the local storage with the current user's data
